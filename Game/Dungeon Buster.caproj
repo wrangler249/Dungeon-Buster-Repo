@@ -7,9 +7,9 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>9500</saved-with-version>
     <used-plugins>
-        <plugin id="Arr" version="1">Array</plugin>
-        <plugin id="Keyboard" version="1">Keyboard</plugin>
         <plugin id="Sprite" version="1">Sprite</plugin>
+        <plugin id="Keyboard" version="1">Keyboard</plugin>
+        <plugin id="Arr" version="1">Array</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior id="EightDir" version="1">8 Direction</behavior>
