@@ -10,11 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
+        <layout active="1">TestDungeon</layout>
         <layout>HouseInterior02</layout>
-        <layout active="1">HouseInterior01</layout>
-        <event-sheet>TestVillage_ES</event-sheet>
-        <event-sheet>HouseInterior01_ES</event-sheet>
+        <layout>Test Village</layout>
+        <event-sheet>TestDungeon_ES</event-sheet>
         <event-sheet>HouseInterior02_ES</event-sheet>
+        <event-sheet>MrBlue_AI</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />

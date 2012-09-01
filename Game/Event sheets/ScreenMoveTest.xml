@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ScreenMoveTest</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">ScreenEdge_Right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Buster" />
+                <action id="-7" name="Scroll to position" type="System">
+                    <param id="0" name="X">scrollx+1280</param>
+                    <param id="1" name="Y">scrolly</param>
+                </action>
+                <action id="-1" name="Set X" type="Buster">
+                    <param id="0" name="X">Buster.X+40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">ScreenEdge_Left</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Buster" />
+                <action id="-7" name="Scroll to position" type="System">
+                    <param id="0" name="X">scrollx-1280</param>
+                    <param id="1" name="Y">scrolly</param>
+                </action>
+                <action id="-1" name="Set X" type="Buster">
+                    <param id="0" name="X">Buster.X-40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">ScreenEdge_Top</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Buster" />
+                <action id="-7" name="Scroll to position" type="System">
+                    <param id="0" name="X">scrollx</param>
+                    <param id="1" name="Y">scrolly-480</param>
+                </action>
+                <action id="-2" name="Set Y" type="Buster">
+                    <param id="0" name="Y">Buster.Y-50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">ScreenEdge_Bottom</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Buster" />
+                <action id="-7" name="Scroll to position" type="System">
+                    <param id="0" name="X">scrollx</param>
+                    <param id="1" name="Y">scrolly+480</param>
+                </action>
+                <action id="-2" name="Set Y" type="Buster">
+                    <param id="0" name="Y">Buster.Y+50</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
