@@ -16,6 +16,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>TestDungeon_ES</event-sheet>
         <event-sheet>HouseInterior02_ES</event-sheet>
         <event-sheet>MrBlue_AI</event-sheet>
+        <event-sheet>Item_Pickup</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />

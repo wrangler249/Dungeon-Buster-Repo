@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Item_Pickup</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">HP_Small</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">health_pickup</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="1" name="Tag (optional)">&quot;items&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" type="HP_Small" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
