@@ -7,15 +7,16 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10000</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -39,12 +40,9 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-type global="1" name="Buster">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="Health" type="number" />
-            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction">
                     <behavior id="EightDir" />
@@ -498,14 +496,6 @@
         </object-type>
         <object-type name="MrBlue">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Bullet">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -751,15 +741,55 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="Sprite43">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HP_Text">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="EXP_Text">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="CurrentLevel_Text">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="NextLvLEXP_Text">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
-    <families />
-    <layout-folder expanded="1">
+    <families>
+        <family name="WanderingEnemies" plugin-id="Sprite">
+            <members>
+                <member>MrBlue</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet2">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder expanded="0">
         <layout>Test Village.xml</layout>
         <layout>HouseInterior01.xml</layout>
         <layout>HouseInterior02.xml</layout>
         <layout>TestDungeon.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
+        <event-folder expanded="0" name="Enemy AI">
+            <event-sheet>WanderingEnemyAI.xml</event-sheet>
+        </event-folder>
+        <event-folder expanded="0" name="Buster">
+            <event-sheet>BusterMechanics.xml</event-sheet>
+        </event-folder>
         <event-sheet>TestVillage_ES.xml</event-sheet>
         <event-sheet>HouseInterior01_ES.xml</event-sheet>
         <event-sheet>HouseInterior02_ES.xml</event-sheet>
@@ -767,7 +797,6 @@
         <event-sheet>ScreenMoveTest.xml</event-sheet>
         <event-sheet>DoorKey Mechanic.xml</event-sheet>
         <event-sheet>KeyChestMechanic.xml</event-sheet>
-        <event-sheet>MrBlue_AI.xml</event-sheet>
         <event-sheet>Item_Pickup.xml</event-sheet>
     </event-folder>
     <global-instances>

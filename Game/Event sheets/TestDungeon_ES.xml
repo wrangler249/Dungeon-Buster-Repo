@@ -3,8 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>TestDungeon_ES</name>
     <events>
+        <include>BusterMechanics</include>
         <include>Item_Pickup</include>
-        <include>MrBlue_AI</include>
+        <include>WanderingEnemyAI</include>
         <include>KeyChestMechanic</include>
         <include>DoorKey Mechanic</include>
         <include>ScreenMoveTest</include>
