@@ -10,22 +10,21 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1">TestDungeon</layout>
-        <layout>HouseInterior02</layout>
-        <layout>Test Village</layout>
+        <layout>TestDungeon</layout>
+        <layout active="1">HouseInterior02</layout>
         <event-sheet>TestDungeon_ES</event-sheet>
-        <event-sheet>HouseInterior02_ES</event-sheet>
-        <event-sheet>WanderingEnemyAI</event-sheet>
         <event-sheet>Item_Pickup</event-sheet>
         <event-sheet>KeyChestMechanic</event-sheet>
         <event-sheet>BusterMechanics</event-sheet>
+        <event-sheet>Dialogue</event-sheet>
+        <event-sheet>MrTestDialogue</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="1">
+    <families-expanded root="0">
         <family expanded="0" name="WanderingEnemies" />
     </families-expanded>
 </c2uistate>

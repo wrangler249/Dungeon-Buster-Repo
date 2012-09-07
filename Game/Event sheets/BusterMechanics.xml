@@ -45,11 +45,14 @@
                         <action id="0" name="Set text" type="NextLvLEXP_Text">
                             <param id="0" name="Text">busterNextLvlEXP</param>
                         </action>
+                        <action id="0" name="Set text" type="GoldCount">
+                            <param id="0" name="Text">busterTotalGold</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="Levelling Formulae">
+        <event-group collapsed="1" description="" title="Levelling Formulae">
             <sub-events>
                 <event-block>
                     <conditions>

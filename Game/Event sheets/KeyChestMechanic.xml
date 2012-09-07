@@ -3,40 +3,104 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>KeyChestMechanic</name>
     <events>
+        <variable comment="The amount of gold in Buster&apos;s possession." name="busterTotalGold" type="number">0</variable>
         <variable comment="Amount of Dungeon Keys obtained" name="DungeonKeyCount" type="number">0</variable>
-        <event-block>
-            <conditions>
-                <condition id="1" name="Is overlapping another object" type="Buster">
-                    <param id="0" name="Object">Sprite29</param>
-                </condition>
-            </conditions>
-            <actions />
+        <event-group description="" title="Key for wooden/standard door">
             <sub-events>
                 <event-block>
                     <conditions>
-                        <condition id="2" name="Key is down" type="Keyboard">
-                            <param id="0" name="Key">69 (E)</param>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">Key</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" type="Sprite29" />
-                        <action id="0" name="Spawn another object" type="Sprite29">
-                            <param id="0" name="Object">NormalChestOpen</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="0" name="Play" type="Audio">
-                            <param id="0" name="Audio file">pickup_sound</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-10" name="Add to" type="System">
-                            <param id="0" name="Variable">DungeonKeyCount</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="2" name="Key is down" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" type="Key" />
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">LA_Chest_Open</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Spawn another object" type="Key">
+                                    <param id="0" name="Object">NormalChestOpen</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">pickup_sound</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">DungeonKeyCount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
+        </event-group>
+        <event-group description="" title="5 Gold">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">5gold</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="2" name="Key is down" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" type="5gold" />
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">LA_Chest_Open</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Spawn another object" type="5gold">
+                                    <param id="0" name="Object">NormalChestOpen</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="0" name="Spawn another object" type="NormalChestOpen">
+                                    <param id="0" name="Object">CoinBurst</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">pickup_sound</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterTotalGold</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

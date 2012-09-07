@@ -5,18 +5,20 @@
     <version>1.0</version>
     <author></author>
     <unique-id>2hhtd1awt2msk</unique-id>
-    <saved-with-version>10000</saved-with-version>
+    <saved-with-version>10200</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -41,7 +43,7 @@
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-folder expanded="1" name="Enemies">
+        <object-folder expanded="0" name="Enemies">
             <object-type name="Skeleton01">
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
@@ -61,37 +63,78 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type global="1" name="Buster">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="8Direction">
-                    <behavior id="EightDir" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.619048" hotspotY="0.46875">
-                        <image-point name="Text Snap" x="1.35714" y="-0.15625" />
-                        <image-point name="Item Effect Snap" x="0.619048" y="-0.03125" />
-                    </frame>
-                </animation>
-                <animation framecount="2" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="0.5" hotspotX="0.619048" hotspotY="0.46875">
-                        <image-point name="Imagepoint 1" x="1.78571" y="-0.171875" />
-                    </frame>
-                    <frame duration="0.5" hotspotX="0.583333" hotspotY="0.46875">
-                        <image-point name="Imagepoint 1" x="2.02778" y="-0.203125" />
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="0" name="Idle_IronSword" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.568182" hotspotY="0.484375" />
-                </animation>
-                <animation framecount="2" loop="1" name="Run_IronSword" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="0.5" hotspotX="0.568182" hotspotY="0.484375" />
-                    <frame duration="0.5" hotspotX="0.527778" hotspotY="0.484375" />
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder expanded="0" name="ItemChests">
+            <object-folder expanded="0" name="Effects">
+                <object-type name="CoinBurst">
+                    <plugin id="Particles" />
+                    <texture />
+                </object-type>
+            </object-folder>
+            <object-type name="Key">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="closed" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="open" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="NormalChestOpen">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="5gold">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="closed" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="open" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Player">
+            <object-type global="1" name="Buster">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="8Direction">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.619048" hotspotY="0.46875">
+                            <image-point name="Text Snap" x="1.35714" y="-0.15625" />
+                            <image-point name="Item Effect Snap" x="0.619048" y="-0.03125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="1" name="Run" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="0.5" hotspotX="0.619048" hotspotY="0.46875">
+                            <image-point name="Imagepoint 1" x="1.78571" y="-0.171875" />
+                        </frame>
+                        <frame duration="0.5" hotspotX="0.583333" hotspotY="0.46875">
+                            <image-point name="Imagepoint 1" x="2.02778" y="-0.203125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Idle_IronSword" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.568182" hotspotY="0.484375" />
+                    </animation>
+                    <animation framecount="2" loop="1" name="Run_IronSword" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="0.5" hotspotX="0.568182" hotspotY="0.484375" />
+                        <frame duration="0.5" hotspotX="0.527778" hotspotY="0.484375" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder expanded="1" name="Dungeon Tiles" />
         <object-type name="Sprite">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
@@ -393,12 +436,12 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.125" y="0.0625" />
-                            <point x="0.5" y="0" />
-                            <point x="0.875" y="0.0625" />
-                            <point x="0.875" y="0.9375" />
-                            <point x="0.5" y="1" />
-                            <point x="0.125" y="0.9375" />
+                            <point x="0.25" y="0.125" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.75" y="0.125" />
+                            <point x="0.75" y="0.875" />
+                            <point x="0.5" y="0.96875" />
+                            <point x="0.25" y="0.875" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -428,17 +471,6 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Sprite29">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="closed" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="open" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -480,14 +512,6 @@
             <texture />
         </object-type>
         <object-type name="LayoutSize">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="NormalChestOpen">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
@@ -788,6 +812,95 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="GoldCount">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="DialoguePanel">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0" y="0" />
+                        <image-point name="Imagepoint 2" x="1" y="0" />
+                        <image-point name="Imagepoint 3" x="0.5" y="1" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DialogueText">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MrTest">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0833333" y="0.05" />
+                            <point x="0.5" y="0.025" />
+                            <point x="0.958333" y="0.025" />
+                            <point x="0.75" y="0.85" />
+                            <point x="0.5" y="0.8" />
+                            <point x="0.25" y="0.85" />
+                            <point x="0.125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MrTestDialogueImg">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite29">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite45">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Sprite46">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Sprite47">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0.25" />
+                            <point x="0.625" y="0.375" />
+                            <point x="1" y="0.5" />
+                            <point x="0.625" y="0.625" />
+                            <point x="0.5" y="0.625" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="WanderingEnemies" plugin-id="Sprite">
@@ -810,12 +923,16 @@
         <layout>HouseInterior02.xml</layout>
         <layout>TestDungeon.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
-        <event-folder expanded="0" name="Enemy AI">
+    <event-folder expanded="1">
+        <event-folder expanded="1" name="Enemy AI">
             <event-sheet>WanderingEnemyAI.xml</event-sheet>
         </event-folder>
         <event-folder expanded="0" name="Buster">
             <event-sheet>BusterMechanics.xml</event-sheet>
+        </event-folder>
+        <event-folder expanded="1" name="Dialogue">
+            <event-sheet>Dialogue.xml</event-sheet>
+            <event-sheet>MrTestDialogue.xml</event-sheet>
         </event-folder>
         <event-sheet>TestVillage_ES.xml</event-sheet>
         <event-sheet>HouseInterior01_ES.xml</event-sheet>
@@ -833,12 +950,16 @@
                 <timescale-audio>Off</timescale-audio>
             </properties>
         </global-instance>
+        <global-instance type="Mouse" />
     </global-instances>
     <sounds-folder expanded="0">
         <file name="pickup_sound.ogg" />
         <file name="jump_sound.ogg" />
         <file name="health_pickup.ogg" />
         <file name="superhealth_pickup.ogg" />
+        <file name="LA_Chest_Open.m4a" />
+        <file name="LA_Chest_Open.ogg" />
+        <file name="LA_Chest_Open.wav" />
     </sounds-folder>
     <music-folder expanded="0">
         <file name="A_Airbrushed.ogg" />
