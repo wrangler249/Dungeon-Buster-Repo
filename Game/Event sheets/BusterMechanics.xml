@@ -3,8 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>BusterMechanics</name>
     <events>
+        <variable comment="Amount of EXP required for the current level." name="busterCurrentLevelStartXP" type="number">0</variable>
         <variable comment="Buster&apos;s current level (starts at 1)" name="busterCurrentLevel" type="number">1</variable>
-        <variable comment="The total EXP required to reach the next level." name="busterNextLvlEXP" type="number">50</variable>
+        <variable comment="The total EXP required to reach the next level." name="busterNextLvlEXP" type="number">250</variable>
         <variable comment="Buster&apos;s total EXP at any given time." name="busterTotalEXP" type="number">0</variable>
         <variable comment="Total health Buster can have at any given time." name="busterTotalHealth" type="number">125</variable>
         <variable comment="Actual health at any given time" name="busterHealthPerTick" type="number">125</variable>
@@ -48,9 +49,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="Levelling Formulae">
+        <event-group description="" title="Levelling Formulae">
             <sub-events>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="-14" name="Compare variable" type="System">
                             <param id="0" name="Variable">busterCurrentLevel</param>
@@ -74,8 +75,12 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevelStartXP</param>
+                                    <param id="1" name="Value">busterNextLvlEXP</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
                                     <param id="0" name="Variable">busterNextLvlEXP</param>
-                                    <param id="1" name="Value">int(busterTotalEXP+(busterTotalEXP*0.5))</param>
+                                    <param id="1" name="Value">int(busterTotalEXP+(250*busterCurrentLevel))</param>
                                 </action>
                                 <action id="-10" name="Add to" type="System">
                                     <param id="0" name="Variable">busterTotalHealth</param>
@@ -89,7 +94,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="-14" name="Compare variable" type="System">
                             <param id="0" name="Variable">busterCurrentLevel</param>
@@ -113,8 +118,12 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevelStartXP</param>
+                                    <param id="1" name="Value">busterNextLvlEXP</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
                                     <param id="0" name="Variable">busterNextLvlEXP</param>
-                                    <param id="1" name="Value">int(busterTotalEXP+(busterTotalEXP*0.15))</param>
+                                    <param id="1" name="Value">int(busterTotalEXP*1.255)</param>
                                 </action>
                                 <action id="-10" name="Add to" type="System">
                                     <param id="0" name="Variable">busterTotalHealth</param>
@@ -130,5 +139,15 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" type="exp_bar">
+                    <param id="0" name="Width">(busterTotalEXP-busterCurrentLevelStartXP)/(busterNextLvlEXP-busterCurrentLevelStartXP)*100</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

@@ -10,7 +10,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout>TestDungeon</layout>
+        <layout active="1">TestDungeon</layout>
         <layout>HouseInterior02</layout>
         <layout>Test Village</layout>
         <event-sheet>TestDungeon_ES</event-sheet>
@@ -18,7 +18,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>WanderingEnemyAI</event-sheet>
         <event-sheet>Item_Pickup</event-sheet>
         <event-sheet>KeyChestMechanic</event-sheet>
-        <event-sheet active="1">BusterMechanics</event-sheet>
+        <event-sheet>BusterMechanics</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />
