@@ -11,13 +11,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>TestDungeon</layout>
-        <layout active="1">HouseInterior02</layout>
+        <layout>HouseInterior02</layout>
         <event-sheet>TestDungeon_ES</event-sheet>
         <event-sheet>Item_Pickup</event-sheet>
         <event-sheet>KeyChestMechanic</event-sheet>
         <event-sheet>BusterMechanics</event-sheet>
         <event-sheet>Dialogue</event-sheet>
         <event-sheet>MrTestDialogue</event-sheet>
+        <event-sheet active="1">Master Reference</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />

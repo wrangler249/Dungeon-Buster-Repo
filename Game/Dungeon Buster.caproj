@@ -9,11 +9,11 @@
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
     </used-plugins>
     <used-behaviors>
@@ -924,10 +924,10 @@
         <layout>TestDungeon.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-folder expanded="1" name="Enemy AI">
+        <event-folder expanded="0" name="Enemy AI">
             <event-sheet>WanderingEnemyAI.xml</event-sheet>
         </event-folder>
-        <event-folder expanded="0" name="Buster">
+        <event-folder expanded="1" name="Buster">
             <event-sheet>BusterMechanics.xml</event-sheet>
         </event-folder>
         <event-folder expanded="1" name="Dialogue">
@@ -942,6 +942,7 @@
         <event-sheet>DoorKey Mechanic.xml</event-sheet>
         <event-sheet>KeyChestMechanic.xml</event-sheet>
         <event-sheet>Item_Pickup.xml</event-sheet>
+        <event-sheet>Master Reference.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" />
