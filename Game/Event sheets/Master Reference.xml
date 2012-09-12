@@ -2,5 +2,15 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
-    <events />
+    <events>
+        <include>WanderingNPCs</include>
+        <include>UniqueItems</include>
+        <include>DoorKey Mechanic</include>
+        <include>Item_Pickup</include>
+        <include>WanderingEnemyAI</include>
+        <include>ScreenMoveTest</include>
+        <include>ChestMechanic</include>
+        <include>Dialogue</include>
+        <include>BusterMechanics</include>
+    </events>
 </c2eventsheet>

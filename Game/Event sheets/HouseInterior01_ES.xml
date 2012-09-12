@@ -30,7 +30,7 @@
                     <param id="1" name="Value">&quot;HouseInterior01&quot;</param>
                 </action>
                 <action id="-2" name="Go to layout" type="System">
-                    <param id="0" name="Layout">Test Village</param>
+                    <param id="0" name="Layout">Pittdour_Main</param>
                 </action>
             </actions>
         </event-block>

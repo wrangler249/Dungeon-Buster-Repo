@@ -13,13 +13,6 @@
                     <param id="0" name="Layer">4</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="-1" name="Every tick" type="System" />
-            </conditions>
-            <actions>
                 <action id="3" name="Set font size" type="DialogueText">
                     <param id="0" name="Size (pt)">12</param>
                 </action>

@@ -7,7 +7,7 @@
         <include>BusterMechanics</include>
         <include>Item_Pickup</include>
         <include>WanderingEnemyAI</include>
-        <include>KeyChestMechanic</include>
+        <include>ChestMechanic</include>
         <include>DoorKey Mechanic</include>
         <include>ScreenMoveTest</include>
         <event-block collapsed="1">

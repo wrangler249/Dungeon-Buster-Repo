@@ -10,22 +10,24 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout>TestDungeon</layout>
-        <layout>HouseInterior02</layout>
-        <event-sheet>TestDungeon_ES</event-sheet>
-        <event-sheet>Item_Pickup</event-sheet>
-        <event-sheet>KeyChestMechanic</event-sheet>
-        <event-sheet>BusterMechanics</event-sheet>
-        <event-sheet>Dialogue</event-sheet>
+        <layout>Pittdour_Main</layout>
+        <layout>BustersHouse</layout>
+        <layout>Master Instance</layout>
+        <event-sheet>TestVillage_ES</event-sheet>
+        <event-sheet>HouseInterior02_ES</event-sheet>
+        <event-sheet>ChestMechanic</event-sheet>
         <event-sheet>MrTestDialogue</event-sheet>
-        <event-sheet active="1">Master Reference</event-sheet>
+        <event-sheet>Dialogue</event-sheet>
+        <event-sheet active="1">BusterMechanics</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
+    <families-expanded root="1">
         <family expanded="0" name="WanderingEnemies" />
+        <family expanded="0" name="WanderingNPCs" />
+        <family expanded="1" name="Chests" />
     </families-expanded>
 </c2uistate>

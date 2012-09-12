@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>TestVillage_ES</name>
     <events>
-        <include>ScreenMoveTest</include>
+        <include>Master Reference</include>
         <variable comment="What layout did Buster come from? (Used to spawn him at the correct door/hole/whatever when he returns from another layout)" name="WhereICameFrom" type="text">Compton</variable>
         <event-block>
             <conditions>
@@ -13,7 +13,7 @@
                 <action id="-26" name="Move to layer" type="Buster">
                     <param id="0" name="Layer">0</param>
                 </action>
-                <action id="0" name="Play" type="Audio">
+                <action disabled="1" id="0" name="Play" type="Audio">
                     <param id="0" name="Audio file">12 - Mabe Village</param>
                     <param id="2" name="Loop">1</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -76,7 +76,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" type="System">
-                    <param id="0" name="Layout">HouseInterior01</param>
+                    <param id="0" name="Layout">PittdourHouse01</param>
                 </action>
             </actions>
         </event-block>
@@ -91,7 +91,11 @@
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" type="System">
-                    <param id="0" name="Layout">HouseInterior02</param>
+                    <param id="0" name="Layout">BustersHouse</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">WhereICameFrom</param>
+                    <param id="1" name="Value">&quot;TestVillageDoor2&quot;</param>
                 </action>
             </actions>
         </event-block>

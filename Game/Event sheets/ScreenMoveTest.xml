@@ -50,7 +50,7 @@
                     <param id="1" name="Y">scrolly-480</param>
                 </action>
                 <action id="-2" name="Set Y" type="Buster">
-                    <param id="0" name="Y">Buster.Y-50</param>
+                    <param id="0" name="Y">Buster.Y-56</param>
                 </action>
             </actions>
         </event-block>
@@ -67,7 +67,7 @@
                     <param id="1" name="Y">scrolly+480</param>
                 </action>
                 <action id="-2" name="Set Y" type="Buster">
-                    <param id="0" name="Y">Buster.Y+50</param>
+                    <param id="0" name="Y">Buster.Y+56</param>
                 </action>
             </actions>
         </event-block>
