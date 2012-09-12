@@ -1,0 +1,106 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Game/Animations/Buster/Default/000.png
+#	modified:   Game/Animations/Sprite10/Default/000.png
+#	modified:   Game/Animations/Sprite29/Default/000.png
+#	deleted:    Game/Animations/Sprite9/Default/000.png
+#	modified:   Game/Dungeon Buster.caproj
+#	modified:   Game/Dungeon Buster.capx.backup1
+#	modified:   Game/Dungeon Buster.uistate.xml
+#	modified:   Game/Event sheets/BusterMechanics.uistate.xml
+#	modified:   Game/Event sheets/BusterMechanics.xml
+#	modified:   Game/Event sheets/Dialogue.xml
+#	modified:   Game/Event sheets/HouseInterior01_ES.xml
+#	modified:   Game/Event sheets/HouseInterior02_ES.uistate.xml
+#	modified:   Game/Event sheets/HouseInterior02_ES.xml
+#	deleted:    Game/Event sheets/KeyChestMechanic.uistate.xml
+#	deleted:    Game/Event sheets/KeyChestMechanic.xml
+#	modified:   Game/Event sheets/Master Reference.xml
+#	modified:   Game/Event sheets/MrTestDialogue.xml
+#	modified:   Game/Event sheets/ScreenMoveTest.xml
+#	modified:   Game/Event sheets/TestDungeon_ES.xml
+#	modified:   Game/Event sheets/TestVillage_ES.xml
+#	modified:   Game/Event sheets/WanderingEnemyAI.uistate.xml
+#	modified:   Game/Layouts/HouseInterior01.uistate.xml
+#	modified:   Game/Layouts/HouseInterior01.xml
+#	modified:   Game/Layouts/HouseInterior02.uistate.xml
+#	modified:   Game/Layouts/HouseInterior02.xml
+#	modified:   Game/Layouts/Test Village.uistate.xml
+#	modified:   Game/Layouts/Test Village.xml
+#	modified:   Game/Layouts/TestDungeon.uistate.xml
+#	modified:   Game/Layouts/TestDungeon.xml
+#	modified:   Game/Rough Graphics/Characters/Player/Buster.png
+#	modified:   Game/Rough Graphics/Environments/Dungeon/Stone/Stonewall_tall.psd
+#	modified:   Game/Rough Graphics/Environments/Overworld/interiors/woodenfloor_01.png
+#	modified:   Game/Rough Graphics/Environments/Overworld/interiors/woodenfloor_01.psd
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	Game/Animations/Bed01/
+#	Game/Animations/Bed02/
+#	Game/Animations/Buster_DialogueImg/
+#	"Game/Animations/LarryS\303\251ance/"
+#	Game/Animations/Sprite48/
+#	Game/Animations/Sprite49/
+#	Game/Animations/Sprite50/
+#	Game/Animations/Sprite51/
+#	Game/Animations/Sprite52/
+#	Game/Animations/Sprite53/
+#	Game/Animations/Sprite54/
+#	Game/Animations/Sprite55/
+#	Game/Animations/Sprite56/
+#	Game/Animations/Sprite57/
+#	Game/Animations/Sprite58/
+#	Game/Animations/Sprite59/
+#	Game/Animations/Sprite61/
+#	Game/Animations/Sprite63/
+#	"Game/Animations/S\303\251anceChest/"
+#	Game/Animations/woodentrapdoor/
+#	Game/Event sheets/ChestMechanic.uistate.xml
+#	Game/Event sheets/ChestMechanic.xml
+#	Game/Event sheets/UniqueItems.uistate.xml
+#	Game/Event sheets/UniqueItems.xml
+#	Game/Event sheets/WanderingNPCs.uistate.xml
+#	Game/Event sheets/WanderingNPCs.xml
+#	Game/Layouts/BustersHouse.uistate.xml
+#	Game/Layouts/BustersHouse.xml
+#	Game/Layouts/Master Instance.uistate.xml
+#	Game/Layouts/Master Instance.xml
+#	Game/Layouts/PittdourHouse01.uistate.xml
+#	Game/Layouts/PittdourHouse01.xml
+#	Game/Layouts/Pittdour_Main.uistate.xml
+#	Game/Layouts/Pittdour_Main.xml
+#	"Game/Rough Graphics/Characters/Friendly/S\303\251ance/"
+#	Game/Rough Graphics/Characters/Player/Buster2.psd
+#	Game/Rough Graphics/Characters/Player/buster_v2.png
+#	Game/Rough Graphics/Environments/Overworld/fence01_vertical.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/bed.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/bed.psd
+#	Game/Rough Graphics/Environments/Overworld/interiors/bed02.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/bookshelf.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/bookshelf01.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/bookshelf01.psd
+#	Game/Rough Graphics/Environments/Overworld/interiors/door_lightshaft.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/door_lightshaft_leftside.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/door_lightshaft_rightside.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/redwallpaper_old.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/redwallpaper_old_corner.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/redwallpaper_old_corner_outer.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/redwallpaper_old_window.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/redwallpaper_old_window_alt.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/wall_baseshadow.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/wall_baseshadow_innercorner.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/wall_baseshadow_outercorner.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/wallpaper_old01.psd
+#	Game/Rough Graphics/Environments/Overworld/interiors/woodenfloor_01_alt1.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/woodentrapdoor.png
+#	Game/Rough Graphics/Environments/Overworld/interiors/woodentrapdoor_goldenlock.psd
+#	Game/Rough Graphics/Environments/Overworld/items/
+#	Game/Textures/TiledBackground3.png
+

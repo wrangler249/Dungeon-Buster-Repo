@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>UniqueItems</name>
+    <events>
+        <variable comment="Does Buster have the Séance key?" name="hasSéanceKey" type="number">0</variable>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">SéanceChest</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">hasSéanceKey</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="LarrySéance">
+                    <param id="0" name="Object">Sprite63</param>
+                    <param id="1" name="Layer">3</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="Sprite63" />
+                <action id="-9" name="Destroy" type="Sprite63" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
