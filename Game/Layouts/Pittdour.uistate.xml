@@ -5,10 +5,10 @@ It is entirely optional and the project will load without it.  If you are placin
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
         <position-x>383.184</position-x>
-        <position-y>202.5</position-y>
+        <position-y>137.616</position-y>
         <position-z>100</position-z>
         <lookat-x>383.184</lookat-x>
-        <lookat-y>202.5</lookat-y>
+        <lookat-y>137.616</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -20,11 +20,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="PlayerOnTop" />
+    <active-layer name="Collisions" />
     <layers>
-        <layer locked="0" name="PlayerOnTop" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="PlayerOnTop" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="PlayerBehind" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Collisions" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="GUI/HUD" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Collisions" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="GUI/HUD" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Dialogue" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>

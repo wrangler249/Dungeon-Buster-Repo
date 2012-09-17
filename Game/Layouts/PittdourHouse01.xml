@@ -726,11 +726,14 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="DoorTrigger_1">
+                <instance type="DoorTrigger">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-frame>0</initial-frame>
                     </properties>
+                    <instance-variables>
+                        <DoorTrigger_ID></DoorTrigger_ID>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

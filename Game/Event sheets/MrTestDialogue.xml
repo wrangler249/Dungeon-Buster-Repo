@@ -4,7 +4,7 @@
     <name>MrTestDialogue</name>
     <events>
         <variable name="AllowDialogueQuit" type="number">0</variable>
-        <variable name="DialogueInitiated" type="number">0</variable>
+        <variable name="DialogueProceed" type="number">0</variable>
         <variable comment="Is Mr Test talking?" name="DialogueStep" type="number">0</variable>
         <variable name="TextCount" type="number">0</variable>
         <event-block>
@@ -33,7 +33,7 @@
                             <param id="2" name="Second value">64</param>
                         </condition>
                         <condition id="-14" name="Compare variable" type="System">
-                            <param id="0" name="Variable">DialogueInitiated</param>
+                            <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -43,7 +43,7 @@
                             <param id="0" name="Text">tokenat(&quot;Shit son, I&apos;m a skeleton!|$30, paypal preferred.|I&apos;m saying random phrases...&quot;, random(0,3), &quot;|&quot;) </param>
                         </action>
                         <action id="-9" name="Set value" type="System">
-                            <param id="0" name="Variable">DialogueInitiated</param>
+                            <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Set value" type="System">
@@ -54,9 +54,10 @@
                             <param id="0" name="Layer">4</param>
                             <param id="1" name="Visibility">1</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="MrTestDialogueImg">
-                            <param id="0" name="Object">DialoguePanel</param>
-                            <param id="1" name="Image point (optional)">1</param>
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">MrTestDialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
                         </action>
                         <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
                             <param id="0" name="State">0</param>
@@ -72,6 +73,10 @@
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block>
@@ -82,7 +87,7 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                         <condition id="-14" name="Compare variable" type="System">
-                            <param id="0" name="Variable">DialogueInitiated</param>
+                            <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -96,13 +101,11 @@
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="MrTestDialogueImg">
-                            <param id="0" name="X">-100</param>
-                            <param id="1" name="Y">-100</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" type="Buster_DialogueImg">
-                            <param id="0" name="Object">DialoguePanel</param>
-                            <param id="1" name="Image point (optional)">2</param>
+                        <action id="-9" name="Destroy" type="MrTestDialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">Buster_DialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">2</param>
                         </action>
                         <action id="0" name="Set text" type="DialogueText">
                             <param id="0" name="Text">&quot;...&quot;</param>
@@ -137,10 +140,7 @@
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Buster_DialogueImg">
-                            <param id="0" name="X">-100</param>
-                            <param id="1" name="Y">-100</param>
-                        </action>
+                        <action id="-9" name="Destroy" type="Buster_DialogueImg" />
                         <action id="0" name="Set text" type="DialogueText">
                             <param id="0" name="Text">&quot;I should be blank.&quot;</param>
                         </action>
@@ -155,7 +155,7 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="-9" name="Set value" type="System">
-                            <param id="0" name="Variable">DialogueInitiated</param>
+                            <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>

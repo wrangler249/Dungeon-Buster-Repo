@@ -10,7 +10,7 @@
                     <param id="0" name="Key">69 (E)</param>
                 </condition>
                 <condition id="1" name="Is overlapping another object" type="Buster">
-                    <param id="0" name="Object">SéanceChest</param>
+                    <param id="0" name="Object">SeanceChest</param>
                 </condition>
                 <condition id="-14" name="Compare variable" type="System">
                     <param id="0" name="Variable">hasSéanceKey</param>
@@ -19,7 +19,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" type="LarrySéance">
+                <action id="0" name="Spawn another object" type="LarrySeance">
                     <param id="0" name="Object">Sprite63</param>
                     <param id="1" name="Layer">3</param>
                     <param id="2" name="Image point">1</param>

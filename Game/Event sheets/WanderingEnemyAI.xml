@@ -16,7 +16,7 @@
                     <conditions>
                         <condition id="-21" name="Is between values" type="System">
                             <param id="0" name="Value">WanderingEnemies.Bullet2.AngleOfMotion</param>
-                            <param id="1" name="Lower bound">-179</param>
+                            <param id="1" name="Lower bound">-180</param>
                             <param id="2" name="Upper bound">-90</param>
                         </condition>
                     </conditions>
@@ -31,7 +31,7 @@
                         <condition id="-21" name="Is between values" type="System">
                             <param id="0" name="Value">WanderingEnemies.Bullet2.AngleOfMotion</param>
                             <param id="1" name="Lower bound">91</param>
-                            <param id="2" name="Upper bound">179</param>
+                            <param id="2" name="Upper bound">180</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -44,7 +44,7 @@
                     <conditions>
                         <condition id="-21" name="Is between values" type="System">
                             <param id="0" name="Value">WanderingEnemies.Bullet2.AngleOfMotion</param>
-                            <param id="1" name="Lower bound">1</param>
+                            <param id="1" name="Lower bound">0</param>
                             <param id="2" name="Upper bound">90</param>
                         </condition>
                     </conditions>
@@ -59,7 +59,7 @@
                         <condition id="-21" name="Is between values" type="System">
                             <param id="0" name="Value">WanderingEnemies.Bullet2.AngleOfMotion</param>
                             <param id="1" name="Lower bound">-90</param>
-                            <param id="2" name="Upper bound">-1</param>
+                            <param id="2" name="Upper bound">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -108,7 +108,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="-14" name="Compare variable" type="System">
                             <param id="0" name="Variable">Wandering</param>
@@ -135,7 +135,7 @@
                                     <param id="0" name="State">1</param>
                                 </action>
                                 <action behavior="Bullet2" id="3" name="Set angle of motion" type="WanderingEnemies">
-                                    <param id="0" name="Angle">int(random(-180,180))</param>
+                                    <param id="0" name="Angle">int(tokenat(&quot;0|90|180|-90|-180&quot;, int(random(5)), &quot;|&quot;))</param>
                                 </action>
                                 <action behavior="Bullet2" id="0" name="Set speed" type="WanderingEnemies">
                                     <param id="0" name="Speed">45</param>
@@ -144,7 +144,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="-14" name="Compare variable" type="System">
                             <param id="0" name="Variable">Wandering</param>

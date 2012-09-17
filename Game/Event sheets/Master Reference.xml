@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
     <events>
+        <include>LayoutSwitching</include>
         <include>WanderingNPCs</include>
         <include>UniqueItems</include>
         <include>DoorKey Mechanic</include>
@@ -12,5 +13,15 @@
         <include>ChestMechanic</include>
         <include>Dialogue</include>
         <include>BusterMechanics</include>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" type="Text2">
+                    <param id="0" name="Text">WhereICameFrom</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

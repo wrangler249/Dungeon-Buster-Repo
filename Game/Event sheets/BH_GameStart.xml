@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BH_GameStart</name>
+    <events>
+        <variable comment="Is it the start of the game?" name="gameStart" type="number">1</variable>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">gameStart</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;Wake up!&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">AllowDialogueQuit</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Spawn another object" type="DialoguePanel">
+                    <param id="0" name="Object">SeanceDialogueImg</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">DialogueProceed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">DialogueStep</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" type="Sprite45">
+                    <param id="0" name="Object">DialoguePanel</param>
+                    <param id="1" name="Image point (optional)">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">DialogueProceed</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="SeanceDialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">Buster_DialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;...&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" type="Sprite45">
+                            <param id="0" name="Object">DialoguePanel</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="Buster_DialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">SeanceDialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;...? Don&apos;t give me those dots you tardy-gaited  coward!&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" type="Sprite45">
+                            <param id="0" name="Object">DialoguePanel</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="Buster_DialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">SeanceDialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;The King has sent for you, you loggerheaded weather-bitten turd!&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" type="Sprite45">
+                            <param id="0" name="Object">DialoguePanel</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="SeanceDialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">Buster_DialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;......&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" type="Sprite45">
+                            <param id="0" name="Object">DialoguePanel</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="Buster_DialogueImg" />
+                        <action id="0" name="Spawn another object" type="DialoguePanel">
+                            <param id="0" name="Object">SeanceDialogueImg</param>
+                            <param id="1" name="Layer">4</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;GET. UP.&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">AllowDialogueQuit</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" type="Sprite45">
+                            <param id="0" name="Object">DialoguePanel</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">AllowDialogueQuit</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Set position" type="Sprite45">
+                            <param id="0" name="X">168</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="Buster_DialogueImg" />
+                        <action id="0" name="Set text" type="DialogueText">
+                            <param id="0" name="Text">&quot;I should be blank.&quot;</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueStep</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">DialogueProceed</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">gameStart</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
