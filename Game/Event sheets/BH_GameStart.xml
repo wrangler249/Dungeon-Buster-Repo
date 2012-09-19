@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>BH_GameStart</name>
     <events>
-        <variable comment="Is it the start of the game?" name="gameStart" type="number">1</variable>
+        <variable comment="Is it the start of the game?" name="gameStart" type="number">0</variable>
         <event-block>
             <conditions>
                 <condition id="-2" name="On start of layout" type="System" />
@@ -47,7 +47,7 @@
                     <param id="0" name="Variable">DialogueStep</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-4" name="Set position to another object" type="Sprite45">
+                <action id="-4" name="Set position to another object" type="DialogueButton">
                     <param id="0" name="Object">DialoguePanel</param>
                     <param id="1" name="Image point (optional)">3</param>
                 </action>
@@ -79,7 +79,7 @@
                             <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
@@ -99,7 +99,7 @@
                             <param id="0" name="Variable">DialogueStep</param>
                             <param id="1" name="Value">2</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="Sprite45">
+                        <action id="-4" name="Set position to another object" type="DialogueButton">
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
@@ -122,7 +122,7 @@
                             <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
@@ -142,7 +142,7 @@
                             <param id="0" name="Variable">DialogueStep</param>
                             <param id="1" name="Value">3</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="Sprite45">
+                        <action id="-4" name="Set position to another object" type="DialogueButton">
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
@@ -165,7 +165,7 @@
                             <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
@@ -185,7 +185,7 @@
                             <param id="0" name="Variable">DialogueStep</param>
                             <param id="1" name="Value">4</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="Sprite45">
+                        <action id="-4" name="Set position to another object" type="DialogueButton">
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
@@ -208,7 +208,7 @@
                             <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
@@ -228,7 +228,7 @@
                             <param id="0" name="Variable">DialogueStep</param>
                             <param id="1" name="Value">5</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="Sprite45">
+                        <action id="-4" name="Set position to another object" type="DialogueButton">
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
@@ -251,7 +251,7 @@
                             <param id="0" name="Variable">DialogueProceed</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>
@@ -275,7 +275,7 @@
                             <param id="0" name="Variable">AllowDialogueQuit</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-4" name="Set position to another object" type="Sprite45">
+                        <action id="-4" name="Set position to another object" type="DialogueButton">
                             <param id="0" name="Object">DialoguePanel</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
@@ -298,7 +298,7 @@
                             <param id="0" name="Layer">4</param>
                             <param id="1" name="Visibility">0</param>
                         </action>
-                        <action id="-3" name="Set position" type="Sprite45">
+                        <action id="-3" name="Set position" type="DialogueButton">
                             <param id="0" name="X">168</param>
                             <param id="1" name="Y">0</param>
                         </action>

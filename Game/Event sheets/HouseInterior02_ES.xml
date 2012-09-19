@@ -14,7 +14,7 @@
                     <param id="0" name="Layer">2</param>
                     <param id="1" name="Visibility">0</param>
                 </action>
-                <action disabled="1" id="0" name="Play" type="Audio">
+                <action id="0" name="Play" type="Audio">
                     <param id="0" name="Audio file">13 - Inside the Houses</param>
                     <param id="2" name="Loop">1</param>
                     <param id="1" name="Tag (optional)">&quot;music&quot;</param>

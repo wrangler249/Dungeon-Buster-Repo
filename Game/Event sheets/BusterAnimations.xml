@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BusterAnimations</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Idling</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Buster">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On click" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Idling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Attacking</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Attacking</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" type="Buster">
+                    <param id="0" name="Animation">&quot;Slap&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">ThrowingKnife</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="ThrowingKnife">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">ThrowingKnife</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="ThrowingKnife">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Up&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">ThrowingKnife</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="ThrowingKnife">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Down&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">ThrowingKnife</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="ThrowingKnife">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Attacking</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Walking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Walking</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="4" name="On finished" type="Buster">
+                    <param id="0" name="Animation">&quot;Slap&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Attacking</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Idling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="8Direction" id="3" name="Set speed" type="Buster">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Walking</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Buster">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="8Direction" id="1" name="Compare speed" type="Buster">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Idling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Walking</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="8Direction" id="1" name="Compare speed" type="Buster">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Walking</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Idling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" type="Text3">
+                    <param id="0" name="Text">&quot;Idling:&quot; &amp; Buster.Idling</param>
+                </action>
+                <action id="0" name="Set text" type="Text4">
+                    <param id="0" name="Text">&quot;Walking:&quot; &amp; Buster.Walking</param>
+                </action>
+                <action id="0" name="Set text" type="Text5">
+                    <param id="0" name="Text">&quot;Attacking:&quot; &amp; Buster.Attacking</param>
+                </action>
+                <action id="0" name="Set text" type="Text6">
+                    <param id="0" name="Text">&quot;Direction Facing:&quot; &amp; Buster.DirectionFacing</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="ThrowingKnife">
+                    <param id="0" name="Object">CollisionBox</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="ThrowingKnife" />
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">knifehitwall</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="ThrowingKnife">
+                    <param id="0" name="Object">WanderingEnemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">enemydeath1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                </action>
+                <action id="0" name="Spawn another object" type="WanderingEnemies">
+                    <param id="0" name="Object">GoldCoin</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" type="WanderingEnemies">
+                    <param id="0" name="Object">Skeleton_Gib_Head</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" type="WanderingEnemies" />
+                <action id="-9" name="Destroy" type="ThrowingKnife" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="ThrowingKnife">
+                    <param id="0" name="Object">WoodenDoor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="ThrowingKnife" />
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">knifehitwall</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

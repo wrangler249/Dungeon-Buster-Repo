@@ -195,6 +195,18 @@
         <event-block>
             <conditions>
                 <condition id="0" name="On collision with another object" type="WanderingEnemies">
+                    <param id="0" name="Object">WoodenDoor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet2" id="3" name="Set angle of motion" type="WanderingEnemies">
+                    <param id="0" name="Angle">WanderingEnemies.Bullet2.AngleOfMotion-180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="WanderingEnemies">
                     <param id="0" name="Object">Buster</param>
                 </condition>
             </conditions>
