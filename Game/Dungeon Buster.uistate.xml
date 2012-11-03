@@ -10,23 +10,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
+        <layout active="1">Tomb_Dream</layout>
         <layout>BustersHouse</layout>
-        <layout>Master Instance</layout>
-        <layout>TestDungeon</layout>
-        <event-sheet>BusterMechanics</event-sheet>
-        <event-sheet>Master Reference</event-sheet>
-        <event-sheet active="1">BusterAnimations</event-sheet>
-        <event-sheet>TestDungeon_ES</event-sheet>
-        <event-sheet>WanderingEnemyAI</event-sheet>
+        <event-sheet>LayoutSwitching</event-sheet>
+        <event-sheet>GameStartScene</event-sheet>
+        <event-sheet>Audio Control</event-sheet>
     </open-tabs>
     <properties>
-        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Project settings" />
         <property expanded="0" name="Window Size" />
-        <property expanded="1" name="Configuration Settings" />
+        <property expanded="0" name="Configuration Settings" />
     </properties>
     <families-expanded root="0">
-        <family expanded="1" name="WanderingEnemies" />
         <family expanded="0" name="WanderingNPCs" />
         <family expanded="0" name="Chests" />
+        <family expanded="0" name="Skeletons" />
     </families-expanded>
 </c2uistate>

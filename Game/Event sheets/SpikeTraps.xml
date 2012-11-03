@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SpikeTraps</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="4" name="On finished" type="StoneFloor01_SpikeTrap01">
+                    <param id="0" name="Animation">&quot;Activated&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="StoneFloor01_SpikeTrap01">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">StoneFloor01_SpikeTrap01</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">StoneFloor01_SpikeTrap01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="StoneFloor01_SpikeTrap01">
+                            <param id="0" name="Animation">&quot;Activated&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" type="BusterKunai">
+                            <param id="0" name="Object">StoneFloor01_SpikeTrap01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="StoneFloor01_SpikeTrap01">
+                            <param id="0" name="Animation">&quot;Activated&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

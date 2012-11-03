@@ -10,7 +10,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-24" name="Move to top" type="Buster" />
                 <action id="-7" name="Scroll to position" type="System">
                     <param id="0" name="X">scrollx+1280</param>
                     <param id="1" name="Y">scrolly</param>
@@ -27,7 +26,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-24" name="Move to top" type="Buster" />
                 <action id="-7" name="Scroll to position" type="System">
                     <param id="0" name="X">scrollx-1280</param>
                     <param id="1" name="Y">scrolly</param>
@@ -44,7 +42,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-24" name="Move to top" type="Buster" />
                 <action id="-7" name="Scroll to position" type="System">
                     <param id="0" name="X">scrollx</param>
                     <param id="1" name="Y">scrolly-480</param>
@@ -61,7 +58,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-24" name="Move to top" type="Buster" />
                 <action id="-7" name="Scroll to position" type="System">
                     <param id="0" name="X">scrollx</param>
                     <param id="1" name="Y">scrolly+480</param>

@@ -13,6 +13,7 @@
                 <action id="0" name="Play" type="Audio">
                     <param id="0" name="Audio file">health_pickup</param>
                     <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;items&quot;</param>
                 </action>
                 <action id="-9" name="Destroy" type="HP_Small" />

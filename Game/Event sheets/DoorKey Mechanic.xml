@@ -5,7 +5,7 @@
     <events>
         <event-group collapsed="1" description="" title="Check for unlocked doors">
             <sub-events>
-                <event-block>
+                <event-block collapsed="1">
                     <conditions>
                         <condition id="-2" name="On start of layout" type="System" />
                     </conditions>

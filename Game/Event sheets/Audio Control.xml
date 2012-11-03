@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Audio Control</name>
+    <events>
+        <variable comment="0 = fade in, 1 = fade out, -1 = do nothing" constant="0" name="musicFade" static="0" type="number">0</variable>
+        <variable constant="0" name="musicVolume" static="0" type="number">0</variable>
+        <event-block>
+            <conditions>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">musicFade</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">musicVolume</param>
+                    <param id="1" name="Value">lerp(musicVolume,-5,0.25*dt)</param>
+                </action>
+                <action id="3" name="Set volume" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                    <param id="1" name="dB">musicVolume</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">musicFade</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">musicVolume</param>
+                    <param id="1" name="Value">lerp(musicVolume,-75,0.25*dt)</param>
+                </action>
+                <action id="3" name="Set volume" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                    <param id="1" name="dB">musicVolume</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

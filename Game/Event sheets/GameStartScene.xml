@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameStartScene</name>
+    <events>
+        <include>Audio Control</include>
+        <comment>Hiding dem unnecessary layers</comment>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">musicFade</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">musicVolume</param>
+                    <param id="1" name="Value">-50</param>
+                </action>
+                <action id="-18" name="Set layer opacity" type="System">
+                    <param id="0" name="Layer">&quot;Collision&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-18" name="Set layer opacity" type="System">
+                    <param id="0" name="Layer">&quot;Triggers&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">Algol_Last_Minutes_Of_Dying_Star</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-100</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Dialogue sequence</comment>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" type="Black_Tileable">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" type="DialogueText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;...&quot;</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-15" name="Set visible" type="DialogueText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="DialogueText" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;Your betrayal fed me...&quot;</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;Nourished me in my darkest of prisons...&quot;</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;I am coming for you...&quot;</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action id="0" name="Set text" type="DialogueText">
+                    <param id="0" name="Text">&quot;I am coming for all of you.&quot;</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-15" name="Set visible" type="Black_Tileable">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" type="Black_Tileable" />
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">musicFade</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" type="System">
+                    <param id="0" name="Layout">BustersHouse</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1">
+            <conditions>
+                <condition disabled="1" id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" type="DebugText01">
+                    <param id="0" name="Text">musicVolume</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

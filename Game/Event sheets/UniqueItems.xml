@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>UniqueItems</name>
     <events>
-        <variable comment="Does Buster have the Séance key?" name="hasSéanceKey" type="number">0</variable>
+        <variable comment="Does Buster have the Séance key?" constant="0" name="hasSéanceKey" static="0" type="number">0</variable>
         <event-block>
             <conditions>
                 <condition id="0" name="On key pressed" type="Keyboard">
@@ -20,15 +20,15 @@
             </conditions>
             <actions>
                 <action id="0" name="Spawn another object" type="LarrySeance">
-                    <param id="0" name="Object">Sprite63</param>
+                    <param id="0" name="Object">Seance_ChestRant</param>
                     <param id="1" name="Layer">3</param>
                     <param id="2" name="Image point">1</param>
                 </action>
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">4</param>
                 </action>
-                <action behavior="Fade" id="1" name="Start fade" type="Sprite63" />
-                <action id="-9" name="Destroy" type="Sprite63" />
+                <action behavior="Fade" id="1" name="Start fade" type="Seance_ChestRant" />
+                <action id="-9" name="Destroy" type="Seance_ChestRant" />
             </actions>
         </event-block>
     </events>
