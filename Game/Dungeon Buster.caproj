@@ -20,6 +20,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -27,10 +28,10 @@
     <used-effects>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Scirra" id="overlay">Overlay</effect>
-        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -52,7 +53,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -394,6 +395,7 @@
                     <instance-variable name="Attacking" type="boolean" />
                     <instance-variable name="Walking" type="boolean" />
                     <instance-variable name="DirectionFacing" type="string" />
+                    <instance-variable name="Talking" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction">
@@ -1742,6 +1744,14 @@
                 <object-type name="DialogueText">
                     <plugin id="Text" />
                 </object-type>
+                <object-type name="Dialogue_OK">
+                    <plugin id="Text" />
+                    <behaviors>
+                        <behavior-type name="Flash">
+                            <behavior id="Flash" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
             </object-folder>
             <object-type global="1" name="exp_bar">
                 <plugin id="TiledBg" />
@@ -1897,7 +1907,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Debug">
+        <object-folder expanded="0" name="Debug">
             <object-type name="DebugText01">
                 <plugin id="Text" />
             </object-type>
@@ -1951,11 +1961,11 @@
             <layout>BustersHouse.xml</layout>
         </layout-folder>
         <layout-folder expanded="0" name="Reference">
-            <layout>Master Instance Sheet.xml</layout>
+            <layout>Master Instance Layout.xml</layout>
         </layout-folder>
     </layout-folder>
     <event-folder expanded="0">
-        <event-folder expanded="1" name="Buster">
+        <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>

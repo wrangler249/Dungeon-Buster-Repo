@@ -11,11 +11,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>Tomb_Dream</layout>
-        <layout active="1">BustersHouse</layout>
-        <layout>Master Instance Sheet</layout>
+        <layout>BustersHouse</layout>
+        <layout>Master Instance Layout</layout>
         <event-sheet>LayoutSwitching</event-sheet>
         <event-sheet>BusterBaseMechanics</event-sheet>
-        <event-sheet>Dialogue</event-sheet>
+        <event-sheet active="1">Dialogue</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="0" name="Project settings" />
