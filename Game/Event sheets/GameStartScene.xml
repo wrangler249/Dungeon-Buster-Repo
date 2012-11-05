@@ -43,47 +43,47 @@
                 <action id="-15" name="Set visible" type="Black_Tileable">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-15" name="Set visible" type="DialogueText">
+                <action id="-15" name="Set visible" type="FadingDialogueText">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="0" name="Set text" type="DialogueText">
+                <action id="0" name="Set text" type="FadingDialogueText">
                     <param id="0" name="Text">&quot;...&quot;</param>
                 </action>
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">2</param>
                 </action>
-                <action id="-15" name="Set visible" type="DialogueText">
+                <action id="-15" name="Set visible" type="FadingDialogueText">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action behavior="Fade" id="1" name="Start fade" type="DialogueText" />
+                <action behavior="Fade" id="1" name="Start fade" type="FadingDialogueText" />
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">7</param>
                 </action>
-                <action id="0" name="Set text" type="DialogueText">
+                <action id="0" name="Set text" type="FadingDialogueText">
                     <param id="0" name="Text">&quot;Your betrayal fed me...&quot;</param>
                 </action>
-                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action behavior="Fade" id="0" name="Restart fade" type="FadingDialogueText" />
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">7</param>
                 </action>
-                <action id="0" name="Set text" type="DialogueText">
+                <action id="0" name="Set text" type="FadingDialogueText">
                     <param id="0" name="Text">&quot;Nourished me in my darkest of prisons...&quot;</param>
                 </action>
-                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action behavior="Fade" id="0" name="Restart fade" type="FadingDialogueText" />
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">7</param>
                 </action>
-                <action id="0" name="Set text" type="DialogueText">
+                <action id="0" name="Set text" type="FadingDialogueText">
                     <param id="0" name="Text">&quot;I am coming for you...&quot;</param>
                 </action>
-                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action behavior="Fade" id="0" name="Restart fade" type="FadingDialogueText" />
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">7</param>
                 </action>
-                <action id="0" name="Set text" type="DialogueText">
+                <action id="0" name="Set text" type="FadingDialogueText">
                     <param id="0" name="Text">&quot;I am coming for all of you.&quot;</param>
                 </action>
-                <action behavior="Fade" id="0" name="Restart fade" type="DialogueText" />
+                <action behavior="Fade" id="0" name="Restart fade" type="FadingDialogueText" />
                 <action id="-16" name="Wait" type="System">
                     <param id="0" name="Seconds">5</param>
                 </action>

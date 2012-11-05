@@ -9,7 +9,7 @@
         <variable comment="Buster&apos;s total EXP at any given time." constant="0" name="busterTotalEXP" static="0" type="number">0</variable>
         <variable comment="Total health Buster can have at any given time." constant="0" name="busterTotalHealth" static="0" type="number">125</variable>
         <variable comment="Actual health at any given time" constant="0" name="busterHealthPerTick" static="0" type="number">125</variable>
-        <variable comment="Actual health at any given time" constant="0" name="whereICameFrom" static="0" type="text">Compton</variable>
+        <variable comment="The specific portal entity Buster came from in the previous layout." constant="0" name="whereICameFrom" static="0" type="text">Tomb_Dream</variable>
         <event-block>
             <conditions>
                 <condition id="-2" name="On start of layout" type="System" />

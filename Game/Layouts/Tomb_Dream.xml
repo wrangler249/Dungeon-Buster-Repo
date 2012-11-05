@@ -1907,7 +1907,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="DialogueText">
+                <instance type="FadingDialogueText">
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>

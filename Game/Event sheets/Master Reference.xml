@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
     <events>
+        <include>Dialogue</include>
+        <include>Audio Control</include>
         <include>SpikeTraps</include>
         <include>BusterAnimations</include>
         <include>LayoutSwitching</include>

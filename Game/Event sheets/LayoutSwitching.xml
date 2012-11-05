@@ -5,8 +5,9 @@
     <events>
         <event-group collapsed="1" description="" title="Setting Variables/Playing Sounds/Etc">
             <sub-events>
-                <event-group collapsed="1" description="" title="Pittdour">
+                <event-group collapsed="1" description="" title="Example of transitioning">
                     <sub-events>
+                        <comment>This code checks the DoorTrigger_ID of the DoorTrigger entity Buster has collided with, and sets the whereICameFrom global text variable to the DoorTrigger_ID and then switches to the selected layout. By keeping the DoorTrigger_ID variables descriptive confusion over transitions is kept to a minumum.</comment>
                         <event-block>
                             <conditions>
                                 <condition id="0" name="On collision with another object" type="Buster">
@@ -18,43 +19,41 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-group description="" title="Pittdour -&gt; Buster&apos;s House">
-                                    <sub-events>
-                                        <event-block>
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" type="System">
-                                                    <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;BustersHouseOutsideDoor&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Set value" type="System">
-                                                    <param id="0" name="Variable">whereICameFrom</param>
-                                                    <param id="1" name="Value">&quot;BustersHouseOutsideDoor&quot;</param>
-                                                </action>
-                                                <action id="-25" name="Go to layout (by name)" type="System">
-                                                    <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-group>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;BustersHouseOutsideDoor&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;BustersHouseOutsideDoor&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
+                <comment>REAL STUFF GOES BELOW THIS</comment>
             </sub-events>
         </event-group>
         <event-group collapsed="1" description="" title="Previous Location Checking">
             <sub-events>
-                <event-block collapsed="1">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" type="System" />
-                    </conditions>
-                    <actions />
+                <event-group collapsed="1" description="" title="Example of checking">
                     <sub-events>
-                        <event-group collapsed="1" description="" title="Busters House -&gt; Pittdour (Spawn)">
+                        <comment>When the layout starts, this code checks the WhereICameFrom variable. In this case it is the interior front door exit from Buster&apos;s house. It then checks for the relevent DoorSpawn_ID, in this case the spawn point directly outside the front door of Buster&apos;s house, and spawns Buster at it.</comment>
+                        <event-block collapsed="1">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" type="System" />
+                            </conditions>
+                            <actions />
                             <sub-events>
                                 <event-block>
                                     <conditions>
@@ -83,6 +82,36 @@
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <comment>REAL STUFF GOES BELOW THIS</comment>
+                <comment>Add ALL of your stuff as a sub event of this inital &quot;On Start of Layout&quot; condition.</comment>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-group description="Self explanatory. Do not change this." title="Start of the game">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Tomb_Dream&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Bed01">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-group>

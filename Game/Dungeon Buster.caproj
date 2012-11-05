@@ -7,12 +7,12 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
@@ -27,10 +27,10 @@
     <used-effects>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+        <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -52,7 +52,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -532,7 +532,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Scenery">
+        <object-folder expanded="0" name="Scenery">
             <object-folder expanded="0" name="Aztec">
                 <object-folder expanded="0" name="Floor">
                     <object-type name="AztecFloor01_Alt01">
@@ -1453,7 +1453,7 @@
                     </animation-folder>
                 </object-type>
             </object-folder>
-            <object-folder expanded="1" name="Gradients">
+            <object-folder expanded="0" name="Gradients">
                 <object-type name="BlackGradient_Tileable">
                     <plugin id="TiledBg" />
                     <texture />
@@ -1508,6 +1508,9 @@
         <object-folder expanded="0" name="NPCs">
             <object-type name="MrTest">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="conversationID" type="string" />
+                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -1707,7 +1710,7 @@
             </object-folder>
         </object-folder>
         <object-folder expanded="0" name="HUD Elements">
-            <object-folder expanded="1" name="Dialogue Panel">
+            <object-folder expanded="0" name="Dialogue Panel">
                 <object-type name="DialogueButton">
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
@@ -1728,13 +1731,16 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="DialogueText">
+                <object-type name="FadingDialogueText">
                     <plugin id="Text" />
                     <behaviors>
                         <behavior-type name="Fade">
                             <behavior id="Fade" />
                         </behavior-type>
                     </behaviors>
+                </object-type>
+                <object-type name="DialogueText">
+                    <plugin id="Text" />
                 </object-type>
             </object-folder>
             <object-type global="1" name="exp_bar">
@@ -1891,7 +1897,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Debug">
+        <object-folder expanded="1" name="Debug">
             <object-type name="DebugText01">
                 <plugin id="Text" />
             </object-type>
@@ -1937,15 +1943,19 @@
             </behaviors>
         </family>
     </families>
-    <layout-folder expanded="1">
-        <layout-folder expanded="1" name="Dreams">
+    <layout-folder expanded="0">
+        <layout-folder expanded="0" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
-        <layout-folder expanded="1" name="New folder" />
-        <layout>BustersHouse.xml</layout>
+        <layout-folder expanded="0" name="Houses">
+            <layout>BustersHouse.xml</layout>
+        </layout-folder>
+        <layout-folder expanded="0" name="Reference">
+            <layout>Master Instance Sheet.xml</layout>
+        </layout-folder>
     </layout-folder>
     <event-folder expanded="0">
-        <event-folder expanded="0" name="Buster">
+        <event-folder expanded="1" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>
@@ -1971,6 +1981,7 @@
         <event-sheet>ChestMechanic.xml</event-sheet>
         <event-sheet>Master Reference.xml</event-sheet>
         <event-sheet>Audio Control.xml</event-sheet>
+        <event-sheet>Dialogue.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" />
