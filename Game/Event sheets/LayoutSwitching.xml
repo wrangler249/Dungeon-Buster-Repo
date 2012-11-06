@@ -3,18 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LayoutSwitching</name>
     <events>
-        <event-group collapsed="1" description="" title="Setting Variables/Playing Sounds/Etc">
+        <event-group description="" title="Changing Location">
             <sub-events>
                 <event-group collapsed="1" description="" title="Example of transitioning">
                     <sub-events>
                         <comment>This code checks the DoorTrigger_ID of the DoorTrigger entity Buster has collided with, and sets the whereICameFrom global text variable to the DoorTrigger_ID and then switches to the selected layout. By keeping the DoorTrigger_ID variables descriptive confusion over transitions is kept to a minumum.</comment>
                         <event-block>
                             <conditions>
-                                <condition id="0" name="On collision with another object" type="Buster">
-                                    <param id="0" name="Object">DoorTrigger</param>
+                                <condition id="0" name="On key pressed" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
                                 </condition>
-                                <condition id="2" name="Key is down" type="Keyboard">
-                                    <param id="0" name="Key">87 (W)</param>
+                                <condition id="1" name="Is overlapping another object" type="Buster">
+                                    <param id="0" name="Object">DoorTrigger</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -41,10 +41,67 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <comment>REAL STUFF GOES BELOW THIS</comment>
+                <comment>REAL STUFF GOES BELOW THIS AS A SUB EVENT OF THE KEYBOARD AND DOOR TRIGGER EVENT</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">DoorTrigger</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-group description="" title="Buster&apos;s House -&gt; Squatter&apos;s Hole">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;BustersHouseInteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;BustersHouseInteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;SH_Main&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group collapsed="1" description="" title="Squatter&apos;s Hole -&gt; Buster&apos;s House">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;BustersHouseExteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;BustersHouseExteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="Previous Location Checking">
+        <event-group description="" title="Previous Location Checking">
             <sub-events>
                 <event-group collapsed="1" description="" title="Example of checking">
                     <sub-events>
@@ -108,7 +165,57 @@
                                     <actions>
                                         <action id="0" name="Spawn another object" type="Bed01">
                                             <param id="0" name="Object">Buster</param>
-                                            <param id="1" name="Layer">0</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Buster&apos;s House">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;BustersHouseExteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;BustersHouseInteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Squatter&apos;s Hole">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;BustersHouseInteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;BustersHouseExteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
                                             <param id="2" name="Image point">0</param>
                                         </action>
                                     </actions>

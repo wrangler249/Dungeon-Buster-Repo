@@ -7,11 +7,11 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -1173,7 +1173,40 @@
                 </object-type>
             </object-folder>
             <object-folder expanded="0" name="Wood">
-                <object-folder expanded="1" name="Wall" />
+                <object-folder expanded="1" name="Wall">
+                    <object-type name="WoodWall01">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0" hotspotY="0" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="WoodWall01_LeftEdge">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0" hotspotY="0" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="WoodWall01_RightEdge">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0" hotspotY="0" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="WoodWall01_Door01">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0" hotspotY="0" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
                 <object-folder expanded="0" name="Trim">
                     <object-type name="Wooden_BottomTrim_InnerCorner">
                         <plugin id="Sprite" />
@@ -1336,11 +1369,35 @@
             </object-folder>
             <object-folder expanded="0" name="Exteriors">
                 <object-folder expanded="0" name="Buildings">
-                    <object-type name="House01">
+                    <object-type name="ThatchedRoof01_Top">
                         <plugin id="Sprite" />
                         <animation-folder expanded="1">
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                    <collision-poly>
+                                        <point x="0.015625" y="0.015625" />
+                                        <point x="1" y="0" />
+                                        <point x="1" y="1" />
+                                        <point x="0" y="1" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="ThatchedRoof01_Bottom">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0" hotspotY="0">
+                                    <collision-poly>
+                                        <point x="0" y="0" />
+                                        <point x="1" y="0" />
+                                        <point x="1" y="0.5" />
+                                        <point x="0.96875" y="0.875" />
+                                        <point x="0.03125" y="0.875" />
+                                        <point x="0" y="0.5" />
+                                    </collision-poly>
+                                </frame>
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -1374,9 +1431,13 @@
                         <plugin id="Sprite" />
                         <animation-folder expanded="1">
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                <frame duration="1" hotspotX="0" hotspotY="0" />
                             </animation>
                         </animation-folder>
+                    </object-type>
+                    <object-type name="TiledBackground">
+                        <plugin id="TiledBg" />
+                        <texture />
                     </object-type>
                 </object-folder>
             </object-folder>
@@ -1634,7 +1695,7 @@
                     <texture />
                 </object-type>
             </object-folder>
-            <object-folder expanded="0" name="Collision Boxes">
+            <object-folder expanded="1" name="Collision Boxes">
                 <object-type name="CollisionBox">
                     <plugin id="TiledBg" />
                     <behaviors>
@@ -1645,7 +1706,7 @@
                     <texture />
                 </object-type>
             </object-folder>
-            <object-folder expanded="0" name="Player Specific">
+            <object-folder expanded="1" name="Player Specific">
                 <object-folder expanded="1" name="Layout Related">
                     <object-type name="DoorSpawnPoint">
                         <plugin id="Sprite" />
@@ -1953,7 +2014,7 @@
             </behaviors>
         </family>
     </families>
-    <layout-folder expanded="0">
+    <layout-folder expanded="1">
         <layout-folder expanded="0" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
@@ -1963,14 +2024,20 @@
         <layout-folder expanded="0" name="Reference">
             <layout>Master Instance Layout.xml</layout>
         </layout-folder>
+        <layout-folder expanded="0" name="Towns">
+            <layout-folder expanded="0" name="Squatter&apos;s Hole">
+                <layout>SH_Main.xml</layout>
+            </layout-folder>
+        </layout-folder>
     </layout-folder>
-    <event-folder expanded="0">
-        <event-folder expanded="0" name="Buster">
+    <event-folder expanded="1">
+        <event-folder expanded="1" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>
             <event-folder expanded="0" name="Layout Related">
                 <event-sheet>LayoutSwitching.xml</event-sheet>
+                <event-sheet>ScreenMoveTest.xml</event-sheet>
             </event-folder>
             <event-sheet>BusterBaseMechanics.xml</event-sheet>
         </event-folder>
@@ -1982,11 +2049,10 @@
             <event-sheet>SpikeTraps.xml</event-sheet>
         </event-folder>
         <event-folder expanded="0" name="Level Specific">
-            <event-folder expanded="1" name="Tomb_Dream">
+            <event-folder expanded="0" name="Tomb_Dream">
                 <event-sheet>GameStartScene.xml</event-sheet>
             </event-folder>
         </event-folder>
-        <event-sheet>ScreenMoveTest.xml</event-sheet>
         <event-sheet>DoorKey Mechanic.xml</event-sheet>
         <event-sheet>ChestMechanic.xml</event-sheet>
         <event-sheet>Master Reference.xml</event-sheet>
