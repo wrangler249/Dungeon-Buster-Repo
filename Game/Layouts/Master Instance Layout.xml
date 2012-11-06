@@ -96,7 +96,7 @@
                         <initial-frame>0</initial-frame>
                     </properties>
                     <instance-variables>
-                        <conversationID>BusterMrTest_TestConversation</conversationID>
+                        <ConversationID>None</ConversationID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -197,6 +197,29 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TownGuard">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <ConversationID>None</ConversationID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>16</x>
+                        <y>112</y>
+                        <z>0</z>
+                        <width>23</width>
+                        <height>41</height>
+                        <depth>0</depth>
+                        <hotspotX>0.521739125</hotspotX>
+                        <hotspotY>0.51219511</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

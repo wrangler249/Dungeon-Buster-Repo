@@ -7,14 +7,14 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -1571,9 +1571,6 @@
         <object-folder expanded="0" name="NPCs">
             <object-type name="MrTest">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="conversationID" type="string" />
-                </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -1670,6 +1667,25 @@
                                 <point x="0.5" y="1" />
                                 <point x="0.5" y="0.7" />
                                 <point x="0.125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TownGuard">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="0.512195">
+                            <collision-poly>
+                                <point x="0.173913" y="0.097561" />
+                                <point x="0.478261" y="0" />
+                                <point x="0.826087" y="0.097561" />
+                                <point x="0.913043" y="0.487805" />
+                                <point x="0.782609" y="0.878049" />
+                                <point x="0.478261" y="0.951219" />
+                                <point x="0.217391" y="0.878049" />
+                                <point x="0.0869565" y="0.487805" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1975,16 +1991,6 @@
         </object-folder>
     </object-folder>
     <families>
-        <family name="WanderingNPCs" plugin-id="Sprite">
-            <members>
-                <member>LarrySeance</member>
-            </members>
-            <behaviors>
-                <behavior-type name="Bullet">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-        </family>
         <family name="Chests" plugin-id="Sprite">
             <members>
                 <member>Key</member>
@@ -2013,9 +2019,18 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="NPCs" plugin-id="Sprite">
+            <members>
+                <member>MrTest</member>
+                <member>TownGuard</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ConversationID" type="string" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder expanded="1">
-        <layout-folder expanded="0" name="Dreams">
+        <layout-folder expanded="1" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
         <layout-folder expanded="0" name="Houses">
@@ -2030,8 +2045,8 @@
             </layout-folder>
         </layout-folder>
     </layout-folder>
-    <event-folder expanded="1">
-        <event-folder expanded="1" name="Buster">
+    <event-folder expanded="0">
+        <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>

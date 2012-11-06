@@ -874,13 +874,13 @@
                         <initial-frame>0</initial-frame>
                     </properties>
                     <instance-variables>
-                        <conversationID>BusterMrTest_TestConversation</conversationID>
+                        <ConversationID>BusterMrTest_ExampleConversation1</ConversationID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>344</x>
-                        <y>304</y>
+                        <x>304</x>
+                        <y>312</y>
                         <z>0</z>
                         <width>24</width>
                         <height>40</height>
@@ -897,13 +897,36 @@
                         <initial-frame>0</initial-frame>
                     </properties>
                     <instance-variables>
-                        <conversationID>BusterMrTest_TestConversation2</conversationID>
+                        <ConversationID>BusterMrTest_ExampleConversation2</ConversationID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>400</x>
                         <y>344</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>40</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MrTest">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <ConversationID>None</ConversationID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>368</x>
+                        <y>240</y>
                         <z>0</z>
                         <width>24</width>
                         <height>40</height>

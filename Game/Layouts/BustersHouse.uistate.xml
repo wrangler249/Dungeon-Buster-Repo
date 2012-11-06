@@ -22,9 +22,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <active-layer name="Scenery" />
     <layers>
-        <layer locked="0" name="Background" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Background" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Scenery" parallax-in-editor="0" visible="1" />
-        <layer locked="1" name="Collision" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="Collision" parallax-in-editor="0" visible="0" />
         <layer locked="1" name="Triggers" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="Dialogue" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="HUD" parallax-in-editor="0" visible="1" />
