@@ -7,14 +7,14 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -26,12 +26,12 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
-        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -2029,8 +2029,8 @@
             </instance-variables>
         </family>
     </families>
-    <layout-folder expanded="1">
-        <layout-folder expanded="1" name="Dreams">
+    <layout-folder expanded="0">
+        <layout-folder expanded="0" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
         <layout-folder expanded="0" name="Houses">
@@ -2045,7 +2045,7 @@
             </layout-folder>
         </layout-folder>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
