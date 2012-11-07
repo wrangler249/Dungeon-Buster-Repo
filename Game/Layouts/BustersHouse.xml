@@ -938,18 +938,7 @@
                     </world>
                 </instance>
             </instances>
-            <effects>
-                <effect-type name="AdjustHSL">
-                    <effect id="hsladjust" />
-                    <effect-instance type="AdjustHSL">
-                        <parameters>
-                            <hue>0.03</hue>
-                            <luminosity>1</luminosity>
-                            <saturation>0.8</saturation>
-                        </parameters>
-                    </effect-instance>
-                </effect-type>
-            </effects>
+            <effects />
         </layer>
         <layer name="Collision">
             <initially-visible>1</initially-visible>

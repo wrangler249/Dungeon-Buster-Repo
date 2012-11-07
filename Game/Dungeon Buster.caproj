@@ -7,11 +7,11 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -26,12 +26,12 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
-        <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Brad Larson" id="vignette">Vignette</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -53,7 +53,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -1678,9 +1678,9 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                         <frame duration="1" hotspotX="0.521739" hotspotY="0.512195">
                             <collision-poly>
-                                <point x="0.173913" y="0.097561" />
+                                <point x="0.217391" y="0.121951" />
                                 <point x="0.478261" y="0" />
-                                <point x="0.826087" y="0.097561" />
+                                <point x="0.782609" y="0.121951" />
                                 <point x="0.913043" y="0.487805" />
                                 <point x="0.782609" y="0.878049" />
                                 <point x="0.478261" y="0.951219" />
@@ -1692,7 +1692,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Entities">
+        <object-folder expanded="1" name="Entities">
             <object-folder expanded="0" name="Layout Scrolling">
                 <object-type name="ScreenEdge_Bottom">
                     <plugin id="TiledBg" />
@@ -2040,12 +2040,12 @@
             <layout>Master Instance Layout.xml</layout>
         </layout-folder>
         <layout-folder expanded="0" name="Towns">
-            <layout-folder expanded="0" name="Squatter&apos;s Hole">
+            <layout-folder expanded="1" name="Squatter&apos;s Hole">
                 <layout>SH_Main.xml</layout>
             </layout-folder>
         </layout-folder>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder expanded="0">
         <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
