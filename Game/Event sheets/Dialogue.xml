@@ -63,10 +63,6 @@
                     <param id="0" name="Layer">&quot;Dialogue&quot;</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
-                <action id="-18" name="Set layer opacity" type="System">
-                    <param id="0" name="Layer">&quot;Scenery&quot;</param>
-                    <param id="1" name="Opacity">50</param>
-                </action>
             </actions>
         </event-block>
         <comment>Events carried out when Busters &apos;Talking&apos; boolean is false.</comment>
@@ -81,10 +77,6 @@
                 <action id="-4" name="Set layer visible" type="System">
                     <param id="0" name="Layer">&quot;Dialogue&quot;</param>
                     <param id="1" name="Visibility">0</param>
-                </action>
-                <action id="-18" name="Set layer opacity" type="System">
-                    <param id="0" name="Layer">&quot;Scenery&quot;</param>
-                    <param id="1" name="Opacity">100</param>
                 </action>
                 <action id="-14" name="Set object time scale" type="System">
                     <param id="0" name="Object">Buster</param>

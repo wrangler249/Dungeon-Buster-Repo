@@ -13,6 +13,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout active="1">BustersHouse</layout>
         <layout>Master Instance Layout</layout>
         <layout>SH_Main</layout>
+        <event-sheet>Dialogue</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="0" name="Project settings" />
