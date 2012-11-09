@@ -10,9 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1">BustersHouse</layout>
+        <layout>BustersHouse</layout>
         <layout>Master Instance Layout</layout>
-        <layout>SH_Main</layout>
+        <layout active="1">SH_Main</layout>
         <event-sheet>Dialogue</event-sheet>
     </open-tabs>
     <properties>
