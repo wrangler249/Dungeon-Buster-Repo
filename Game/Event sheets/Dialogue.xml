@@ -29,20 +29,20 @@
                 <action id="-3" name="Create object" type="System">
                     <param id="0" name="Object to create">DialoguePanel</param>
                     <param id="1" name="Layer">&quot;Dialogue&quot;</param>
-                    <param id="2" name="X">320</param>
-                    <param id="3" name="Y">96</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly</param>
                 </action>
                 <action id="-3" name="Create object" type="System">
                     <param id="0" name="Object to create">DialogueText</param>
                     <param id="1" name="Layer">&quot;Dialogue&quot;</param>
-                    <param id="2" name="X">224</param>
-                    <param id="3" name="Y">48</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly-6</param>
                 </action>
                 <action id="-3" name="Create object" type="System">
                     <param id="0" name="Object to create">Dialogue_OK</param>
                     <param id="1" name="Layer">&quot;Dialogue&quot;</param>
-                    <param id="2" name="X">320</param>
-                    <param id="3" name="Y">138</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly+40</param>
                 </action>
             </actions>
         </event-block>

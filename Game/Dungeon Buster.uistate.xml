@@ -14,9 +14,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>Master Instance Layout</layout>
         <layout active="1">SH_Main</layout>
         <event-sheet>Dialogue</event-sheet>
+        <event-sheet>LayoutSwitching</event-sheet>
     </open-tabs>
     <properties>
-        <property expanded="0" name="Project settings" />
+        <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
         <property expanded="0" name="Configuration Settings" />
     </properties>

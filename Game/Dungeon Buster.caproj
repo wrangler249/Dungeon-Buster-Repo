@@ -7,6 +7,7 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
@@ -14,22 +15,22 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
-        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
     </used-effects>
@@ -40,7 +41,7 @@
         <width>640</width>
         <height>480</height>
     </window-size>
-    <pixel-rounding>1</pixel-rounding>
+    <pixel-rounding>0</pixel-rounding>
     <first-layout>Tomb_Dream</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
@@ -53,7 +54,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -403,6 +404,9 @@
                     </behavior-type>
                     <behavior-type name="BoundToLayout">
                         <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo">
+                        <behavior id="scrollto" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder expanded="1">
@@ -2682,6 +2686,14 @@
                 <plugin id="Text" />
             </object-type>
         </object-folder>
+        <object-type name="LayoutNameTip">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families>
         <family name="Chests" plugin-id="Sprite">
