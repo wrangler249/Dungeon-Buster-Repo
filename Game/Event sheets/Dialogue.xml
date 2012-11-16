@@ -20,6 +20,23 @@
         <event-block>
             <conditions>
                 <condition id="-2" name="On start of layout" type="System" />
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">NPCs</param>
+                </condition>
+                <condition id="4" name="Session key exists" type="WebStorage">
+                    <param id="0" name="Key">NPCs.npcID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" type="NPCs">
+                    <param id="0" name="Instance variable">ConversationID</param>
+                    <param id="1" name="Value">Webstorage.SessionValue(NPCs.npcID)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
             </conditions>
             <actions>
                 <action id="-4" name="Set layer visible" type="System">
@@ -350,7 +367,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block collapsed="1">
+                        <event-block>
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" type="NPCs">
                                     <param id="0" name="Instance variable">ConversationID</param>
@@ -445,6 +462,14 @@
                                         <action id="-15" name="Set visible" type="Dialogue_OK">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
+                                        <action id="-10" name="Set value" type="NPCs">
+                                            <param id="0" name="Instance variable">ConversationID</param>
+                                            <param id="1" name="Value">&quot;BusterSquattersHoleGuard_Conversation2&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set session value" type="WebStorage">
+                                            <param id="0" name="Key">&quot;SH_Guard2&quot;</param>
+                                            <param id="1" name="Value">&quot;BusterSquattersHoleGuard_Conversation2&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -513,6 +538,16 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" type="DebugText01">
+                    <param id="0" name="Text">Webstorage.SessionValue(&quot;SH_Guard2&quot;)</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

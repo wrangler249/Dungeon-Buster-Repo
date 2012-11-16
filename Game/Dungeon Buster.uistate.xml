@@ -11,10 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>BustersHouse</layout>
-        <layout>Master Instance Layout</layout>
-        <layout active="1">SH_Main</layout>
-        <event-sheet>Dialogue</event-sheet>
-        <event-sheet>LayoutSwitching</event-sheet>
+        <layout>SH_Main</layout>
+        <event-sheet active="1">Dialogue</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />
@@ -24,6 +22,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="0">
         <family expanded="0" name="Chests" />
         <family expanded="0" name="Skeletons" />
-        <family expanded="1" name="NPCs" />
+        <family expanded="0" name="NPCs" />
     </families-expanded>
 </c2uistate>

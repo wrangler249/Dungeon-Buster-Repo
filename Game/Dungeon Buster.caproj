@@ -12,6 +12,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -27,8 +28,8 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
@@ -54,7 +55,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -538,7 +539,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Scenery">
+        <object-folder expanded="0" name="Scenery">
             <object-folder expanded="0" name="Aztec">
                 <object-folder expanded="0" name="Floor">
                     <object-type name="AztecFloor01_Alt01">
@@ -2469,6 +2470,9 @@
                 <object-type name="WebStorage">
                     <plugin id="WebStorage" />
                 </object-type>
+                <object-type global="1" name="Conversations">
+                    <plugin id="Dictionary" />
+                </object-type>
             </object-folder>
             <object-folder expanded="0" name="Enemy Specific">
                 <object-type name="Enemy_Spawn">
@@ -2681,7 +2685,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Debug">
+        <object-folder expanded="1" name="Debug">
             <object-type name="DebugText01">
                 <plugin id="Text" />
             </object-type>
@@ -2731,6 +2735,7 @@
             </members>
             <instance-variables>
                 <instance-variable name="ConversationID" type="string" />
+                <instance-variable name="npcID" type="string" />
             </instance-variables>
         </family>
     </families>

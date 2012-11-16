@@ -875,6 +875,7 @@
                     </properties>
                     <instance-variables>
                         <ConversationID>BusterMrTest_ExampleConversation1</ConversationID>
+                        <npcID>None</npcID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -898,6 +899,7 @@
                     </properties>
                     <instance-variables>
                         <ConversationID>BusterMrTest_ExampleConversation2</ConversationID>
+                        <npcID>None</npcID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -921,6 +923,7 @@
                     </properties>
                     <instance-variables>
                         <ConversationID>None</ConversationID>
+                        <npcID>None</npcID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1323,6 +1326,8 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="Conversations" />
+    </nonworld-instances>
     <effects />
 </c2layout>
