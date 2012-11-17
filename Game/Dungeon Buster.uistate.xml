@@ -10,14 +10,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout>BustersHouse</layout>
+        <layout active="1">BustersHouse</layout>
         <layout>SH_Main</layout>
-        <event-sheet active="1">Dialogue</event-sheet>
+        <event-sheet>BusterBaseMechanics</event-sheet>
+        <event-sheet>Master Reference</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
-        <property expanded="0" name="Configuration Settings" />
+        <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="0">
         <family expanded="0" name="Chests" />

@@ -72,6 +72,28 @@
         </event-group>
         <event-group collapsed="1" description="" title="Door &amp; Key Mechanic">
             <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">Algars_Tomb</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="Algars_Tomb">
+                            <param id="0" name="Animation">&quot;Open&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">LA_Chest_Open</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block collapsed="1">
                     <conditions>
                         <condition id="0" name="On collision with another object" type="WoodenDoor">

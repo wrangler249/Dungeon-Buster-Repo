@@ -27,12 +27,12 @@
             </actions>
         </event-block>
         <comment>Not sure about this event, there will probably be another method added later.</comment>
-        <event-block>
+        <event-block disabled="1">
             <conditions>
-                <condition id="-1" name="Every tick" type="System" />
+                <condition disabled="1" id="-1" name="Every tick" type="System" />
             </conditions>
             <actions>
-                <action id="-24" name="Move to top" type="Buster" />
+                <action disabled="1" id="-24" name="Move to top" type="Buster" />
             </actions>
         </event-block>
         <event-group collapsed="1" description="" title="HUD Text Settings">
