@@ -95,7 +95,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block collapsed="1">
+        <event-block>
             <conditions>
                 <condition id="-8" name="Is boolean instance variable set" type="Buster">
                     <param id="0" name="Instance variable">Attacking</param>
@@ -123,7 +123,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" type="Buster">
                             <param id="0" name="Object">BusterKunai</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
                             <param id="2" name="Image point">2</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
@@ -142,7 +142,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" type="Buster">
                             <param id="0" name="Object">BusterKunai</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
                             <param id="2" name="Image point">2</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
@@ -161,7 +161,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" type="Buster">
                             <param id="0" name="Object">BusterKunai</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
                             <param id="2" name="Image point">2</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
@@ -180,7 +180,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" type="Buster">
                             <param id="0" name="Object">BusterKunai</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
                             <param id="2" name="Image point">2</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
