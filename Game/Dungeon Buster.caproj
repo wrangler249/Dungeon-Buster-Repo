@@ -28,11 +28,11 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
     </used-effects>
     <configurations>
@@ -43,7 +43,7 @@
         <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <first-layout>Tomb_Dream</first-layout>
+    <first-layout>SplashScreen</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
@@ -55,7 +55,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -539,7 +539,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Scenery">
+        <object-folder expanded="0" name="Scenery">
             <object-folder expanded="0" name="Aztec">
                 <object-folder expanded="0" name="Floor">
                     <object-type name="AztecFloor01_Alt01">
@@ -2719,6 +2719,34 @@
                 <plugin id="Text" />
             </object-type>
         </object-folder>
+        <object-folder expanded="1" name="Logos">
+            <object-type name="SplashScreen">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MainLogo">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
     </object-folder>
     <families>
         <family name="Chests" plugin-id="Sprite">
@@ -2775,9 +2803,10 @@
                 <layout>SH_Main.xml</layout>
             </layout-folder>
         </layout-folder>
+        <layout>SplashScreen.xml</layout>
     </layout-folder>
     <event-folder expanded="0">
-        <event-folder expanded="1" name="Buster">
+        <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>
@@ -2798,6 +2827,9 @@
             <event-folder expanded="0" name="Tomb_Dream">
                 <event-sheet>GameStartScene.xml</event-sheet>
             </event-folder>
+        </event-folder>
+        <event-folder expanded="1" name="Splash Screen">
+            <event-sheet>SplashScreen.xml</event-sheet>
         </event-folder>
         <event-sheet>DoorKey Mechanic.xml</event-sheet>
         <event-sheet>ChestMechanic.xml</event-sheet>
@@ -2832,6 +2864,7 @@
         <file name="13 - Inside the Houses.ogg" />
         <file name="bitboy_perilous-descent.ogg" />
         <file name="Algol_Last_Minutes_Of_Dying_Star.ogg" />
+        <file name="SplashScreen.ogg" />
     </music-folder>
     <files-folder expanded="1" />
 </c2project>
