@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Dialogue</name>
     <events>
-        <variable comment="What step is it in the conversation?" constant="0" name="dialogueStep" static="0" type="number">0</variable>
         <variable comment="Can Buster talk now?" constant="0" name="busterCanTalk" static="0" type="number">0</variable>
+        <variable comment="What step is it in the conversation?" constant="0" name="dialogueStep" static="0" type="number">0</variable>
         <variable constant="0" name="busterCanQuitConversation" static="0" type="number">0</variable>
         <comment>---</comment>
         <comment>Each NPC capable of dialogue must have a conversationID attached to it. This ID distinguishes each conversation and must be named descriptively, ie &quot;[Character Name][Character Name]_[Scene]&quot; would be something like &quot;BusterHarry_Argument1&quot;</comment>
