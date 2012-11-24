@@ -1,0 +1,306 @@
+[33mcommit 61a96fc049b14bf9048e811b904daf993871f338[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:55:27 2012 +0000
+
+    Finally there
+
+[33mcommit 3fb182a60944f090a75bd690e3406daf3693625a[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:43:51 2012 +0000
+
+    ASOBASF
+
+[33mcommit cf8e8e5d02597d9ecb89b6fefc699a18b239d989[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:40:40 2012 +0000
+
+    Piss
+
+[33mcommit fc57fce86f23212e0312778eaa529b7cb20f5ac7[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:37:24 2012 +0000
+
+    More stuff, sigh.
+
+[33mcommit bb6851e71e42b9bcbd0898e6aaacb17cccfc925d[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:28:52 2012 +0000
+
+    Missed a file.
+
+[33mcommit e293dc046852514d15aa0c36a5e5a03440c73387[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:18:42 2012 +0000
+
+    Removed the .uistate.xml files.
+
+[33mcommit 14f1a6babf1dcec22c24fbcb3e3ed95a622bf8e2[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 18:01:08 2012 +0000
+
+    Fixed the .gitignore
+
+[33mcommit 37d2b7ab0d964d6b2f0ed89012801fb25ea3352c[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 13:44:01 2012 +0000
+
+    Poo
+
+[33mcommit 9c9f7ff610a3e4239edf0a68802dcb39edd7dbea[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 13:12:07 2012 +0000
+
+    More Rebase
+
+[33mcommit 844a78c3b3a17b84b28b41d0222e048cd4986fbc[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 24 13:06:02 2012 +0000
+
+    The poop that did a pee.
+
+[33mcommit f353632322cf057a72705f7ad07e18b8854f6be0[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Fri Nov 23 13:48:35 2012 +0000
+
+    -u
+
+[33mcommit 57d34d9f915b0f56c004f0266f1f51623f01a8ad[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Fri Nov 23 12:54:26 2012 +0000
+
+    Testing Rebase
+
+[33mcommit 454e321d669869b59ee7158cf280c69cfc2c73ff[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Thu Nov 22 02:22:20 2012 +0000
+
+    Splash Screen Commit
+    
+    Added a splash screen.
+
+[33mcommit 96770bd37bc1cbe0ace31541c3d9e8ff5848d701[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sun Nov 18 16:25:28 2012 +0000
+
+    Kunai fix.
+
+[33mcommit d2c2e6b72e78e52b22d43ad3423a1b393e237e75[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sun Nov 18 15:53:47 2012 +0000
+
+    Another Test
+    
+    Poo at Paul's.
+
+[33mcommit c5e320c2c4dbad6ce580c6db21395ad035c251ef[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sun Nov 18 15:45:01 2012 +0000
+
+    Test
+
+[33mcommit 2617fed5bc745a8d4b5d1402bc29d0f4208e43a9[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Sat Nov 17 12:59:26 2012 +0000
+
+    Squatter's Hole Changes
+    
+    ==Changes==
+    *Graveyard altered
+    *Algar's Tomb now has an opening animation "Open"
+    *Added some cracks to Algar's Tomb
+    *Moved the guards down to the bottom exit
+    *Reduced the tiling effect on the grass a bit
+    
+    ==Added==
+    *Dead grass tile
+    *Dead grass to normal grass blends
+
+[33mcommit de0f195ebb417df9d4edf808b7fcc6cc555f19c8[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Fri Nov 16 14:25:43 2012 +0000
+
+    Dat Dialogue
+    
+    Changed the way the dialogue system works slightly so it is persistent.
+    Yay!
+
+[33mcommit 2f2f8f439444664d1e511cd8f82dcfb7bc256a0d[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Nov 13 13:56:23 2012 +0000
+
+    Layout Scrolling Update
+    
+    Fixed: Dialogue bug.
+    Change: No longer using LoZ style layout scrolling.
+
+[33mcommit 85180ef092fd6824ffb1e55267b76b0ade4a59dc[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Mon Nov 12 14:31:41 2012 +0000
+
+    asdfsaddfasdfasdf
+
+[33mcommit 2029c14b895fe15539fa79fd3228dd2d27f6bf0a[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Fri Nov 9 14:46:01 2012 +0000
+
+    More new sprites.
+    
+    Improved trees, low stone wall added, wooden fence added.
+
+[33mcommit c5e71aec077290315fae396b3be58787ac650cb6[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Thu Nov 8 15:50:31 2012 +0000
+
+    Lots of new sprites.
+    
+    Omnomnom
+
+[33mcommit 33a5ef8c6245793d50c6dea29887d87b1d2c3dc4[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Wed Nov 7 19:13:39 2012 +0000
+
+    tryurtrt
+
+[33mcommit c79fcda9348d6c0f10cae056a0bd475814c8bd7f[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Nov 6 21:09:03 2012 +0000
+
+    And more again!
+
+[33mcommit b03e33b6552bf20906376ae68bce0895a0a90659[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Nov 6 21:08:31 2012 +0000
+
+    Yet More Changes.
+
+[33mcommit 0ab2b9f41f95c86d894f2d14152c9c6242967bc3[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Nov 6 20:40:30 2012 +0000
+
+    More Dialogue Changes
+
+[33mcommit 159b3211b94e5c362e6d69fcea57cef74ba1d876[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Nov 6 18:50:50 2012 +0000
+
+    6/11/2012 Dialogue System Changes
+
+[33mcommit a693ba37a2f84ec9cf8544f33c3e5644423dff9e[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Mon Nov 5 20:10:13 2012 +0000
+
+    mhgrbtjohrbdsrg
+
+[33mcommit 8e2aa38b3f3c0b1822f442a03d1f41b22c66fe08[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Mon Nov 5 13:49:16 2012 +0000
+
+    5/11/2012
+
+[33mcommit b412e2c32735146f6c86ebb5380769aa854cf010[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Nov 3 10:29:26 2012 +0000
+
+    Jesus Christ man, sort yourself out.
+    
+    You can't just CALL someone a cunt...
+
+[33mcommit 50bd2145efe82a251ec9a4bb8faed48b731d00eb[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Wed Sep 19 12:21:47 2012 +0100
+
+    Frimmin' on the frim fram
+    
+    Frimmin' on the fram
+
+[33mcommit 5d63f7ce8338a356561185799a69209e89f3c99e[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Mon Sep 17 19:46:46 2012 +0100
+
+    Yes
+
+[33mcommit ba2a71d1ce87658f2907b70c964a86cbfacea645[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Wed Sep 12 18:51:19 2012 +0100
+
+    WORK
+
+[33mcommit ab10a8f4c3246d0d6511b2c929be868cf52f4be4[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Wed Sep 12 18:44:46 2012 +0100
+
+    This is really annoying
+
+[33mcommit 2555d3d71591125263812adc96558fe9c38e39d2[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Sep 8 13:25:17 2012 +0100
+
+    Hope I don't fuck this merge up
+
+[33mcommit 75b3bbae84e5f03323ba54b94b03e32a40acc08e[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Fri Sep 7 22:04:59 2012 +0100
+
+    7/9/2012 Evening Commit
+
+[33mcommit 56bba2204d8b483d31c4bafc92699ee8ef3955fd[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Fri Sep 7 12:42:49 2012 +0100
+
+    7/9/2012 Commit
+    
+    AI, graphics, HUD
+
+[33mcommit cfac76ca556d2da7c658d981c0cb5675a098ef20[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Wed Sep 5 20:28:08 2012 +0100
+
+    Big AI & HUD update
+    
+    Changed the AI and added a HUD. Also added formulae for calculating XP
+    to level, as well as increasing player HP per level as well.
+
+[33mcommit 1898dcb88d601266cb762a3e8c439cd0b1ba30bf[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Mon Sep 3 15:29:18 2012 +0100
+
+    Monday Commit from PC
+
+[33mcommit f6cf112c376dba646173c187737f50ebea2c6e41[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Sat Sep 1 18:03:02 2012 +0100
+
+    Big-ass dungeon commit.
+    
+    This includes a ton of new stuff including the first working enemy AI
+    schedule.
+
+[33mcommit 1632c15043b6346cd344b688b24d425b92fa8692[m
+Author: Mitchell Cosh <wrangler249@gmail.com>
+Date:   Tue Aug 28 19:10:29 2012 +0100
+
+    First commit for this branch
+    
+    HURRRRRurrrrrURRRRRRRRurrrrRRRRuuRURUURURU
+
+[33mcommit 67bcf883e811bafbf524cb36245371bfc7696ec5[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Tue Aug 28 14:52:38 2012 +0100
+
+    Test Commit
+    
+    Edited the village to see if the changes work.
+
+[33mcommit 1a40e1db0f0dc52ba668856105e7471cf221e38d[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Tue Aug 28 14:02:59 2012 +0100
+
+    Main Commit
+    
+    Jesus fuck I just did something.
+
+[33mcommit 46b00e5eb510d40a1d4447a8d1c5ca2194319b21[m
+Author: wrangler249 <wrangler249@gmail.com>
+Date:   Tue Aug 28 14:00:45 2012 +0100
+
+    I did something
