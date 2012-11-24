@@ -115,9 +115,9 @@ Backup*/
 UpgradeLog*.XML
 
 #Construct 2 Specific
-.uistate.xml
-.capx.backup
-.capx.backup1
+*.uistate.xml
+*.capx.backup
+*.capx.backup1
 
 ############
 ## Windows
