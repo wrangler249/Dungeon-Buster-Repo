@@ -7,35 +7,35 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>10900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
-        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
-        <effect author="Scirra" id="contrast">Contrast</effect>
+        <effect author="Brad Larson" id="vignette">Vignette</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Scirra" id="colorblend">Color</effect>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Scirra" id="contrast">Contrast</effect>
+        <effect author="Scirra" id="colorblend">Color</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -57,7 +57,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-folder expanded="0" name="Enemies">
             <object-folder expanded="0" name="Skeletons">
                 <object-folder expanded="0" name="Projectiles">
@@ -541,7 +541,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Scenery">
+        <object-folder expanded="1" name="Scenery">
             <object-folder expanded="0" name="Aztec">
                 <object-folder expanded="0" name="Floor">
                     <object-type name="AztecFloor01_Alt01">
@@ -793,9 +793,9 @@
                     </animation-folder>
                 </object-type>
             </object-folder>
-            <object-folder expanded="0" name="Stone">
-                <object-folder expanded="1" name="Wall">
-                    <object-folder expanded="1" name="Trim">
+            <object-folder expanded="1" name="Stone">
+                <object-folder expanded="0" name="Wall">
+                    <object-folder expanded="0" name="Trim">
                         <object-type name="StoneWall_BottomTrim_InnerCorner">
                             <plugin id="Sprite" />
                             <animation-folder expanded="1">
@@ -1076,7 +1076,7 @@
                         </animation-folder>
                     </object-type>
                 </object-folder>
-                <object-folder expanded="0" name="Floor">
+                <object-folder expanded="1" name="Floor">
                     <object-type name="StoneFloor01_Alt01">
                         <plugin id="Sprite" />
                         <animation-folder expanded="1">
@@ -1122,6 +1122,22 @@
                         <texture />
                     </object-type>
                     <object-type name="Sprite30">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Sprite43">
+                        <plugin id="Sprite" />
+                        <animation-folder expanded="1">
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Sprite44">
                         <plugin id="Sprite" />
                         <animation-folder expanded="1">
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
@@ -3105,7 +3121,7 @@
             </instance-variables>
         </family>
     </families>
-    <layout-folder expanded="0">
+    <layout-folder expanded="1">
         <layout-folder expanded="0" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
@@ -3127,7 +3143,7 @@
         <layout>Algar&apos;s Tomb.xml</layout>
         <layout>Fishing Game.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder expanded="0">
         <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
@@ -3154,7 +3170,7 @@
         <event-folder expanded="0" name="Splash Screen">
             <event-sheet>SplashScreen.xml</event-sheet>
         </event-folder>
-        <event-folder expanded="1" name="CutScenes">
+        <event-folder expanded="0" name="CutScenes">
             <event-sheet>AlgarsTomb.xml</event-sheet>
             <event-sheet>Four Staggering Dogs Inn.xml</event-sheet>
         </event-folder>
