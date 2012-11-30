@@ -43,7 +43,7 @@
                     </sub-events>
                 </event-group>
                 <comment>REAL STUFF GOES BELOW THIS AS A SUB EVENT OF THE KEYBOARD AND DOOR TRIGGER EVENT</comment>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="0" name="On key pressed" type="Keyboard">
                             <param id="0" name="Key">69 (E)</param>
@@ -69,12 +69,12 @@
                                             <param id="0" name="Variable">whereICameFrom</param>
                                             <param id="1" name="Value">&quot;BustersHouseInteriorFrontDoor&quot;</param>
                                         </action>
-                                        <action id="-25" name="Go to layout (by name)" type="System">
-                                            <param id="0" name="Layout">&quot;SH_Main&quot;</param>
-                                        </action>
                                         <action id="-9" name="Set value" type="System">
                                             <param id="0" name="Variable">myLocation</param>
                                             <param id="1" name="Value">&quot;Squatter&apos;s Hole&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;SH_Main&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -95,12 +95,116 @@
                                             <param id="0" name="Variable">whereICameFrom</param>
                                             <param id="1" name="Value">&quot;BustersHouseExteriorFrontDoor&quot;</param>
                                         </action>
-                                        <action id="-25" name="Go to layout (by name)" type="System">
-                                            <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
-                                        </action>
                                         <action id="-9" name="Set value" type="System">
                                             <param id="0" name="Variable">myLocation</param>
                                             <param id="1" name="Value">&quot;Buster&apos;s House&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Squatter&apos;s Hole -&gt; Algar&apos;s Tomb">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;AlgarsTombExteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;AlgarsTombExteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">myLocation</param>
+                                            <param id="1" name="Value">&quot;Algar Family Tomb&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;Algar&apos;s Tomb&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Algar&apos;s Tomb -&gt; Squatter&apos;s Hole">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;AlgarsTombInteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;AlgarsTombInteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">myLocation</param>
+                                            <param id="1" name="Value">&quot;Squatter&apos;s Hole&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;SH_Main&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Squatter&apos;s Hole -&gt; Four Staggering Dogs Inn">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;FourStaggeringDogsInnExteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;FourStaggeringDogsInnExteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">myLocation</param>
+                                            <param id="1" name="Value">&quot;Four Staggering Dogs Inn&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;Four Staggering Dogs Inn&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Four Staggering Dogs Inn -&gt; Squatter&apos;s Hole">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">DoorTrigger.DoorTrigger_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;FourStaggeringDogsInnInteriorFrontDoorTrigger&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Value">&quot;FourStaggeringDogsInnInteriorFrontDoor&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">myLocation</param>
+                                            <param id="1" name="Value">&quot;Squatter&apos;s Hole&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" type="System">
+                                            <param id="0" name="Layout">&quot;SH_Main&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -219,6 +323,98 @@
                                             <param id="0" name="Instance variable">DoorSpawn_ID</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;BustersHouseExteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;AlgarsTombInteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;AlgarsTombExteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FourStaggeringDogsInnInteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FourStaggeringDogsInnExteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Algar&apos;s Tomb">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;AlgarsTombExteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;AlgarsTombInteriorFrontDoorSpawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Four Staggering Dogs Inn">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FourStaggeringDogsInnExteriorFrontDoor&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FourStaggeringDogsInnInteriorFrontDoorSpawn&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>

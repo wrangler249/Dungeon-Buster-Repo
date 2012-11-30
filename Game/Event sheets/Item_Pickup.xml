@@ -18,7 +18,7 @@
                 </action>
                 <action id="-9" name="Destroy" type="HP_Small" />
                 <action id="-10" name="Add to" type="System">
-                    <param id="0" name="Variable">busterHealthPerTick</param>
+                    <param id="0" name="Variable">busterCurrentHealth</param>
                     <param id="1" name="Value">25</param>
                 </action>
             </actions>

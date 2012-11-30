@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AlgarsTomb</name>
+    <events>
+        <include>Master Reference</include>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">Webstorage.SessionValue(&quot;Algar&apos;s Casket&quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;Opened&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="AlgarsCasket">
+                    <param id="0" name="Animation">&quot;Opened_Sword&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1">
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">busterCanTalk</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">AlgarsCasket</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="2" name="Is playing" type="AlgarsCasket">
+                            <param id="0" name="Animation">&quot;Opened_Sword&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Unknown&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;???&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Ugh...&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Seriously? You just HAD to open me didn&apos;t you?&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;I&apos;M A SCARY SHOUTING VOICE!!! GO AWAY!!&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" type="AlgarsCasket">
+                            <param id="0" name="Object">Buster</param>
+                        </condition>
+                        <condition id="2" name="Is playing" type="AlgarsCasket">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">LA_Chest_Open</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" type="AlgarsCasket">
+                            <param id="0" name="Animation">&quot;Opened_Sword&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="1" name="Set session value" type="WebStorage">
+                            <param id="0" name="Key">&quot;Algar&apos;s Casket&quot;</param>
+                            <param id="1" name="Value">&quot;Opened&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterCanQuitConversation</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" title="Algar&apos;s Casket Scene" />
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">Algol_Last_Minutes_Of_Dying_Star</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-3" name="On end of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

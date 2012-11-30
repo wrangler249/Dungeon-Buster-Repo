@@ -868,80 +868,19 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="MrTest">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <ConversationID>BusterMrTest_ExampleConversation1</ConversationID>
-                        <npcID>None</npcID>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>304</x>
-                        <y>312</y>
-                        <z>0</z>
-                        <width>24</width>
-                        <height>40</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="MrTest">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <ConversationID>BusterMrTest_ExampleConversation2</ConversationID>
-                        <npcID>None</npcID>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>400</x>
-                        <y>344</y>
-                        <z>0</z>
-                        <width>24</width>
-                        <height>40</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="MrTest">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <ConversationID>None</ConversationID>
-                        <npcID>None</npcID>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>368</x>
-                        <y>240</y>
-                        <z>0</z>
-                        <width>24</width>
-                        <height>40</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
             </instances>
-            <effects />
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                    <effect-instance type="AdjustHSL">
+                        <parameters>
+                            <hue>0</hue>
+                            <luminosity>0.95</luminosity>
+                            <saturation>1</saturation>
+                        </parameters>
+                    </effect-instance>
+                </effect-type>
+            </effects>
         </layer>
         <layer name="SceneryInFront">
             <initially-visible>1</initially-visible>
@@ -1322,7 +1261,32 @@
             <force-own-texture>0</force-own-texture>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="LarrySeance">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <ConversationID>BusterLarry_Conversation01</ConversationID>
+                        <npcID>None</npcID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>384</x>
+                        <y>336</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>40</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>

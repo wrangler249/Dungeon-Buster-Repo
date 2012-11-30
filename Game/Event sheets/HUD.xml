@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>HUD</name>
+    <events>
+        <event-group collapsed="1" description="" title="HUD Text Settings">
+            <sub-events>
+                <comment>The majority of this isn&apos;t used as yet, these are all from the older version. (5/11/2012)</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="-1" name="Every tick" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" type="HP_Text">
+                            <param id="0" name="Text">busterCurrentHealth &amp;&quot;/&quot; &amp; busterTotalHealth</param>
+                        </action>
+                        <action id="0" name="Set text" type="EXP_Text">
+                            <param id="0" name="Text">busterTotalEXP</param>
+                        </action>
+                        <action id="0" name="Set text" type="CurrentLevel_Text">
+                            <param id="0" name="Text">busterCurrentLevel</param>
+                        </action>
+                        <action id="0" name="Set text" type="NextLvLEXP_Text">
+                            <param id="0" name="Text">busterNextLvlEXP</param>
+                        </action>
+                        <action id="0" name="Set text" type="GoldCount">
+                            <param id="0" name="Text">busterTotalGold</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" title="Levelling Formulae">
+            <sub-events>
+                <comment>The majority of this isn&apos;t used as yet, these are all from the older version. (5/11/2012)</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterCurrentLevel</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">busterTotalEXP</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">busterNextLvlEXP</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevel</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevelStartXP</param>
+                                    <param id="1" name="Value">busterNextLvlEXP</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterNextLvlEXP</param>
+                                    <param id="1" name="Value">int(busterTotalEXP+(250*busterCurrentLevel))</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterTotalHealth</param>
+                                    <param id="1" name="Value">int(busterCurrentLevel*15.575)</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentHealth</param>
+                                    <param id="1" name="Value">busterTotalHealth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterCurrentLevel</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">busterTotalEXP</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">busterNextLvlEXP</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevel</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentLevelStartXP</param>
+                                    <param id="1" name="Value">busterNextLvlEXP</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterNextLvlEXP</param>
+                                    <param id="1" name="Value">int(busterTotalEXP*1.255)</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterTotalHealth</param>
+                                    <param id="1" name="Value">int(busterCurrentLevel*15.575)</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCurrentHealth</param>
+                                    <param id="1" name="Value">busterTotalHealth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" type="hp_bar">
+                    <param id="0" name="Width">(busterCurrentHealth/busterTotalHealth)*100</param>
+                </action>
+                <action id="-5" name="Set width" type="exp_bar">
+                    <param id="0" name="Width">(busterTotalEXP-busterCurrentLevelStartXP)/(busterNextLvlEXP-busterCurrentLevelStartXP)*100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">HUD_Blank</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly+224</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">hp_bar</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx-106</param>
+                    <param id="3" name="Y">scrolly+212</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">mp_bar</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx-106</param>
+                    <param id="3" name="Y">scrolly+228</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">exp_bar</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx+22</param>
+                    <param id="3" name="Y">scrolly+220</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">CurrentLevel_Text</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx+143</param>
+                    <param id="3" name="Y">scrolly+214</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

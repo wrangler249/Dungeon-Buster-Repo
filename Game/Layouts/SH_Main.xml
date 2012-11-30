@@ -6670,28 +6670,19 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite9">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>320</x>
-                        <y>760</y>
-                        <z>0</z>
-                        <width>64</width>
-                        <height>112</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
             </instances>
-            <effects />
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                    <effect-instance type="AdjustHSL">
+                        <parameters>
+                            <hue>0</hue>
+                            <luminosity>0.95</luminosity>
+                            <saturation>1.15</saturation>
+                        </parameters>
+                    </effect-instance>
+                </effect-type>
+            </effects>
         </layer>
         <layer name="SceneryInFront">
             <initially-visible>1</initially-visible>
@@ -7928,7 +7919,18 @@
                     </world>
                 </instance>
             </instances>
-            <effects />
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                    <effect-instance type="AdjustHSL">
+                        <parameters>
+                            <hue>0</hue>
+                            <luminosity>0.95</luminosity>
+                            <saturation>1.15</saturation>
+                        </parameters>
+                    </effect-instance>
+                </effect-type>
+            </effects>
         </layer>
         <layer name="Collision">
             <initially-visible>1</initially-visible>
@@ -8825,6 +8827,98 @@
                     <world>
                         <x>80</x>
                         <y>208</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DoorTrigger">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <DoorTrigger_ID>AlgarsTombExteriorFrontDoorTrigger</DoorTrigger_ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>128</x>
+                        <y>416</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DoorSpawnPoint">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <DoorSpawn_ID>AlgarsTombExteriorFrontDoorSpawn</DoorSpawn_ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>128</x>
+                        <y>432</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DoorTrigger">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <DoorTrigger_ID>FourStaggeringDogsInnExteriorFrontDoorTrigger</DoorTrigger_ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>416</x>
+                        <y>448</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DoorSpawnPoint">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                    </properties>
+                    <instance-variables>
+                        <DoorSpawn_ID>FourStaggeringDogsInnExteriorFrontDoorSpawn</DoorSpawn_ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>416</x>
+                        <y>464</y>
                         <z>0</z>
                         <width>32</width>
                         <height>16</height>
