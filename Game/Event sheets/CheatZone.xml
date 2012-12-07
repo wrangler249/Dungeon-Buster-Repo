@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CheatZone</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On clicked" type="BustersHouse" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">&quot;BustersHouse&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">myLocation</param>
+                    <param id="1" name="Value">&quot;Buster&apos;s House&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">whereICameFrom</param>
+                    <param id="1" name="Value">&quot;Tomb_Dream&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On clicked" type="AlgarsTomb" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">&quot;Algar&apos;s Tomb&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">myLocation</param>
+                    <param id="1" name="Value">&quot;Algar Family Tomb&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">whereICameFrom</param>
+                    <param id="1" name="Value">&quot;AlgarsTombExteriorFrontDoor&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On clicked" type="FourStaggeringDogs" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">&quot;Four Staggering Dogs Inn&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">myLocation</param>
+                    <param id="1" name="Value">&quot;Four Staggering Dogs Inn&quot;</param>
+                </action>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">whereICameFrom</param>
+                    <param id="1" name="Value">&quot;FourStaggeringDogsInnExteriorFrontDoor&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

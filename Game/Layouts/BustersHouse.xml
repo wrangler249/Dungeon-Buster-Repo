@@ -822,29 +822,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="StandardChest">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-frame>0</initial-frame>
-                    </properties>
-                    <instance-variables>
-                        <Chest_ID></Chest_ID>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>304</x>
-                        <y>240</y>
-                        <z>0</z>
-                        <width>32</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="SeanceChest">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>

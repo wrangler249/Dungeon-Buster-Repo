@@ -20,7 +20,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block collapsed="1">
+        <event-block>
             <conditions>
                 <condition id="0" name="On key pressed" type="Keyboard">
                     <param id="0" name="Key">69 (E)</param>
@@ -36,7 +36,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block collapsed="1">
+                <event-block>
                     <conditions>
                         <condition id="2" name="Is playing" type="AlgarsCasket">
                             <param id="0" name="Animation">&quot;Opened_Sword&quot;</param>
@@ -193,7 +193,7 @@
                     <param id="0" name="Audio file">Algol_Last_Minutes_Of_Dying_Star</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">-5</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                    <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -203,7 +203,7 @@
             </conditions>
             <actions>
                 <action id="6" name="Stop" type="Audio">
-                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="0" name="Tag">&quot;Music&quot;</param>
                 </action>
             </actions>
         </event-block>

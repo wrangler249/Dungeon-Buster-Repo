@@ -3,7 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>HUD</name>
     <events>
-        <event-group collapsed="1" description="" title="HUD Text Settings">
+        <variable constant="0" name="inventoryCoolDown" static="0" type="number">0.1</variable>
+        <event-group description="" title="HUD Text Settings">
             <sub-events>
                 <comment>The majority of this isn&apos;t used as yet, these are all from the older version. (5/11/2012)</comment>
                 <event-block>
@@ -25,6 +26,9 @@
                         </action>
                         <action id="0" name="Set text" type="GoldCount">
                             <param id="0" name="Text">busterTotalGold</param>
+                        </action>
+                        <action id="0" name="Set text" type="KeyCount">
+                            <param id="0" name="Text">DungeonKeyCount</param>
                         </action>
                     </actions>
                 </event-block>
@@ -168,6 +172,100 @@
                     <param id="1" name="Layer">&quot;HUD&quot;</param>
                     <param id="2" name="X">scrollx+143</param>
                     <param id="3" name="Y">scrolly+214</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">InventoryPage</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly</param>
+                </action>
+                <action id="-15" name="Set visible" type="InventoryPage">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Spawn another object" type="InventoryPage">
+                    <param id="0" name="Object">GoldCount</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="Image point">&quot;CoinCount&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" type="GoldCount">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Spawn another object" type="InventoryPage">
+                    <param id="0" name="Object">KeyCount</param>
+                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                    <param id="2" name="Image point">&quot;KeyCount&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" type="KeyCount">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">73 (I)</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Talking</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">canExitInventory</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-14" name="Set object time scale" type="System">
+                    <param id="0" name="Object">Buster</param>
+                    <param id="1" name="Time scale">0</param>
+                </action>
+                <action id="-15" name="Set visible" type="InventoryPage">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" type="InventoryText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">inventoryCoolDown</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">canExitInventory</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">73 (I)</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">canExitInventory</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-14" name="Set object time scale" type="System">
+                    <param id="0" name="Object">Buster</param>
+                    <param id="1" name="Time scale">1</param>
+                </action>
+                <action id="-15" name="Set visible" type="InventoryPage">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" type="InventoryText">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
