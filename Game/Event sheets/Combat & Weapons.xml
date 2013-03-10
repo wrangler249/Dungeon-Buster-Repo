@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Combat &amp; Weapons</name>
+    <events>
+        <include>Weapon Stats</include>
+        <variable constant="0" name="currentRightWeaponName" static="0" type="text">None</variable>
+        <variable constant="0" name="currentRightWeaponDamage" static="0" type="number">0</variable>
+        <variable constant="0" name="currentRightWeaponRange" static="0" type="number">0</variable>
+        <variable constant="0" name="currentRightWeaponCooldown" static="0" type="number">0</variable>
+        <variable constant="0" name="currentRightWeaponAmmoCount" static="0" type="number">0</variable>
+        <variable comment="None" constant="0" name="currentLeftWeaponName" static="0" type="text">None</variable>
+        <variable constant="0" name="currentLeftWeaponDamage" static="0" type="number">0</variable>
+        <variable constant="0" name="currentLeftWeaponRange" static="0" type="number">0</variable>
+        <variable constant="0" name="currentLeftWeaponCooldown" static="0" type="number">0</variable>
+        <event-group description="" title="Combat">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="2" name="Is playing" type="Buster">
+                            <param id="0" name="Animation">&quot;Walk_Left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" type="SwordSwipe">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="2" name="Is playing" type="Buster">
+                            <param id="0" name="Animation">&quot;Idle_Left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" type="SwordSwipe">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On click" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">currentLeftWeaponCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">currentLeftWeaponName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;None&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Weapon Cooldown&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">SwordSwipe</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">&quot;Melee_Point&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" type="SwordSwipe">
+                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">SwordSlash01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" type="SwordSwipe" />
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Play" type="Audio">
+                                            <param id="0" name="Audio file">HurtSound01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On click" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">currentRightWeaponCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">currentRightWeaponName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;None&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Right Weapon Cooldown&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">currentRightWeaponName</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" title="Weapon Switching">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Check Weapons&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Handles the sound &amp; switching when a MELEE weapon icon is clicked in the inventory.</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="6" name="On object clicked" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">InventoryButtons_MeleeWeapons</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponName</param>
+                            <param id="1" name="Value">InventoryButtons_MeleeWeapons.weaponName</param>
+                        </action>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Left Weapon Switching&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">MenuSelect01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Inv_SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Handles the sound &amp; switching when a RANGED weapon icon is clicked in the inventory.</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="6" name="On object clicked" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">InventoryButtons_RangedWeapons</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponName</param>
+                            <param id="1" name="Value">InventoryButtons_RangedWeapons.weaponName</param>
+                        </action>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Right Weapon Switching&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">MenuSelect01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Inv_SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Handles the sound played when the mouse is OVER a weapon icon in the inventory.</comment>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-11" name="For Each" type="System">
+                            <param id="0" name="Object">InventoryButtons_MeleeWeapons</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" type="Mouse">
+                                    <param id="0" name="Object">InventoryButtons_MeleeWeapons</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" type="Audio">
+                                    <param id="0" name="Tag">&quot;Inv_SFX&quot;</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">Inv_Blip01</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;Inv_SFX&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-11" name="For Each" type="System">
+                            <param id="0" name="Object">InventoryButtons_RangedWeapons</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" type="Mouse">
+                                    <param id="0" name="Object">InventoryButtons_RangedWeapons</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" type="Audio">
+                                    <param id="0" name="Tag">&quot;Inv_SFX&quot;</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">Inv_Blip01</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;Inv_SFX&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" title="Weapon Functions">
+            <sub-events>
+                <comment>This function gets the Damage and Range stats from the Weapon Stats dictionary. Notice that it does NOT get the weapon&apos;s Cooldown stat.</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Left Weapon Switching&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponDamage</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentLeftWeaponName&amp;&quot;Damage&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponRange</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentLeftWeaponName&amp;&quot;Range&quot;)</param>
+                        </action>
+                        <action id="4" name="Set animation" type="leftHand_Icon">
+                            <param id="0" name="Animation">currentLeftWeaponName</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Right Weapon Switching&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponDamage</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Damage&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponRange</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Range&quot;)</param>
+                        </action>
+                        <action id="4" name="Set animation" type="rightHand_Icon">
+                            <param id="0" name="Animation">currentRightWeaponName</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponAmmoCount</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Ammo&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>This function handles the weapon cooldown time. This is necessary to prevent spamming of powerful weapons.</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Weapon Cooldown&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponCooldown</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentLeftWeaponName&amp;&quot;Cooldown&quot;)</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">currentLeftWeaponCooldown</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponCooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Right Weapon Cooldown&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponCooldown</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Cooldown&quot;)</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">currentRightWeaponCooldown</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponCooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>This function handles persistence across layouts for selected weapons.</comment>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Check Weapons&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponDamage</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Damage&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponRange</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Range&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponRange</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Range&quot;)</param>
+                        </action>
+                        <action id="4" name="Set animation" type="rightHand_Icon">
+                            <param id="0" name="Animation">currentRightWeaponName</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponDamage</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentLeftWeaponName&amp;&quot;Damage&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentLeftWeaponRange</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentLeftWeaponName&amp;&quot;Range&quot;)</param>
+                        </action>
+                        <action id="4" name="Set animation" type="leftHand_Icon">
+                            <param id="0" name="Animation">currentLeftWeaponName</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group collapsed="1" description="" title="Kunai">
+                    <sub-events>
+                        <event-block collapsed="1">
+                            <conditions>
+                                <condition id="0" name="On function" type="Function">
+                                    <param id="0" name="Name">&quot;kunai&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">BusterKunai</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">&quot;Melee_Point&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" type="Audio">
+                                            <param id="0" name="Audio file">KunaiSwish01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="1" name="Set key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;kunaiAmmo&quot;</param>
+                                            <param id="1" name="Value">currentRightWeaponAmmoCount</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block collapsed="1">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" type="System">
+                                                    <param id="0" name="Object">BusterKunai</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Right&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
+                                                            <param id="0" name="Angle">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Left&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
+                                                            <param id="0" name="Angle">180</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Up&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
+                                                            <param id="0" name="Angle">-90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Down&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterKunai">
+                                                            <param id="0" name="Angle">90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" type="Audio">
+                                            <param id="0" name="Audio file">NoAmmo</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition behavior="Bullet" id="1" name="Compare distance travelled" type="BusterKunai">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Distance">currentRightWeaponRange</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" type="BusterKunai" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" title="Short Bow">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="0" name="On function" type="Function">
+                                    <param id="0" name="Name">&quot;shortBow&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" type="Audio">
+                                            <param id="0" name="Audio file">NoAmmo</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" type="System">
+                                            <param id="0" name="First value">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">BusterArrow</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">&quot;Melee_Point&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" type="Audio">
+                                            <param id="0" name="Audio file">KunaiSwish01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" type="System">
+                                            <param id="0" name="Variable">currentRightWeaponAmmoCount</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="1" name="Set key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;shortBowAmmo&quot;</param>
+                                            <param id="1" name="Value">currentRightWeaponAmmoCount</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block>
+                                            <conditions>
+                                                <condition id="-11" name="For Each" type="System">
+                                                    <param id="0" name="Object">BusterArrow</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Right&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Bullet" id="3" name="Set angle of motion" type="BusterArrow">
+                                                            <param id="0" name="Angle">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Left&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-18" name="Rotate clockwise" type="BusterArrow">
+                                                            <param id="0" name="Degrees">180</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Up&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-18" name="Rotate clockwise" type="BusterArrow">
+                                                            <param id="0" name="Degrees">-90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block>
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" type="System">
+                                                            <param id="0" name="First value">Buster.DirectionFacing</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">&quot;Down&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-18" name="Rotate clockwise" type="BusterArrow">
+                                                            <param id="0" name="Degrees">90</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition behavior="Bullet" id="1" name="Compare distance travelled" type="BusterArrow">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Distance">currentRightWeaponRange</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" type="BusterArrow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

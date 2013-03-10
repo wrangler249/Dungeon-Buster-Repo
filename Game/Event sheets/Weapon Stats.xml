@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Weapon Stats</name>
+    <events>
+        <comment>This event sheet is where ALL weapon stats should be defined.</comment>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-group collapsed="1" description="" title="Melee">
+                    <sub-events>
+                        <comment>Short Sword</comment>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortSwordDamage&quot;</param>
+                                    <param id="1" name="Value">12</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortSwordRange&quot;</param>
+                                    <param id="1" name="Value">24</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortSwordCooldown&quot;</param>
+                                    <param id="1" name="Value">0.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Long Sword</comment>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;longSwordDamage&quot;</param>
+                                    <param id="1" name="Value">22</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;longSwordRange&quot;</param>
+                                    <param id="1" name="Value">32</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;longSwordCooldown&quot;</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" title="Ranged">
+                    <sub-events>
+                        <comment>Kunai</comment>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;kunaiDamage&quot;</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;kunaiRange&quot;</param>
+                                    <param id="1" name="Value">128</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;kunaiCooldown&quot;</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="3" inverted="1" name="Has key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;kunaiAmmo&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;kunaiAmmo&quot;</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Short Bow</comment>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortBowDamage&quot;</param>
+                                    <param id="1" name="Value">13</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortBowRange&quot;</param>
+                                    <param id="1" name="Value">157</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;shortBowCooldown&quot;</param>
+                                    <param id="1" name="Value">0.3</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="3" inverted="1" name="Has key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;shortBowAmmo&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" type="WeaponStats">
+                                            <param id="0" name="Key">&quot;shortBowAmmo&quot;</param>
+                                            <param id="1" name="Value">15</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

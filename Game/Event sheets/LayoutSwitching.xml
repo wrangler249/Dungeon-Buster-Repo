@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LayoutSwitching</name>
     <events>
-        <variable comment="The current layout&apos;s full name." constant="0" name="myLocation" static="0" type="text">Buster&apos;s House</variable>
+        <variable comment="The current layout&apos;s full name." constant="0" name="myLocation" static="0" type="text">Jisshō No Shinden Temple</variable>
         <event-group description="" title="Changing Location">
             <sub-events>
                 <event-group collapsed="1" description="" title="Example of transitioning">
@@ -422,6 +422,35 @@
                                             <param id="0" name="Object">Buster</param>
                                             <param id="1" name="Layer">&quot;Scenery&quot;</param>
                                             <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" title="Combat Arena">
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">whereICameFrom</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Tomb_Dream&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="DoorSpawnPoint">
+                                            <param id="0" name="Instance variable">DoorSpawn_ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;CombatArena_Spawn&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="DoorSpawnPoint">
+                                            <param id="0" name="Object">Buster</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">myLocation</param>
+                                            <param id="1" name="Value">&quot;Combat  Arena (you should&apos;t fuckin&apos; be here son)&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

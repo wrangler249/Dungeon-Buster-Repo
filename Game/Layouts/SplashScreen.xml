@@ -81,7 +81,7 @@
                         <x>320</x>
                         <y>240</y>
                         <z>0</z>
-                        <width>640</width>
+                        <width>1024</width>
                         <height>480</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -94,6 +94,8 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="WeaponStats" />
+    </nonworld-instances>
     <effects />
 </c2layout>

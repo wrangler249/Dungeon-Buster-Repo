@@ -6929,7 +6929,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <ConversationID>BusterPeach_Conversation01</ConversationID>
+                        <ConversationID>BusterSquattersHoleGuard_Conversation1</ConversationID>
                         <npcID>SH_Guard1</npcID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -6954,7 +6954,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <ConversationID>BusterPeach_Conversation01</ConversationID>
+                        <ConversationID>BusterSquattersHoleGuard_Conversation1</ConversationID>
                         <npcID>SH_Guard2</npcID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -6980,7 +6980,7 @@
                         <parameters>
                             <hue>0</hue>
                             <luminosity>0.95</luminosity>
-                            <saturation>1.15</saturation>
+                            <saturation>1.8</saturation>
                         </parameters>
                     </effect-instance>
                 </effect-type>
@@ -9318,6 +9318,22 @@
             <effects />
         </layer>
         <layer name="HUD">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Inventory">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

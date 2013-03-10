@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PreLoader</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="4" name="Preload" type="Audio">
+                    <param id="0" name="Audio file">SplashScreen</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">&quot;SplashScreen&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1">
+            <conditions>
+                <condition id="1" name="Preloads complete" type="Audio" />
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" type="System">
+                    <param id="0" name="Layout">&quot;SplashScreen&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

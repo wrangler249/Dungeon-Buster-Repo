@@ -189,7 +189,7 @@
                 <condition id="-2" name="On start of layout" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Play" type="Audio">
+                <action disabled="1" id="0" name="Play" type="Audio">
                     <param id="0" name="Audio file">Algol_Last_Minutes_Of_Dying_Star</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">-5</param>

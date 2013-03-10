@@ -633,22 +633,12 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite35">
+                <instance type="LightGlow01">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="Color" />
-                        <effect-instance type="AdjustHSL">
-                            <parameters>
-                                <hue>0</hue>
-                                <luminosity>0.85</luminosity>
-                                <saturation>0.75</saturation>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -658,8 +648,8 @@
                         <width>85</width>
                         <height>85</height>
                         <depth>0</depth>
-                        <hotspotX>0.505882382</hotspotX>
-                        <hotspotY>0.505882382</hotspotY>
+                        <hotspotX>0.50999999</hotspotX>
+                        <hotspotY>0.50999999</hotspotY>
                         <angle>0</angle>
                         <opacity>0.25</opacity>
                     </world>
@@ -685,22 +675,12 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite35">
+                <instance type="LightGlow01">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="Color" />
-                        <effect-instance type="AdjustHSL">
-                            <parameters>
-                                <hue>0</hue>
-                                <luminosity>0.85</luminosity>
-                                <saturation>0.75</saturation>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -710,8 +690,8 @@
                         <width>85</width>
                         <height>85</height>
                         <depth>0</depth>
-                        <hotspotX>0.505882382</hotspotX>
-                        <hotspotY>0.505882382</hotspotY>
+                        <hotspotX>0.50999999</hotspotX>
+                        <hotspotY>0.50999999</hotspotY>
                         <angle>0</angle>
                         <opacity>0.25</opacity>
                     </world>
@@ -783,22 +763,12 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite35">
+                <instance type="LightGlow01">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="Color" />
-                        <effect-instance type="AdjustHSL">
-                            <parameters>
-                                <hue>0</hue>
-                                <luminosity>1</luminosity>
-                                <saturation>0.75</saturation>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -808,28 +778,18 @@
                         <width>85</width>
                         <height>85</height>
                         <depth>0</depth>
-                        <hotspotX>0.505882382</hotspotX>
-                        <hotspotY>0.505882382</hotspotY>
+                        <hotspotX>0.50999999</hotspotX>
+                        <hotspotY>0.50999999</hotspotY>
                         <angle>0</angle>
                         <opacity>0.25</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite35">
+                <instance type="LightGlow01">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <effect-instances>
-                        <effect-instance type="Color" />
-                        <effect-instance type="AdjustHSL">
-                            <parameters>
-                                <hue>0</hue>
-                                <luminosity>1</luminosity>
-                                <saturation>0.75</saturation>
-                            </parameters>
-                        </effect-instance>
-                    </effect-instances>
                     <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -839,8 +799,8 @@
                         <width>85</width>
                         <height>85</height>
                         <depth>0</depth>
-                        <hotspotX>0.505882382</hotspotX>
-                        <hotspotY>0.505882382</hotspotY>
+                        <hotspotX>0.50999999</hotspotX>
+                        <hotspotY>0.50999999</hotspotY>
                         <angle>0</angle>
                         <opacity>0.25</opacity>
                     </world>

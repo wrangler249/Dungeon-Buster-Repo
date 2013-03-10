@@ -3,9 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ChestMechanic</name>
     <events>
-        <variable comment="The amount of gold in Buster&apos;s possession." constant="0" name="busterTotalGold" static="0" type="number">999</variable>
+        <variable constant="0" name="currentChestBeingOpened" static="0" type="text">None</variable>
+        <variable comment="The amount of gold in Buster&apos;s possession." constant="0" name="busterTotalGold" static="0" type="number">0</variable>
         <variable comment="Amount of Dungeon Keys obtained" constant="0" name="DungeonKeyCount" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" title="Checking opened chests">
+        <event-group description="" title="Checking opened chests">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -17,12 +18,7 @@
                             <param id="0" name="Key">Chests.Chest_ID</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action disabled="1" id="-10" name="Set value" type="Chests">
-                            <param id="0" name="Instance variable">Chest_ID</param>
-                            <param id="1" name="Value">Webstorage.SessionValue(Chests.Chest_ID)</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block>
                             <conditions>
@@ -39,6 +35,7 @@
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="-9" name="Destroy" type="Chests" />
+                                <action id="-24" name="Move to top" type="Buster" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -49,70 +46,82 @@
             <sub-events>
                 <event-block>
                     <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
+                        </condition>
                         <condition id="1" name="Is overlapping another object" type="Buster">
                             <param id="0" name="Object">Chests</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentChestBeingOpened</param>
+                            <param id="1" name="Value">Chests.Chest_ID</param>
+                        </action>
+                        <action id="0" name="Call function" type="Function">
+                            <param id="0" name="Name">&quot;Chest Opening&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On function" type="Function">
+                            <param id="0" name="Name">&quot;Chest Opening&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" type="Chests">
+                            <param id="0" name="Instance variable">Chest_ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">currentChestBeingOpened</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set session value" type="WebStorage">
+                            <param id="0" name="Key">currentChestBeingOpened</param>
+                            <param id="1" name="Value">&quot;Opened&quot;</param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">LA_Chest_Open</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ChestSFX&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="Chests">
+                            <param id="0" name="Object">NormalChestOpen</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="Chests" />
+                        <action id="-24" name="Move to top" type="Buster" />
+                    </actions>
                     <sub-events>
                         <event-block>
                             <conditions>
-                                <condition id="0" name="On key pressed" type="Keyboard">
-                                    <param id="0" name="Key">69 (E)</param>
+                                <condition id="-7" name="Compare instance variable" type="Chests">
+                                    <param id="0" name="Instance variable">Chest_ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;AlgarsTomb_Chest01&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-group description="" title="Algar&apos;s Tomb">
-                                    <sub-events>
-                                        <event-block>
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" type="Chests">
-                                                    <param id="0" name="Instance variable">Chest_ID</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">&quot;AlgarsTomb_Chest01&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="1" name="Set session value" type="WebStorage">
-                                                    <param id="0" name="Key">&quot;AlgarsTomb_Chest01&quot;</param>
-                                                    <param id="1" name="Value">&quot;Opened&quot;</param>
-                                                </action>
-                                                <action id="0" name="Play" type="Audio">
-                                                    <param id="0" name="Audio file">LA_Chest_Open</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">0</param>
-                                                    <param id="1" name="Tag (optional)">&quot;ChestSFX&quot;</param>
-                                                </action>
-                                                <action id="0" name="Spawn another object" type="Chests">
-                                                    <param id="0" name="Object">NormalChestOpen</param>
-                                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
-                                                    <param id="2" name="Image point">0</param>
-                                                </action>
-                                                <action id="-9" name="Destroy" type="Chests" />
-                                                <action id="-24" name="Move to top" type="Buster" />
-                                                <action id="-16" name="Wait" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
-                                                </action>
-                                                <action id="0" name="Play" type="Audio">
-                                                    <param id="0" name="Audio file">pickup_sound</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">0</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="-10" name="Add to" type="System">
-                                                    <param id="0" name="Variable">busterTotalGold</param>
-                                                    <param id="1" name="Value">50</param>
-                                                </action>
-                                                <action id="-10" name="Add to" type="System">
-                                                    <param id="0" name="Variable">DungeonKeyCount</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-group>
-                            </sub-events>
+                            <actions>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">pickup_sound</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterTotalGold</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">DungeonKeyCount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

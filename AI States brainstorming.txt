@@ -1,0 +1,17 @@
+AI
+---
+
+possible states:
+*wandering (true if Buster is not within pursuitRange)
+    1.Wander to random piont
+    2.Stand still for a random amount of time
+    3.Repeat
+    
+*pursuing (true if Buster is within pursuitRange, and a valid path can be calculated between the enemy and Buster)
+    1.Follow Buster
+    2.Attack if close enough
+    
+*attacking (true if Buster is within attackRange)
+    1.Stop moving and attack if in range
+    2.If still in range attack again
+    3.If not in range, switch to pursuing until in range for attacking again

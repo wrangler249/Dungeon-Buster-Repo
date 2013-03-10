@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Debug</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-18" name="Is in preview" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">48 (0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" type="System">
+                            <param id="0" name="Layout">&quot;CheatZone&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">189 (-)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" type="Buster">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" type="Buster">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="8Direction" id="4" name="Set max speed" type="Buster">
+                            <param id="0" name="Max Speed">150</param>
+                        </action>
+                        <action behavior="Pathfinding" id="3" name="Set enabled" type="Skellies">
+                            <param id="0" name="Set">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">RuneTrap_Fire</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" type="RuneTrap_Fire">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;Overlay&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" type="RuneTrap_Fire">
+                            <param id="0" name="Animation">&quot;Glow&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="RuneTrap_Fire">
+                            <param id="0" name="Object">TrapFlame</param>
+                            <param id="1" name="Layer">&quot;SceneryInFront&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">Fire</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;FlameSFX&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" type="RuneTrap_Fire">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">RuneTrap_Fire</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" type="RuneTrap_Fire">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;Overlay&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" type="RuneTrap_Fire">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="TrapFlame" />
+                        <action id="6" name="Stop" type="Audio">
+                            <param id="0" name="Tag">&quot;FlameSFX&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" type="RuneTrap_Fire">
+                            <param id="0" name="Opacity">25</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-23" name="While" type="System" />
+                        <condition id="1" name="Is overlapping another object" type="Buster">
+                            <param id="0" name="Object">TrapFlame</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" type="System">
+                            <param id="0" name="Variable">busterCurrentHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-19" name="On destroyed" type="WoodenDoor" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" type="Master_Glowsprite" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" type="Skellies">
+                    <param id="0" name="Obstacle">Pathfinding_Helper</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" type="Skellies">
+                    <param id="0" name="Obstacle">CollisionBox</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" type="Skellies">
+                    <param id="0" name="Obstacle">NoWalkOnly</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" type="Skellies">
+                    <param id="0" name="Obstacle">WoodenDoor</param>
+                </action>
+                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" type="Skellies" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Skellies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" type="Skellies">
+                    <param id="0" name="X">Skellies.X+random(-128,129)</param>
+                    <param id="1" name="Y">Skellies.Y+random(-128,129)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" type="Skellies" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" type="Skellies" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Pathfinding" id="1" name="On failed to find path" type="Skellies" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Skellies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" type="Skellies">
+                    <param id="0" name="X">Skellies.X+random(-128,129)</param>
+                    <param id="1" name="Y">Skellies.Y+random(-128,129)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition behavior="Pathfinding" id="1" name="On failed to find path" type="Skellies" />
+                <condition id="-8" name="Is boolean instance variable set" type="Skellies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Skellies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="Skellies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" type="Skellies">
+                    <param id="0" name="X">Buster.X</param>
+                    <param id="1" name="Y">Buster.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" title="Line of Sight">
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-2" name="On start of layout" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="Skellies">
+                            <param id="0" name="Object">LineOfSight</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-1" name="Every tick" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" type="LineOfSight">
+                            <param id="0" name="X">Skellies.X</param>
+                            <param id="1" name="Y">Skellies.Y</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" type="LineOfSight">
+                            <param id="0" name="X">Buster.X</param>
+                            <param id="1" name="Y">Buster.Y</param>
+                        </action>
+                        <action id="-5" name="Set width" type="LineOfSight">
+                            <param id="0" name="Width">distance(Skellies.X,Skellies.Y,Buster.X,Buster.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-11" name="For Each" type="System">
+                            <param id="0" name="Object">Skellies</param>
+                        </condition>
+                        <condition id="-15" name="Pick nearest/furthest" type="LineOfSight">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="X">Skellies.X</param>
+                            <param id="2" name="Y">Skellies.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" type="LineOfSight">
+                                    <param id="0" name="Object">CollisionBox</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" type="LineOfSight">
+                                    <param id="0" name="Object">WoodenDoor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" type="Skellies">
+                                    <param id="0" name="Instance variable">hasLineOfSight</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">floor(random(1,3))</param>
+                                </action>
+                                <action id="-13" name="Set boolean" type="Skellies">
+                                    <param id="0" name="Instance variable">isPursuing</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-22" name="Else" type="System" />
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">distance(Skellies.X,Skellies.Y,Buster.X,Buster.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">256</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" type="Skellies">
+                                    <param id="0" name="Instance variable">hasLineOfSight</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" type="Skellies">
+                                    <param id="0" name="Instance variable">isPursuing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" title="Attacking">
+            <sub-events>
+                <event-group description="" title="Ninja Skeleton">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">floor(random(1,2))</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" type="Ninja_Skeleton">
+                                    <param id="0" name="Instance variable">hasLineOfSight</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">distance(Ninja_Skeleton.X,Ninja_Skeleton.Y,Buster.X,Buster.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">180</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" type="Ninja_Skeleton">
+                                    <param id="0" name="Object">SkellieKunai</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" type="SkellieKunai">
+                                    <param id="0" name="Angle">angle(skelliekunai.x,skelliekunai.Y,buster.x,buster.Y)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" type="GlowArea">
+                    <param id="0" name="Object">Buster</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" type="Debug_Text01">
+                    <param id="0" name="Text">Skellies.hasLineOfSight</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-19" name="On destroyed" type="WoodenDoor" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" type="Skellies" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">random(25,35)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="Buster">
+                                    <param id="0" name="Instance variable">DirectionFacing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Left&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" type="Buster">
+                                    <param id="0" name="Object">saltParticle</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">&quot;saltPointLeft&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" type="saltParticle">
+                                    <param id="0" name="Angle">random(90,271)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">random(25,52)</param>
+                                </action>
+                                <action id="-24" name="Move to top" type="Buster" />
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">random(0,0.8)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="Buster">
+                                    <param id="0" name="Instance variable">DirectionFacing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Right&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" type="Buster">
+                                    <param id="0" name="Object">saltParticle</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">&quot;saltPointRight&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" type="saltParticle">
+                                    <param id="0" name="Angle">choose(random(0,90),random(0,-90))</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">random(25,52)</param>
+                                </action>
+                                <action id="-24" name="Move to top" type="Buster" />
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">random(0,0.8)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="Buster">
+                                    <param id="0" name="Instance variable">DirectionFacing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Up&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" type="Buster">
+                                    <param id="0" name="Object">saltParticle</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" type="saltParticle">
+                                    <param id="0" name="Angle">random(180,361)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">random(25,52)</param>
+                                </action>
+                                <action id="-24" name="Move to top" type="Buster" />
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">random(0,0.8)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="Buster">
+                                    <param id="0" name="Instance variable">DirectionFacing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Down&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" type="Buster">
+                                    <param id="0" name="Object">saltParticle</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">&quot;saltPointDown&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" type="saltParticle">
+                                    <param id="0" name="Angle">random(0,180)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">random(25,52)</param>
+                                </action>
+                                <action id="-24" name="Move to top" type="Buster" />
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">random(0,0.8)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" type="saltParticle">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" type="saltParticle">
+                    <param id="0" name="Object">Sprite79</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" type="saltParticle">
+                    <param id="0" name="Object">NonTilingFloorParts</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" type="saltParticle">
+                    <param id="0" name="Object">TilingFloorParts</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="saltParticle" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="saltParticle">
+                    <param id="0" name="Object">CollisionBox</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="saltParticle" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">PitfallArea</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" type="System" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-15" name="Pick nearest/furthest" type="Skellies">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="X">Buster.X</param>
+                    <param id="2" name="Y">Buster.Y</param>
+                </condition>
+                <condition id="-2" name="Compare Y" type="Skellies">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">Buster.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Skellies" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-15" name="Pick nearest/furthest" type="Skellies">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="X">Buster.X</param>
+                    <param id="2" name="Y">Buster.Y</param>
+                </condition>
+                <condition id="-2" name="Compare Y" type="Skellies">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">Buster.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-24" name="Move to top" type="Buster" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

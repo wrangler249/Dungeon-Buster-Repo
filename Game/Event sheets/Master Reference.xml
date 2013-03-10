@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
     <events>
+        <include>Demo_Dialogue</include>
+        <include>Glowsprite</include>
+        <include>Debug</include>
         <include>HUD</include>
         <include>Signs</include>
         <include>Dialogue</include>
@@ -12,21 +15,7 @@
         <include>LayoutSwitching</include>
         <include>UniqueItems</include>
         <include>DoorKey Mechanic</include>
-        <include>Item_Pickup</include>
-        <include>ScreenMoveTest</include>
         <include>ChestMechanic</include>
         <include>BusterBaseMechanics</include>
-        <event-block>
-            <conditions>
-                <condition id="0" name="On key pressed" type="Keyboard">
-                    <param id="0" name="Key">48 (0)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-25" name="Go to layout (by name)" type="System">
-                    <param id="0" name="Layout">&quot;CheatZone&quot;</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

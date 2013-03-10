@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>HUD</name>
     <events>
+        <include>Puzzles</include>
         <variable constant="0" name="inventoryCoolDown" static="0" type="number">0.1</variable>
         <event-group collapsed="1" description="" title="Levelling Formulae">
             <sub-events>
@@ -123,11 +124,9 @@
                             <param id="0" name="Object">Buster</param>
                             <param id="1" name="Time scale">0</param>
                         </action>
-                        <action id="-15" name="Set visible" type="InventoryPage">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" type="InventoryText">
-                            <param id="0" name="Visibility">1</param>
+                        <action id="-4" name="Set layer visible" type="System">
+                            <param id="0" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="1" name="Visibility">1</param>
                         </action>
                         <action id="-16" name="Wait" type="System">
                             <param id="0" name="Seconds">inventoryCoolDown</param>
@@ -159,17 +158,15 @@
                             <param id="0" name="Object">Buster</param>
                             <param id="1" name="Time scale">1</param>
                         </action>
-                        <action id="-15" name="Set visible" type="InventoryPage">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" type="InventoryText">
-                            <param id="0" name="Visibility">0</param>
+                        <action id="-4" name="Set layer visible" type="System">
+                            <param id="0" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="HUD Visuals">
+        <event-group description="Creating Sprites at the start of the layout" title="HUD Visuals">
             <sub-events>
                 <comment>Setting the width of the HP and the EXP bar in the HUD. This uses simple percentages (though the EXP bar was a little more complicated).</comment>
                 <comment>This is mostly for debug purposes. Don&apos;t change anything here.</comment>
@@ -195,6 +192,9 @@
                         </action>
                         <action id="0" name="Set text" type="KeyCount">
                             <param id="0" name="Text">DungeonKeyCount</param>
+                        </action>
+                        <action id="0" name="Set text" type="CurrentAmmoCount">
+                            <param id="0" name="Text">currentRightWeaponAmmoCount</param>
                         </action>
                     </actions>
                 </event-block>
@@ -224,6 +224,11 @@
                             <param id="2" name="X">scrollx</param>
                             <param id="3" name="Y">scrolly+224</param>
                         </action>
+                        <action id="0" name="Spawn another object" type="HUD_Blank">
+                            <param id="0" name="Object">CurrentAmmoCount</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">&quot;AmmoCount&quot;</param>
+                        </action>
                         <action id="-3" name="Create object" type="System">
                             <param id="0" name="Object to create">hp_bar</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
@@ -246,32 +251,95 @@
                             <param id="0" name="Object to create">CurrentLevel_Text</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>
                             <param id="2" name="X">scrollx+143</param>
-                            <param id="3" name="Y">scrolly+214</param>
+                            <param id="3" name="Y">scrolly+212</param>
                         </action>
                         <action id="-3" name="Create object" type="System">
-                            <param id="0" name="Object to create">InventoryPage</param>
-                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="0" name="Object to create">combinationPuzzle</param>
+                            <param id="1" name="Layer">&quot;Puzzle&quot;</param>
                             <param id="2" name="X">scrollx</param>
                             <param id="3" name="Y">scrolly</param>
                         </action>
-                        <action id="-15" name="Set visible" type="InventoryPage">
+                        <action id="0" name="Spawn another object" type="combinationPuzzle">
+                            <param id="0" name="Object">CombinationNumber1</param>
+                            <param id="1" name="Layer">&quot;Puzzle&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="combinationPuzzle">
+                            <param id="0" name="Object">CombinationNumber2</param>
+                            <param id="1" name="Layer">&quot;Puzzle&quot;</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="combinationPuzzle">
+                            <param id="0" name="Object">CombinationNumber3</param>
+                            <param id="1" name="Layer">&quot;Puzzle&quot;</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="combinationPuzzle">
+                            <param id="0" name="Object">PuzzleSolvedIcon</param>
+                            <param id="1" name="Layer">&quot;Puzzle&quot;</param>
+                            <param id="2" name="Image point">4</param>
+                        </action>
+                        <action id="-15" name="Set visible" type="PuzzleSolvedIcon">
                             <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" type="System">
+                            <param id="0" name="Layer">&quot;Puzzle&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" type="System">
+                            <param id="0" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Create object" type="System">
+                            <param id="0" name="Object to create">InventoryPage</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="X">scrollx</param>
+                            <param id="3" name="Y">scrolly</param>
                         </action>
                         <action id="0" name="Spawn another object" type="InventoryPage">
                             <param id="0" name="Object">GoldCount</param>
-                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
                             <param id="2" name="Image point">&quot;CoinCount&quot;</param>
-                        </action>
-                        <action id="-15" name="Set visible" type="GoldCount">
-                            <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="0" name="Spawn another object" type="InventoryPage">
                             <param id="0" name="Object">KeyCount</param>
-                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
                             <param id="2" name="Image point">&quot;KeyCount&quot;</param>
                         </action>
-                        <action id="-15" name="Set visible" type="KeyCount">
-                            <param id="0" name="Visibility">0</param>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">shortSwordIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;ShortSword&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">longSwordIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;LongSword&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">kunaiIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;Kunai&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">shortBowIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;ShortBow&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">saltsIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;Salts&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="HUD_Blank">
+                            <param id="0" name="Object">leftHand_Icon</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">&quot;LeftHand&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="HUD_Blank">
+                            <param id="0" name="Object">rightHand_Icon</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="Image point">&quot;RightHand&quot;</param>
                         </action>
                     </actions>
                 </event-block>
