@@ -5,18 +5,18 @@
     <version>0.01a</version>
     <author>The Light-Up Warrior</author>
     <unique-id>2hhtd1awt2msk</unique-id>
-    <saved-with-version>10900</saved-with-version>
+    <saved-with-version>11400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -29,14 +29,14 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
-        <effect author="Scirra" id="colorblend">Color</effect>
         <effect author="Scirra" id="contrast">Contrast</effect>
-        <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
-        <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="colorblend">Color</effect>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Brad Larson" id="vignette">Vignette</effect>
+        <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -668,7 +668,7 @@
                     </object-type>
                 </object-folder>
             </object-folder>
-            <object-folder expanded="1" name="Clutter">
+            <object-folder expanded="0" name="Clutter">
                 <object-folder expanded="0" name="House">
                     <object-type name="Bed01">
                         <plugin id="Sprite" />
@@ -1628,7 +1628,7 @@
                     </animation-folder>
                 </object-type>
             </object-folder>
-            <object-folder expanded="0" name="Wood">
+            <object-folder expanded="1" name="Wood">
                 <object-folder expanded="0" name="Wall">
                     <object-type name="WoodWall01">
                         <plugin id="Sprite" />
@@ -1762,22 +1762,6 @@
                     </object-type>
                 </object-folder>
                 <object-folder expanded="1" name="Floor">
-                    <object-type name="WoodenFloor01">
-                        <plugin id="Sprite" />
-                        <animation-folder expanded="1">
-                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            </animation>
-                        </animation-folder>
-                    </object-type>
-                    <object-type name="WoodenFloor01_Alt01">
-                        <plugin id="Sprite" />
-                        <animation-folder expanded="1">
-                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                            </animation>
-                        </animation-folder>
-                    </object-type>
                     <object-type name="WoodenFloor01_Tileable">
                         <plugin id="TiledBg" />
                         <texture />
@@ -2703,6 +2687,25 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Peach">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.0952381" />
+                                <point x="0.478261" y="0" />
+                                <point x="0.826087" y="0.0952381" />
+                                <point x="0.913043" y="0.5" />
+                                <point x="0.695652" y="0.833333" />
+                                <point x="0.478261" y="0.97619" />
+                                <point x="0.304348" y="0.833333" />
+                                <point x="0.0869565" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Entities">
             <object-folder expanded="0" name="Layout Scrolling">
@@ -2873,6 +2876,9 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="1" loop="0" name="WoodenSign" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Peach" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
@@ -3155,6 +3161,7 @@
                 <member>FriendlySkellie</member>
                 <member>LarrySeance</member>
                 <member>MrTest</member>
+                <member>Peach</member>
                 <member>TownGuard</member>
             </members>
             <instance-variables>
@@ -3190,7 +3197,7 @@
         <layout-folder expanded="0" name="Dreams">
             <layout>Tomb_Dream.xml</layout>
         </layout-folder>
-        <layout-folder expanded="0" name="Houses">
+        <layout-folder expanded="1" name="Houses">
             <layout>BustersHouse.xml</layout>
         </layout-folder>
         <layout-folder expanded="0" name="Reference">
@@ -3209,8 +3216,8 @@
         <layout>Fishing Game.xml</layout>
         <layout>CheatZone.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
-        <event-folder expanded="1" name="Buster">
+    <event-folder expanded="0">
+        <event-folder expanded="0" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>
