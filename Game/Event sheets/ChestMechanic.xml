@@ -42,7 +42,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" title="Chest Opening &amp; Loot Mechanic">
+        <event-group description="" title="Chest Opening &amp; Loot Mechanic">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -101,6 +101,34 @@
                                     <param id="0" name="Instance variable">Chest_ID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;AlgarsTomb_Chest01&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">pickup_sound</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">busterTotalGold</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Add to" type="System">
+                                    <param id="0" name="Variable">DungeonKeyCount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="Chests">
+                                    <param id="0" name="Instance variable">Chest_ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;demoChest01&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>

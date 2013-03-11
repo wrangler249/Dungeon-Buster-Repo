@@ -507,7 +507,7 @@
         <event-block>
             <conditions>
                 <condition id="1" inverted="1" name="Is overlapping another object" type="saltParticle">
-                    <param id="0" name="Object">Sprite79</param>
+                    <param id="0" name="Object">safePathMarker</param>
                 </condition>
                 <condition id="1" inverted="1" name="Is overlapping another object" type="saltParticle">
                     <param id="0" name="Object">NonTilingFloorParts</param>
@@ -570,6 +570,98 @@
             </conditions>
             <actions>
                 <action id="-24" name="Move to top" type="Buster" />
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">Skellies</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Skellies.Pathfinding.Speed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="Skellies">
+                            <param id="0" name="Animation">&quot;Default_Right&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">Skellies</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">Skellies.Pathfinding.Speed</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="Skellies">
+                            <param id="0" name="Animation">&quot;Walking_Right&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-21" name="Is between values" type="System">
+                    <param id="0" name="Value">Skellies.Pathfinding.MovingAngle</param>
+                    <param id="1" name="Lower bound">0</param>
+                    <param id="2" name="Upper bound">90</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Skellies">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-21" name="Is between values" type="System">
+                    <param id="0" name="Value">Skellies.Pathfinding.MovingAngle</param>
+                    <param id="1" name="Lower bound">270</param>
+                    <param id="2" name="Upper bound">360</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Skellies">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-21" name="Is between values" type="System">
+                    <param id="0" name="Value">Skellies.Pathfinding.MovingAngle</param>
+                    <param id="1" name="Lower bound">90</param>
+                    <param id="2" name="Upper bound">270</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" type="Skellies">
+                    <param id="0" name="State">0</param>
+                </action>
             </actions>
         </event-block>
     </events>

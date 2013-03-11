@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Demo_Dialogue</name>
     <events>
-        <event-block>
+        <event-block collapsed="1">
             <conditions>
                 <condition id="-14" name="Compare variable" type="System">
                     <param id="0" name="Variable">busterCanTalk</param>
@@ -16,63 +16,64 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block>
+                <event-block collapsed="1">
                     <conditions>
-                        <condition id="0" name="On key pressed" type="Keyboard">
-                            <param id="0" name="Key">69 (E)</param>
+                        <condition id="-7" name="Compare instance variable" type="Trigger_Single">
+                            <param id="0" name="Instance variable">Trigger_ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demoTip01&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block>
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" type="Trigger_Single">
-                                    <param id="0" name="Instance variable">Trigger_ID</param>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;demoTip01&quot;</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" type="Buster">
-                                    <param id="0" name="Instance variable">Talking</param>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Skeleton&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;Informative Alan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Welcome to the Dungeon Buster demo!&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="0" name="On key pressed" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
                             <sub-events>
-                                <event-block>
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" type="System">
-                                            <param id="0" name="Variable">dialogueStep</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-15" name="Set visible" type="Dialogue_OK">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                        <action id="4" name="Set animation" type="Dialogue_Portrait">
-                                            <param id="0" name="Animation">&quot;Unknown&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="0" name="Set text" type="SpeakerID">
-                                            <param id="0" name="Text">&quot;???&quot;</param>
-                                        </action>
-                                        <action id="0" name="Set text" type="DialogueText">
-                                            <param id="0" name="Text">&quot;Welcome to the Dungeon Buster demo!&quot;</param>
-                                        </action>
-                                        <action id="-16" name="Wait" type="System">
-                                            <param id="0" name="Seconds">1.0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" type="System">
-                                            <param id="0" name="Variable">dialogueStep</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" type="Dialogue_OK">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block>
                                     <conditions>
                                         <condition id="-14" name="Compare variable" type="System">
@@ -80,13 +81,14 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
                                     </conditions>
                                     <actions>
                                         <action id="-15" name="Set visible" type="Dialogue_OK">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                         <action id="0" name="Set text" type="DialogueText">
-                                            <param id="0" name="Text">&quot;You&apos;ll be exploring the mysterious &apos;Jissho No Shinden Temple&apos;, TOO SPOOKY!!!&quot;</param>
+                                            <param id="0" name="Text">&quot;This is a pre-alpha demo, so no features are final and some may be broken.&quot;</param>
                                         </action>
                                         <action id="-16" name="Wait" type="System">
                                             <param id="0" name="Seconds">1.0</param>
@@ -107,13 +109,147 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
                                     </conditions>
                                     <actions>
                                         <action id="-15" name="Set visible" type="Dialogue_OK">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
                                         <action id="0" name="Set text" type="DialogueText">
-                                            <param id="0" name="Text">&quot;I&apos;ll be here to give you some helpful hints along the way!&quot;</param>
+                                            <param id="0" name="Text">&quot;I&apos;ll be standing around the place to give you helpful hints, so keep an eye out for me.&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">dialogueStep</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" type="Dialogue_OK">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">dialogueStep</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" type="Dialogue_OK">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" type="DialogueText">
+                                            <param id="0" name="Text">&quot;Grab the key from that chest round the corner first, you&apos;re gonna need it!&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">busterCanQuitConversation</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" type="Dialogue_OK">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" type="Trigger_Single" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">busterCanTalk</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">FriendlySkellie</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="FriendlySkellie">
+                            <param id="0" name="Instance variable">ConversationID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demoTip02&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Skeleton&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;Informative Alan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Press the &apos;i&apos; key to view your inventory.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">dialogueStep</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" type="Dialogue_OK">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" type="DialogueText">
+                                            <param id="0" name="Text">&quot;Items you collect get stored there, and you can view how many keys you&apos;ve collected too.&quot;</param>
                                         </action>
                                         <action id="-16" name="Wait" type="System">
                                             <param id="0" name="Seconds">1.0</param>
@@ -129,25 +265,362 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="FriendlySkellie">
+                            <param id="0" name="Instance variable">ConversationID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demoTip03&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
                         <event-block>
                             <conditions>
                                 <condition id="-14" name="Compare variable" type="System">
-                                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Skeleton&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;Informative Alan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;All is not as it seems in these places...&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                                 <condition id="-4" name="Trigger once while true" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" type="Buster">
-                                    <param id="0" name="Instance variable">Talking</param>
-                                    <param id="1" name="Value">0</param>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Use your &apos;Fine Grain Revealing Salts&apos; to guide you across the hidden path.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Press &apos;Q&apos; to throw a handful of the salt in front of you; wherever it sticks is safe to walk across!&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="FriendlySkellie">
+                            <param id="0" name="Instance variable">ConversationID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demoTip04&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Skeleton&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;Informative Alan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Remember that key you got from the chest at the entrance?&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;You grabbed the key right? Ok, well, you can use it to open wooden doors like this one.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Once you use a key, it is lost forever. Lock craftsmanship here in Jorokiim isn&apos;t great...&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="FriendlySkellie">
+                            <param id="0" name="Instance variable">ConversationID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;demoTip05&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="4" name="Set animation" type="Dialogue_Portrait">
+                                    <param id="0" name="Animation">&quot;Skeleton&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Set text" type="SpeakerID">
+                                    <param id="0" name="Text">&quot;Informative Alan&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Beside me is the locking mechanism for the door up ahead.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;For these doors, you need to enter the correct combination ino the lock to open it.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-14" name="Compare variable" type="System">
+                                    <param id="0" name="Variable">dialogueStep</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Set text" type="DialogueText">
+                                    <param id="0" name="Text">&quot;Clues as to the combination can be found in the environment.&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Set value" type="System">
+                                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" type="Dialogue_OK">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" type="System">
+                    <param id="0" name="Variable">busterCanQuitConversation</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">Talking</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" type="Debug_Text01">
+                    <param id="0" name="Text">busterCanQuitConversation</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

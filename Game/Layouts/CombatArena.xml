@@ -3085,7 +3085,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
@@ -3106,7 +3106,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
@@ -3127,7 +3127,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
@@ -3148,7 +3148,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
@@ -3169,7 +3169,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>
@@ -3190,7 +3190,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite79">
+                <instance type="safePathMarker">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-frame>0</initial-frame>

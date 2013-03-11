@@ -78,6 +78,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Events carried out when Busters &apos;Talking&apos; boolean is true.</comment>
         <event-block>
             <conditions>
                 <condition id="-8" name="Is boolean instance variable set" type="Buster">
@@ -95,9 +96,6 @@
                     <param id="1" name="Visibility">1</param>
                 </action>
             </actions>
-            <sub-events>
-                <comment>Events carried out when Busters &apos;Talking&apos; boolean is true.</comment>
-            </sub-events>
         </event-block>
         <comment>Events carried out when Busters &apos;Talking&apos; boolean is false.</comment>
         <event-block>
@@ -150,7 +148,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-group collapsed="1" description="" title="Dialogue Example">
+                <event-group description="" title="Dialogue Example">
                     <sub-events>
                         <event-block>
                             <conditions>
