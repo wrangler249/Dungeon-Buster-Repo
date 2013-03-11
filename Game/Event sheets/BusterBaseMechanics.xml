@@ -36,7 +36,7 @@
                 <action disabled="1" id="-24" name="Move to top" type="Buster" />
             </actions>
         </event-block>
-        <event-group collapsed="1" description="" title="Visual Feedback Icons (Speech Bubbles)">
+        <event-group description="" title="Visual Feedback Icons (Speech Bubbles)">
             <sub-events>
                 <event-group collapsed="1" description="" title="Dialogue">
                     <sub-events>
@@ -133,7 +133,7 @@
                 </event-group>
                 <event-group collapsed="1" description="" title="Sign">
                     <sub-events>
-                        <event-block>
+                        <event-block collapsed="1">
                             <conditions>
                                 <condition id="-11" name="For Each" type="System">
                                     <param id="0" name="Object">WoodenSign01</param>
@@ -163,6 +163,90 @@
                                     <conditions>
                                         <condition id="1" inverted="1" name="Is overlapping another object" type="Buster">
                                             <param id="0" name="Object">WoodenSign01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" type="bubble_mystery" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" title="Scraps of paper">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-11" name="For Each" type="System">
+                                    <param id="0" name="Object">paperScrap</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" type="Buster">
+                                            <param id="0" name="Object">paperScrap</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">bubble_mystery</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" type="bubble_mystery">
+                                            <param id="0" name="Pin to">Buster</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" type="Buster">
+                                            <param id="0" name="Object">paperScrap</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" type="bubble_mystery" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" title="Journal">
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-11" name="For Each" type="System">
+                                    <param id="0" name="Object">deadAdventurer</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" type="Buster">
+                                            <param id="0" name="Object">deadAdventurer</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">bubble_mystery</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" type="bubble_mystery">
+                                            <param id="0" name="Pin to">Buster</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" type="Buster">
+                                            <param id="0" name="Object">deadAdventurer</param>
                                         </condition>
                                     </conditions>
                                     <actions>

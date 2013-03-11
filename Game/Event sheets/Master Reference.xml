@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
     <events>
+        <include>DeadAdventurers</include>
         <include>Demo_Dialogue</include>
         <include>Glowsprite</include>
         <include>Debug</include>

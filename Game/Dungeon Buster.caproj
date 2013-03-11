@@ -7,17 +7,17 @@
     <unique-id>2hhtd1awt2msk</unique-id>
     <saved-with-version>12100</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
-        <plugin author="Scirra" id="Function" version="1">Function</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
     <used-behaviors>
@@ -34,14 +34,14 @@
     </used-behaviors>
     <used-effects>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
-        <effect author="Scirra" id="hardlight">Hard Light</effect>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
-        <effect author="Scirra" id="screen">Screen</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Scirra" id="screen">Screen</effect>
+        <effect author="Scirra" id="hardlight">Hard Light</effect>
         <effect author="Scirra" id="contrast">Contrast</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -589,16 +589,6 @@
                             <image-point name="saltPointLeft" x="0" y="0.829268" />
                             <image-point name="saltPointRight" x="1" y="0.829268" />
                             <image-point name="saltPointDown" x="0.521739" y="1.12195" />
-                            <collision-poly>
-                                <point x="0.173913" y="0.097561" />
-                                <point x="0.478261" y="0" />
-                                <point x="0.782609" y="0.121951" />
-                                <point x="0.869565" y="0.487805" />
-                                <point x="0.73913" y="0.853659" />
-                                <point x="0.478261" y="0.878049" />
-                                <point x="0.26087" y="0.853659" />
-                                <point x="0.130435" y="0.487805" />
-                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Idle_Left" pingpong="0" repeatcount="1" repeatto="0" speed="5">
@@ -670,16 +660,6 @@
                             <image-point name="saltPointLeft" x="0" y="0.829268" />
                             <image-point name="saltPointRight" x="1" y="0.829268" />
                             <image-point name="saltPointDown" x="0.521739" y="1.12195" />
-                            <collision-poly>
-                                <point x="0.173913" y="0.097561" />
-                                <point x="0.478261" y="0.0243902" />
-                                <point x="0.782609" y="0.121951" />
-                                <point x="0.869565" y="0.487805" />
-                                <point x="0.73913" y="0.853659" />
-                                <point x="0.478261" y="0.951219" />
-                                <point x="0.304348" y="0.829268" />
-                                <point x="0.130435" y="0.487805" />
-                            </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.521739" hotspotY="0.512195">
                             <image-point name="Text Snap" x="0.521739" y="0" />
@@ -698,16 +678,6 @@
                             <image-point name="saltPointLeft" x="0" y="0.829268" />
                             <image-point name="saltPointRight" x="1" y="0.829268" />
                             <image-point name="saltPointDown" x="0.521739" y="1.12195" />
-                            <collision-poly>
-                                <point x="0.173913" y="0.097561" />
-                                <point x="0.478261" y="0.0243902" />
-                                <point x="0.782609" y="0.121951" />
-                                <point x="0.869565" y="0.487805" />
-                                <point x="0.695652" y="0.829268" />
-                                <point x="0.478261" y="0.951219" />
-                                <point x="0.26087" y="0.853659" />
-                                <point x="0.130435" y="0.487805" />
-                            </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.521739" hotspotY="0.512195">
                             <image-point name="Text Snap" x="0.521739" y="0" />
@@ -2218,12 +2188,10 @@
                         <animation framecount="1" loop="0" name="ss" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                                 <collision-poly>
-                                    <point x="0.25" y="0.25" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.75" y="0.25" />
-                                    <point x="0.75" y="0.75" />
-                                    <point x="0.5" y="0.921875" />
-                                    <point x="0.25" y="0.75" />
+                                    <point x="0.246094" y="0" />
+                                    <point x="0.75" y="0" />
+                                    <point x="0.75" y="0.546875" />
+                                    <point x="0.246094" y="0.546875" />
                                 </collision-poly>
                             </frame>
                         </animation>
@@ -3668,6 +3636,12 @@
                         <animation framecount="1" loop="0" name="Buster" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
+                        <animation framecount="1" loop="0" name="Paper" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Journal" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
                     </animation-folder>
                 </object-type>
             </object-folder>
@@ -3808,12 +3782,6 @@
                             <image-point name="LeftHand" x="0.2375" y="0.5" />
                             <image-point name="RightHand" x="0.2875" y="0.5" />
                             <image-point name="AmmoCount" x="0.29375" y="0.59375" />
-                            <collision-poly>
-                                <point x="0.5" y="0" />
-                                <point x="0.7875" y="0.5" />
-                                <point x="0.5" y="1" />
-                                <point x="0.2125" y="0.5" />
-                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
@@ -4857,6 +4825,39 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="paperScrap">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="clueID" type="string" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="deadAdventurer">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="adventurerID" type="string" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.28125" />
+                            <point x="0.71875" y="0.28125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.625" y="0.625" />
+                            <point x="0.5" y="0.65625" />
+                            <point x="0.34375" y="0.65625" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Chests" plugin-id="Sprite">
@@ -5034,7 +5035,7 @@
         <layout>PreLoader.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-folder expanded="0" name="Buster">
+        <event-folder expanded="1" name="Buster">
             <event-folder expanded="0" name="Animations">
                 <event-sheet>BusterAnimations.xml</event-sheet>
             </event-folder>
@@ -5082,6 +5083,7 @@
         <event-sheet>PreLoader.xml</event-sheet>
         <event-sheet>Puzzles.xml</event-sheet>
         <event-sheet>Demo_Dialogue.xml</event-sheet>
+        <event-sheet>DeadAdventurers.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" />
