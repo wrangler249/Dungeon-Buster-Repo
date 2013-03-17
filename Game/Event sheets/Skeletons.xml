@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Skeletons</name>
+    <events>
+        <include>ninjaMaster</include>
+        <comment>The function to run when the &apos;Ninja&apos; skeleton is attacking</comment>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="SkellieKunai">
+                    <param id="0" name="Object">Buster</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="SkellieKunai" />
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">HurtSound01</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                </action>
+                <action id="-11" name="Subtract from" type="System">
+                    <param id="0" name="Variable">busterCurrentHealth</param>
+                    <param id="1" name="Value">2*busterCurrentLevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1">
+            <conditions>
+                <condition id="0" name="On collision with another object" type="SkellieKunai">
+                    <param id="0" name="Object">CollisionBox</param>
+                </condition>
+                <condition id="0" name="On collision with another object" type="SkellieKunai">
+                    <param id="0" name="Object">WoodenDoor</param>
+                </condition>
+                <condition id="0" name="On collision with another object" type="SkellieKunai">
+                    <param id="0" name="Object">CombinationDoor_Temple</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="SkellieKunai" />
+            </actions>
+        </event-block>
+        <comment>What happens when projectiles hit skeletons.</comment>
+        <event-block>
+            <conditions>
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">WanderingEnemies</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="BusterKunai">
+                            <param id="0" name="Object">WanderingEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">HurtSound01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="BusterKunai" />
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentAppliedDamage</param>
+                            <param id="1" name="Value">floor(currentRightWeaponDamage*random(0.7,1.5))</param>
+                        </action>
+                        <action id="-12" name="Subtract from" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">currentAppliedDamage</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">damageAmount</param>
+                            <param id="1" name="Layer">&quot;SceneryInFront&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" type="damageAmount">
+                            <param id="0" name="Text">currentAppliedDamage</param>
+                        </action>
+                        <action id="4" name="Set font color" type="damageAmount">
+                            <param id="0" name="Color">rgb(255,0,0)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="damageAmount">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="0" name="On collision with another object" type="BusterArrow">
+                            <param id="0" name="Object">WanderingEnemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">HurtSound01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="BusterArrow" />
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentAppliedDamage</param>
+                            <param id="1" name="Value">floor(currentRightWeaponDamage*random(0.7,1.5))</param>
+                        </action>
+                        <action id="-12" name="Subtract from" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">currentAppliedDamage</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">damageAmount</param>
+                            <param id="1" name="Layer">&quot;SceneryInFront&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" type="damageAmount">
+                            <param id="0" name="Text">currentAppliedDamage</param>
+                        </action>
+                        <action id="4" name="Set font color" type="damageAmount">
+                            <param id="0" name="Color">rgb(255,0,0)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" type="damageAmount">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">DeathSound</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-7" name="Compare instance variable" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isDead</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" type="Function">
+                    <param id="0" name="Name">&quot;Skeleton Loot&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-9" name="Destroy" type="WanderingEnemies" />
+            </actions>
+            <sub-events>
+                <event-block disabled="1">
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">floor(random(1,20))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">GoldCoin</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" type="GoldCoin">
+                            <param id="0" name="Animation">&quot;Falling&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-3" name="Set position" type="GoldCoin">
+                            <param id="0" name="X">WanderingEnemies.X+floor(random(-2,2))</param>
+                            <param id="1" name="Y">WanderingEnemies.Y+floor(random(-2,2))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1">
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">floor(random(1,12))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">expBall</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1">
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">ceil(random(-8,2))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">bigExpBall</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isStunned</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="2" name="Stop" type="WanderingEnemies" />
+                <action behavior="Pathfinding" id="3" name="Set enabled" type="WanderingEnemies">
+                    <param id="0" name="Set">0</param>
+                </action>
+                <action id="-28" name="Set effect parameter" type="WanderingEnemies">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">50</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action behavior="Pathfinding" id="3" name="Set enabled" type="WanderingEnemies">
+                    <param id="0" name="Set">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isStunned</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-28" name="Set effect parameter" type="WanderingEnemies">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On function" type="Function">
+                    <param id="0" name="Name">&quot;Skeleton Loot&quot;</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isDead</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">random(1)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterCurrentHealth</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">busterTotalHealth</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">floor(random(1,20))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">GoldCoin</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="4" name="Set animation" type="GoldCoin">
+                            <param id="0" name="Animation">&quot;Falling&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-3" name="Set position" type="GoldCoin">
+                            <param id="0" name="X">WanderingEnemies.X+floor(random(-2,2))</param>
+                            <param id="1" name="Y">WanderingEnemies.Y+floor(random(-2,2))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">floor(random(1,12))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">expBall</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-12" name="Repeat" type="System">
+                            <param id="0" name="Count">ceil(random(-8,2))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" type="WanderingEnemies">
+                            <param id="0" name="Object">bigExpBall</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1">
+            <conditions>
+                <condition id="4" name="On finished" type="GoldCoin">
+                    <param id="0" name="Animation">&quot;falling&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-11" name="For Each" type="System">
+                            <param id="0" name="Object">GoldCoin</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="GoldCoin">
+                            <param id="0" name="Animation">&quot;Static&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" type="GoldCoin">
+                            <param id="0" name="Frame number">random(5)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">floor(random(1,2))</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Ninja_Skeleton">
+                    <param id="0" name="Instance variable">hasLineOfSight</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">distance(Ninja_Skeleton.X,Ninja_Skeleton.Y,Buster.X,Buster.Y)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">180</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isStunned</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="Ninja_Skeleton">
+                    <param id="0" name="Object">SkellieKunai</param>
+                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" type="SkellieKunai">
+                    <param id="0" name="Angle">angle(skelliekunai.x,skelliekunai.Y,buster.x,buster.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

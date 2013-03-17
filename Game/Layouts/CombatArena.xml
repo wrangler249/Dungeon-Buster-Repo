@@ -2970,6 +2970,9 @@
                         <isPursuing>false</isPursuing>
                         <hasLineOfSight>false</hasLineOfSight>
                         <isDead>false</isDead>
+                        <health>100</health>
+                        <isStunned>false</isStunned>
+                        <immuneToSword>false</immuneToSword>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -2985,7 +2988,17 @@
                                 <diagonals>Enabled</diagonals>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Flash" />
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -3012,6 +3025,9 @@
                         <isPursuing>false</isPursuing>
                         <hasLineOfSight>false</hasLineOfSight>
                         <isDead>false</isDead>
+                        <health>100</health>
+                        <isStunned>false</isStunned>
+                        <immuneToSword>false</immuneToSword>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -3027,7 +3043,17 @@
                                 <diagonals>Enabled</diagonals>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Flash" />
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -3054,6 +3080,9 @@
                         <isPursuing>false</isPursuing>
                         <hasLineOfSight>false</hasLineOfSight>
                         <isDead>false</isDead>
+                        <health>100</health>
+                        <isStunned>false</isStunned>
+                        <immuneToSword>false</immuneToSword>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -3069,7 +3098,17 @@
                                 <diagonals>Enabled</diagonals>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Flash" />
                     </behavior-instances>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

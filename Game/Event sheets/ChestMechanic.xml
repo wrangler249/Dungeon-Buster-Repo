@@ -4,7 +4,7 @@
     <name>ChestMechanic</name>
     <events>
         <variable constant="0" name="currentChestBeingOpened" static="0" type="text">None</variable>
-        <variable comment="The amount of gold in Buster&apos;s possession." constant="0" name="busterTotalGold" static="0" type="number">0</variable>
+        <variable comment="The amount of gold in Buster&apos;s possession." constant="0" name="busterTotalGold" static="0" type="number">25</variable>
         <variable comment="Amount of Dungeon Keys obtained" constant="0" name="DungeonKeyCount" static="0" type="number">0</variable>
         <event-group description="" title="Checking opened chests">
             <sub-events>

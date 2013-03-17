@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Combat &amp; Weapons</name>
     <events>
+        <variable constant="0" name="meleeComboSensibility" static="0" type="number">1</variable>
+        <variable constant="0" name="meleeComboCooldown" static="0" type="number">0</variable>
+        <variable constant="0" name="currentAppliedDamage" static="0" type="number">0</variable>
+        <variable constant="0" name="currentLeftWeaponCombo" static="0" type="number">0</variable>
         <include>Weapon Stats</include>
         <variable constant="0" name="currentRightWeaponName" static="0" type="text">None</variable>
         <variable constant="0" name="currentRightWeaponDamage" static="0" type="number">0</variable>
@@ -13,7 +17,7 @@
         <variable constant="0" name="currentLeftWeaponDamage" static="0" type="number">0</variable>
         <variable constant="0" name="currentLeftWeaponRange" static="0" type="number">0</variable>
         <variable constant="0" name="currentLeftWeaponCooldown" static="0" type="number">0</variable>
-        <event-group description="" title="Combat">
+        <event-group collapsed="1" description="" title="Combat">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -39,24 +43,163 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-group collapsed="1" description="" disabled="1" title="Disable Me For Now">
+                    <sub-events>
+                        <event-block collapsed="1" disabled="1">
+                            <conditions>
+                                <condition id="0" name="On click" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">currentLeftWeaponCooldown</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" type="System">
+                                    <param id="0" name="First value">currentLeftWeaponName</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">&quot;None&quot;</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                                    <param id="0" name="Instance variable">InInventory</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" type="Function">
+                                    <param id="0" name="Name">&quot;Weapon Cooldown&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Spawn another object" type="Buster">
+                                    <param id="0" name="Object">SwordSwipe</param>
+                                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                    <param id="2" name="Image point">&quot;Melee_Point&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" type="SwordSwipe">
+                                    <param id="0" name="Width">currentLeftWeaponRange</param>
+                                    <param id="1" name="Height">currentLeftWeaponRange</param>
+                                </action>
+                                <action id="0" name="Play" type="Audio">
+                                    <param id="0" name="Audio file">SwordSlash01</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" type="SwordSwipe" />
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">meleeDamageZone01</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">&quot;meleeDamageZonePoint&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" type="meleeDamageZone01">
+                                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" type="meleeDamageZone01" />
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">0.8</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" type="Buster">
+                                            <param id="0" name="Object">meleeDamageZone2</param>
+                                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                                            <param id="2" name="Image point">&quot;meleeDamageZonePoint&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" type="meleeDamageZone2">
+                                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                                        </action>
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" type="meleeDamageZone2" />
+                                        <action id="-16" name="Wait" type="System">
+                                            <param id="0" name="Seconds">0.8</param>
+                                        </action>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">currentLeftWeaponCombo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block collapsed="1">
+            <conditions>
+                <condition id="0" name="On click" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">currentLeftWeaponCooldown</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">currentLeftWeaponName</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Second value">&quot;None&quot;</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">isTrading</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Talking</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
                 <event-block>
                     <conditions>
-                        <condition id="0" name="On click" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" type="System">
-                            <param id="0" name="First value">currentLeftWeaponCooldown</param>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">meleeComboCooldown</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" type="System">
-                            <param id="0" name="First value">currentLeftWeaponName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Second value">&quot;None&quot;</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
-                            <param id="0" name="Instance variable">InInventory</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -80,61 +223,115 @@
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                         <action behavior="Fade" id="1" name="Start fade" type="SwordSwipe" />
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">meleeDamageZone01</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">&quot;meleeDamageZonePoint&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" type="meleeDamageZone01">
+                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="meleeDamageZone01" />
                     </actions>
-                    <sub-events>
-                        <event-block>
-                            <conditions />
-                            <actions />
-                            <sub-events>
-                                <event-block>
-                                    <conditions />
-                                    <actions>
-                                        <action id="0" name="Play" type="Audio">
-                                            <param id="0" name="Audio file">HurtSound01</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block>
                     <conditions>
-                        <condition id="0" name="On click" type="Mouse">
-                            <param id="0" name="Mouse button">2</param>
-                            <param id="1" name="Click type">0</param>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">meleeComboCooldown</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-8" name="Compare two values" type="System">
-                            <param id="0" name="First value">currentRightWeaponCooldown</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" type="System">
-                            <param id="0" name="First value">currentRightWeaponName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Second value">&quot;None&quot;</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
-                            <param id="0" name="Instance variable">InInventory</param>
-                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" type="Function">
-                            <param id="0" name="Name">&quot;Right Weapon Cooldown&quot;</param>
+                            <param id="0" name="Name">&quot;Weapon Cooldown&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action id="0" name="Call function" type="Function">
-                            <param id="0" name="Name">currentRightWeaponName</param>
-                            <param id="1" name="Parameter {n}"></param>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">meleeComboCooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">SwordSwipe</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">&quot;Melee_Point&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" type="SwordSwipe">
+                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                        </action>
+                        <action id="0" name="Play" type="Audio">
+                            <param id="0" name="Audio file">SwordSlash01</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" type="SwordSwipe" />
+                        <action id="0" name="Spawn another object" type="Buster">
+                            <param id="0" name="Object">meleeDamageZone2</param>
+                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                            <param id="2" name="Image point">&quot;meleeDamageZonePoint&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" type="meleeDamageZone2">
+                            <param id="0" name="Width">currentLeftWeaponRange</param>
+                            <param id="1" name="Height">currentLeftWeaponRange</param>
+                        </action>
+                        <action id="-16" name="Wait" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="-9" name="Destroy" type="meleeDamageZone2" />
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-22" name="Else" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">meleeComboCooldown</param>
+                            <param id="1" name="Value">meleeComboSensibility</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-group>
-        <event-group description="" title="Weapon Switching">
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On click" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">currentRightWeaponCooldown</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">currentRightWeaponName</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Second value">&quot;None&quot;</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" type="Function">
+                    <param id="0" name="Name">&quot;Right Weapon Cooldown&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" type="Function">
+                    <param id="0" name="Name">currentRightWeaponName</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group collapsed="1" description="" title="Weapon Switching">
             <sub-events>
                 <event-block>
                     <conditions>
@@ -272,7 +469,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="Weapon Functions">
+        <event-group collapsed="1" description="" title="Weapon Functions">
             <sub-events>
                 <comment>This function gets the Damage and Range stats from the Weapon Stats dictionary. Notice that it does NOT get the weapon&apos;s Cooldown stat.</comment>
                 <event-block>
@@ -314,10 +511,6 @@
                         <action id="4" name="Set animation" type="rightHand_Icon">
                             <param id="0" name="Animation">currentRightWeaponName</param>
                             <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-9" name="Set value" type="System">
-                            <param id="0" name="Variable">currentRightWeaponAmmoCount</param>
-                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Ammo&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -397,6 +590,17 @@
                         <action id="4" name="Set animation" type="leftHand_Icon">
                             <param id="0" name="Animation">currentLeftWeaponName</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-1" name="Every tick" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" type="System">
+                            <param id="0" name="Variable">currentRightWeaponAmmoCount</param>
+                            <param id="1" name="Value">WeaponStats.Get(currentRightWeaponName&amp;&quot;Ammo&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -684,5 +888,100 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="WanderingEnemies">
+                    <param id="0" name="Object">meleeDamageZone01</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">immuneToSword</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">currentAppliedDamage</param>
+                    <param id="1" name="Value">floor(currentLeftWeaponDamage*random(0.7,1.5))</param>
+                </action>
+                <action id="-12" name="Subtract from" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">currentAppliedDamage</param>
+                </action>
+                <action id="0" name="Spawn another object" type="WanderingEnemies">
+                    <param id="0" name="Object">damageAmount</param>
+                    <param id="1" name="Layer">&quot;SceneryInFront&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Set text" type="damageAmount">
+                    <param id="0" name="Text">currentAppliedDamage</param>
+                </action>
+                <action id="4" name="Set font color" type="damageAmount">
+                    <param id="0" name="Color">rgb(255,0,0)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" type="damageAmount">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" type="WanderingEnemies">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">0.3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="1" name="Is overlapping another object" type="WanderingEnemies">
+                    <param id="0" name="Object">meleeDamageZone2</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">immuneToSword</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">currentAppliedDamage</param>
+                    <param id="1" name="Value">floor(currentLeftWeaponDamage*random(1,2))</param>
+                </action>
+                <action id="-12" name="Subtract from" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">currentAppliedDamage</param>
+                </action>
+                <action id="0" name="Spawn another object" type="WanderingEnemies">
+                    <param id="0" name="Object">damageAmount</param>
+                    <param id="1" name="Layer">&quot;SceneryInFront&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="4" name="Set font color" type="damageAmount">
+                    <param id="0" name="Color">rgb(255, 142, 0)</param>
+                </action>
+                <action id="0" name="Set text" type="damageAmount">
+                    <param id="0" name="Text">currentAppliedDamage</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" type="damageAmount">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" type="WanderingEnemies">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">0.3</param>
+                </action>
+                <action id="-13" name="Set boolean" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isStunned</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-1" name="Every tick" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" type="System">
+                    <param id="0" name="Variable">meleeComboCooldown</param>
+                    <param id="1" name="Value">max(0,meleeComboCooldown-dt)</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

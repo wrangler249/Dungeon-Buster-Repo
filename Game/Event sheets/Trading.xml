@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Trading</name>
+    <events>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">blackScreenBG</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action disabled="1" id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">buyButton</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly+64</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">tradeScreen</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx</param>
+                    <param id="3" name="Y">scrolly</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">goldPouchIcon</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx+64</param>
+                    <param id="3" name="Y">scrolly-24</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">GoldCount</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx+72</param>
+                    <param id="3" name="Y">scrolly-28</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">shopItemDescription</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx-64</param>
+                    <param id="3" name="Y">scrolly-8</param>
+                </action>
+                <action id="-3" name="Create object" type="System">
+                    <param id="0" name="Object to create">longItemDescription</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="X">scrollx-64</param>
+                    <param id="3" name="Y">scrolly+24</param>
+                </action>
+                <action id="-4" name="Set layer visible" type="System">
+                    <param id="0" name="Layer">&quot;Trading&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="tradeScreen">
+                    <param id="0" name="Object">shopInvisibleIcon</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-10" name="Set value" type="shopInvisibleIcon">
+                    <param id="0" name="Instance variable">shopItemID</param>
+                    <param id="1" name="Value">&quot;potion&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="tradeScreen">
+                    <param id="0" name="Object">shopInvisibleIcon</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="-10" name="Set value" type="shopInvisibleIcon">
+                    <param id="0" name="Instance variable">shopItemID</param>
+                    <param id="1" name="Value">&quot;arrows&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-2" name="On start of layout" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="tradeScreen">
+                    <param id="0" name="Object">shopInvisibleIcon</param>
+                    <param id="1" name="Layer">&quot;Trading&quot;</param>
+                    <param id="2" name="Image point">3</param>
+                </action>
+                <action id="-10" name="Set value" type="shopInvisibleIcon">
+                    <param id="0" name="Instance variable">shopItemID</param>
+                    <param id="1" name="Value">&quot;kunai&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">arnSprite</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">isTrading</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Talking</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">InInventory</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Set object time scale" type="System">
+                    <param id="0" name="Object">Buster</param>
+                    <param id="1" name="Time scale">0</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" type="System">
+                    <param id="0" name="Layer">&quot;Trading&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">isTrading</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">canExitTrading</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">canExitTrading</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On key pressed" type="Keyboard">
+                    <param id="0" name="Key">69 (E)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" type="Buster">
+                    <param id="0" name="Object">arnSprite</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">isTrading</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">canExitTrading</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" type="System">
+                    <param id="0" name="Layer">&quot;Trading&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" type="Buster">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-13" name="Set boolean" type="Buster">
+                    <param id="0" name="Instance variable">isTrading</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-14" name="Set object time scale" type="System">
+                    <param id="0" name="Object">Buster</param>
+                    <param id="1" name="Time scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="7" name="Cursor is over object" type="Mouse">
+                    <param id="0" name="Object">shopInvisibleIcon</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" type="longItemDescription">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" type="shopItemDescription">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;potion&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" type="shopItemDescription">
+                            <param id="0" name="Text">&quot;Health Potion - 50G&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" type="longItemDescription">
+                            <param id="0" name="Text">&quot;Heals any and all wounds!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;arrows&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" type="shopItemDescription">
+                            <param id="0" name="Text">&quot;Arrows x5 - 15G&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" type="longItemDescription">
+                            <param id="0" name="Text">&quot;Perfect when combined with a bow.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;kunai&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" type="shopItemDescription">
+                            <param id="0" name="Text">&quot;Kunai x5 - 5G&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" type="longItemDescription">
+                            <param id="0" name="Text">&quot;For all your long distance stabbing needs.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-22" name="Else" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" type="longItemDescription">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" type="shopItemDescription">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="6" name="On object clicked" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">shopInvisibleIcon</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;potion&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="-10" name="Add to" type="System">
+                            <param id="0" name="Variable">busterCurrentHealth</param>
+                            <param id="1" name="Value">35</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;arrows&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">15</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                        <action id="1" name="Set key" type="WeaponStats">
+                            <param id="0" name="Key">&quot;shortBowAmmo&quot;</param>
+                            <param id="1" name="Value">WeaponStats.Get(&quot;shortBowAmmo&quot;)+5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="shopInvisibleIcon">
+                            <param id="0" name="Instance variable">shopItemID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;kunai&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" type="System">
+                            <param id="0" name="Variable">busterTotalGold</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="1" name="Set key" type="WeaponStats">
+                            <param id="0" name="Key">&quot;kunaiAmmo&quot;</param>
+                            <param id="1" name="Value">WeaponStats.Get(&quot;kunaiAmmo&quot;)+5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

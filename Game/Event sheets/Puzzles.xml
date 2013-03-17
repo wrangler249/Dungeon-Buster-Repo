@@ -452,7 +452,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group description="" title="Clues">
+        <event-group collapsed="1" description="" title="Clues">
             <sub-events>
                 <event-block>
                     <conditions>
