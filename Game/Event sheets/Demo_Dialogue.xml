@@ -231,7 +231,7 @@
                                         <condition id="-4" name="Trigger once while true" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Play" type="Audio">
+                                        <action disabled="1" id="0" name="Play" type="Audio">
                                             <param id="0" name="Audio file">LN2-CentralParkLoader</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>

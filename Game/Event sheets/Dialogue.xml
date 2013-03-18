@@ -135,7 +135,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block>
+        <event-block collapsed="1">
             <conditions>
                 <condition id="0" name="On key pressed" type="Keyboard">
                     <param id="0" name="Key">69 (E)</param>
@@ -786,6 +786,21 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-9" name="Is visible" type="Dialogue_OK" />
+                <condition id="-3" name="Is on-screen" type="Dialogue_OK" />
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">dialogue_blip02</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

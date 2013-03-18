@@ -253,14 +253,20 @@
             </conditions>
             <actions />
         </event-block>
-        <event-block>
+        <event-block any="1">
             <conditions>
-                <condition id="0" name="On collision with another object" type="ninjaStar">
+                <condition id="0" name="On collision with another object" type="SmallProjectiles">
                     <param id="0" name="Object">CollisionBox</param>
+                </condition>
+                <condition id="0" name="On collision with another object" type="SmallProjectiles">
+                    <param id="0" name="Object">WoodenDoor</param>
+                </condition>
+                <condition id="0" name="On collision with another object" type="SmallProjectiles">
+                    <param id="0" name="Object">CombinationDoor_Temple</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" type="ninjaStar" />
+                <action id="-9" name="Destroy" type="SmallProjectiles" />
             </actions>
         </event-block>
         <event-block>
@@ -274,6 +280,7 @@
                     <param id="0" name="Instance variable">health</param>
                     <param id="1" name="Value">20</param>
                 </action>
+                <action id="-9" name="Destroy" type="BusterKunai" />
             </actions>
         </event-block>
         <event-block>
@@ -363,6 +370,32 @@
                 <action id="6" name="Stop" type="Audio">
                     <param id="0" name="Tag">&quot;BossMusic&quot;</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-19" name="On destroyed" type="SmallProjectiles" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" type="SmallProjectiles">
+                    <param id="0" name="Object">hit01</param>
+                    <param id="1" name="Layer">&quot;Scenery&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Play" type="Audio">
+                    <param id="0" name="Audio file">hit01</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="5" name="On any finished" type="hit01" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" type="hit01" />
             </actions>
         </event-block>
     </events>

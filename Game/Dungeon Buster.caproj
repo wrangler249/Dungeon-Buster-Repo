@@ -5,24 +5,24 @@
     <version>0.01a</version>
     <author>The Light-Up Warrior</author>
     <unique-id>2hhtd1awt2msk</unique-id>
-    <saved-with-version>12100</saved-with-version>
+    <saved-with-version>12200</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
-        <plugin author="Scirra" id="Function" version="1">Function</plugin>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
@@ -34,14 +34,14 @@
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Scirra" id="contrast">Contrast</effect>
-        <effect author="Scirra" id="hardlight">Hard Light</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
         <effect author="Scirra" id="screen">Screen</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="hardlight">Hard Light</effect>
+        <effect author="Scirra" id="contrast">Contrast</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -78,14 +78,10 @@
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                                 <frame duration="1" hotspotX="0.5" hotspotY="0.571429">
                                     <collision-poly>
-                                        <point x="0.0625" y="0.142857" />
-                                        <point x="0.5" y="0" />
-                                        <point x="0.875" y="0.285714" />
-                                        <point x="1" y="0.428571" />
-                                        <point x="0.875" y="0.714286" />
-                                        <point x="0.5" y="1" />
-                                        <point x="0.0625" y="0.857143" />
-                                        <point x="0" y="0.428571" />
+                                        <point x="0" y="0" />
+                                        <point x="0.1875" y="0" />
+                                        <point x="0.203125" y="1" />
+                                        <point x="0" y="1" />
                                     </collision-poly>
                                 </frame>
                             </animation>
@@ -874,8 +870,8 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.571429">
                             <collision-poly>
                                 <point x="0" y="0" />
-                                <point x="0.496094" y="0" />
-                                <point x="0.496094" y="1" />
+                                <point x="0.1875" y="0" />
+                                <point x="0.191406" y="1" />
                                 <point x="0" y="1" />
                             </collision-poly>
                         </frame>
@@ -893,14 +889,10 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.571429">
                             <collision-poly>
-                                <point x="0.0625" y="0.142857" />
-                                <point x="0.5" y="0.285714" />
-                                <point x="0.875" y="0.285714" />
-                                <point x="1" y="0.428571" />
-                                <point x="0.875" y="0.714286" />
-                                <point x="0.5" y="0.714286" />
-                                <point x="0.0625" y="0.857143" />
-                                <point x="0" y="0.428571" />
+                                <point x="0" y="0" />
+                                <point x="0.296875" y="0" />
+                                <point x="0.300781" y="1" />
+                                <point x="0" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -5485,6 +5477,7 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="deflected" type="boolean" />
+                <instance-variable name="collisionCount" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet">
@@ -5493,7 +5486,14 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="16">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.386719" y="0.378906" />
+                            <point x="0.625" y="0.375" />
+                            <point x="0.628906" y="0.621094" />
+                            <point x="0.378906" y="0.628906" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.375" y="0.375" />
@@ -5509,6 +5509,79 @@
         </object-type>
         <object-type name="framerateCounter">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="ninjaStarTrail">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.666667" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="Pin">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="hit01">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="12">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.375" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.625" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0.3125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.375" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.625" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0.3125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.375" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.625" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0.3125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="enemyDeathPuff01">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="16">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -5657,13 +5730,27 @@
                 <member>StoneFloor02_Tileable</member>
                 <member>StoneWall_BottomTrim_Tileable</member>
                 <member>TiledBackground</member>
+                <member>TiledBackground16</member>
+                <member>TiledBackground17</member>
+                <member>TiledBackground18</member>
+                <member>TiledBackground19</member>
                 <member>TiledBackground2</member>
+                <member>TiledBackground20</member>
+                <member>TiledBackground21</member>
                 <member>TiledBackground3</member>
                 <member>TiledBackground4</member>
                 <member>TiledBackground5</member>
                 <member>TiledBackground6</member>
                 <member>TiledBackground8</member>
                 <member>WoodenFloor01_Tileable</member>
+            </members>
+        </family>
+        <family name="SmallProjectiles" plugin-id="Sprite">
+            <members>
+                <member>BusterArrow</member>
+                <member>BusterKunai</member>
+                <member>ninjaStar</member>
+                <member>SkellieKunai</member>
             </members>
         </family>
     </families>
@@ -5729,7 +5816,7 @@
             <event-sheet>AlgarsTomb.xml</event-sheet>
             <event-sheet>Four Staggering Dogs Inn.xml</event-sheet>
         </event-folder>
-        <event-folder expanded="0" name="Enemies">
+        <event-folder expanded="1" name="Enemies">
             <event-sheet>Skeletons.xml</event-sheet>
             <event-sheet>ninjaMaster.xml</event-sheet>
             <event-sheet>WanderingEnemies.xml</event-sheet>
@@ -5757,6 +5844,15 @@
         <global-instance type="Audio">
             <properties>
                 <timescale-audio>Off</timescale-audio>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
         <global-instance type="Mouse" />
@@ -5792,6 +5888,15 @@
             <file name="Fire.m4a" />
             <file name="Fire.ogg" />
             <file name="Fire.wav" />
+            <file name="hit01.m4a" />
+            <file name="hit01.ogg" />
+            <file name="hit01.wav" />
+            <file name="dialogue_blip02.m4a" />
+            <file name="dialogue_blip02.ogg" />
+            <file name="dialogue_blip02.wav" />
+            <file name="enemedeath01.m4a" />
+            <file name="enemedeath01.ogg" />
+            <file name="enemedeath01.wav" />
         </file-folder>
         <file name="pickup_sound.ogg" />
         <file name="jump_sound.ogg" />
