@@ -2973,6 +2973,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType></enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -3028,6 +3029,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType></enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -3083,6 +3085,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType></enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">

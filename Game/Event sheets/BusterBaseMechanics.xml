@@ -36,7 +36,7 @@
                 <action disabled="1" id="-24" name="Move to top" type="Buster" />
             </actions>
         </event-block>
-        <event-group description="" title="Visual Feedback Icons (Speech Bubbles)">
+        <event-group collapsed="1" description="" title="Visual Feedback Icons (Speech Bubbles)">
             <sub-events>
                 <event-group collapsed="1" description="" title="Dialogue">
                     <sub-events>
@@ -289,7 +289,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" title="Alternative Key Binds">
+        <event-group collapsed="1" description="" title="Alternative Key Binds">
             <sub-events>
                 <comment>Alternative key binds, changing Busters movement from the arrow keys to WASD.</comment>
                 <event-block>
@@ -299,6 +299,15 @@
                         </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
                             <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">isTrading</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">inPuzzle</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -319,6 +328,15 @@
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
                             <param id="0" name="Instance variable">InInventory</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">isTrading</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">inPuzzle</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" type="Buster">
@@ -338,6 +356,15 @@
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
                             <param id="0" name="Instance variable">InInventory</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">isTrading</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">inPuzzle</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" type="Buster">
@@ -356,6 +383,15 @@
                         </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
                             <param id="0" name="Instance variable">InInventory</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">isTrading</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">inPuzzle</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Buster">
+                            <param id="0" name="Instance variable">Talking</param>
                         </condition>
                     </conditions>
                     <actions>

@@ -337,6 +337,11 @@
                             <param id="1" name="Layer">&quot;Inventory&quot;</param>
                             <param id="2" name="Image point">&quot;Salts&quot;</param>
                         </action>
+                        <action id="0" name="Spawn another object" type="InventoryPage">
+                            <param id="0" name="Object">mythicalKatanaIcon</param>
+                            <param id="1" name="Layer">&quot;Inventory&quot;</param>
+                            <param id="2" name="Image point">&quot;MythicalKatana&quot;</param>
+                        </action>
                         <action id="0" name="Spawn another object" type="HUD_Blank">
                             <param id="0" name="Object">leftHand_Icon</param>
                             <param id="1" name="Layer">&quot;HUD&quot;</param>

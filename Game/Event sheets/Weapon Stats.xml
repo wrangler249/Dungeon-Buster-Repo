@@ -10,7 +10,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-group collapsed="1" description="" title="Melee">
+                <event-group description="" title="Melee">
                     <sub-events>
                         <comment>Short Sword</comment>
                         <event-block>
@@ -48,12 +48,30 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>Mythical Katana</comment>
+                        <event-block>
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;mythicalKatanaDamage&quot;</param>
+                                    <param id="1" name="Value">40</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;mythicalKatanaRange&quot;</param>
+                                    <param id="1" name="Value">32</param>
+                                </action>
+                                <action id="0" name="Add key" type="WeaponStats">
+                                    <param id="0" name="Key">&quot;mythicalKatanaCooldown&quot;</param>
+                                    <param id="1" name="Value">0.3</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" title="Ranged">
+                <event-group collapsed="1" description="" title="Ranged">
                     <sub-events>
                         <comment>Kunai</comment>
-                        <event-block>
+                        <event-block collapsed="1">
                             <conditions />
                             <actions>
                                 <action id="0" name="Add key" type="WeaponStats">
@@ -86,7 +104,7 @@
                             </sub-events>
                         </event-block>
                         <comment>Short Bow</comment>
-                        <event-block>
+                        <event-block collapsed="1">
                             <conditions />
                             <actions>
                                 <action id="0" name="Add key" type="WeaponStats">

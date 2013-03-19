@@ -157,7 +157,7 @@
                     <param id="1" name="Value">1</param>
                 </action>
                 <action id="0" name="Play" type="Audio">
-                    <param id="0" name="Audio file">enemedeath01</param>
+                    <param id="0" name="Audio file">enemedeath2</param>
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">-8</param>
                     <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
@@ -274,8 +274,8 @@
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="-3" name="Set position" type="expBall">
-                            <param id="0" name="X">WanderingEnemies.X+floor(random(-2,2))</param>
-                            <param id="1" name="Y">WanderingEnemies.Y+floor(random(-2,2))</param>
+                            <param id="0" name="X">WanderingEnemies.X+floor(random(-8,8))</param>
+                            <param id="1" name="Y">WanderingEnemies.Y+floor(random(-8,8))</param>
                         </action>
                     </actions>
                 </event-block>

@@ -21,27 +21,27 @@
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Alastair Aitchison" id="boids" version="1">Boids</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
-        <effect author="Scirra" id="screen">Screen</effect>
+        <effect author="Scirra" id="contrast">Contrast</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Danguafer/Silexars" id="pulse">Pulse</effect>
+        <effect author="Scirra" id="screen">Screen</effect>
         <effect author="Scirra" id="hardlight">Hard Light</effect>
-        <effect author="Scirra" id="contrast">Contrast</effect>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -564,6 +564,7 @@
                     <instance-variable name="canExitInventory" type="boolean" />
                     <instance-variable name="isTrading" type="boolean" />
                     <instance-variable name="canExitTrading" type="boolean" />
+                    <instance-variable name="inPuzzle" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction">
@@ -4033,6 +4034,20 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="mythicalKatana" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                        <frame duration="1" hotspotX="0.516129" hotspotY="0.516129">
+                            <collision-poly>
+                                <point x="0.419355" y="0.419355" />
+                                <point x="0.483871" y="0.451613" />
+                                <point x="0.548387" y="0.451613" />
+                                <point x="0.935484" y="0.483871" />
+                                <point x="0.580645" y="0.580645" />
+                                <point x="0.483871" y="0.580645" />
+                                <point x="0.451613" y="0.548387" />
+                                <point x="0.193548" y="0.483871" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="rightHand_Icon">
@@ -4674,6 +4689,7 @@
                         <image-point name="Kunai" x="0.0945455" y="0.585455" />
                         <image-point name="ShortBow" x="0.210909" y="0.585455" />
                         <image-point name="Salts" x="0.327273" y="0.701818" />
+                        <image-point name="MythicalKatana" x="0.443636" y="0.701818" />
                         <collision-poly>
                             <point x="0.0327273" y="0.0327273" />
                             <point x="0.963636" y="0.0363636" />
@@ -5530,7 +5546,19 @@
         <object-type name="hit01">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="12">
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="18">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.375" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.625" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.25" y="0.75" />
+                            <point x="0.3125" y="0.5" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
                             <point x="0.25" y="0.25" />
@@ -5580,6 +5608,14 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mythicalKatanaIcon">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -5636,6 +5672,7 @@
         <family name="InventoryButtons_MeleeWeapons" plugin-id="Sprite">
             <members>
                 <member>longSwordIcon</member>
+                <member>mythicalKatanaIcon</member>
                 <member>shortSwordIcon</member>
             </members>
             <instance-variables>
@@ -5679,6 +5716,7 @@
                 <instance-variable name="health" type="number" />
                 <instance-variable name="isStunned" type="boolean" />
                 <instance-variable name="immuneToSword" type="boolean" />
+                <instance-variable name="enemyType" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pathfinding">
@@ -5897,6 +5935,9 @@
             <file name="enemedeath01.m4a" />
             <file name="enemedeath01.ogg" />
             <file name="enemedeath01.wav" />
+            <file name="enemedeath2.m4a" />
+            <file name="enemedeath2.ogg" />
+            <file name="enemedeath2.wav" />
         </file-folder>
         <file name="pickup_sound.ogg" />
         <file name="jump_sound.ogg" />

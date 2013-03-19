@@ -790,7 +790,9 @@
         <event-block>
             <conditions>
                 <condition id="-9" name="Is visible" type="Dialogue_OK" />
-                <condition id="-3" name="Is on-screen" type="Dialogue_OK" />
+                <condition id="-8" name="Is boolean instance variable set" type="Buster">
+                    <param id="0" name="Instance variable">Talking</param>
+                </condition>
                 <condition id="-4" name="Trigger once while true" type="System" />
             </conditions>
             <actions>

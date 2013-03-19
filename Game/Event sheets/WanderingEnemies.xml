@@ -84,19 +84,41 @@
         </event-block>
         <event-block>
             <conditions>
-                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
-                    <param id="0" name="Instance variable">isPursuing</param>
-                </condition>
-                <condition id="-6" name="Every X seconds" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
+                <condition id="-11" name="For Each" type="System">
+                    <param id="0" name="Object">WanderingEnemies</param>
                 </condition>
             </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="0" name="Find path" type="Ninja_Skeleton">
-                    <param id="0" name="X">choose(Buster.X+floor(random(48,64)),Buster.X+floor(random(-64,-48)))</param>
-                    <param id="1" name="Y">choose(Buster.Y+floor(random(48,64)),Buster.Y+floor(random(-64,-48)))</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isPursuing</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" type="WanderingEnemies">
+                                    <param id="0" name="Instance variable">enemyType</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Ninja Skeleton&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" type="WanderingEnemies">
+                                    <param id="0" name="X">choose(Buster.X+floor(random(48,64)),Buster.X+floor(random(-64,-48)))</param>
+                                    <param id="1" name="Y">choose(Buster.Y+floor(random(48,64)),Buster.Y+floor(random(-64,-48)))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>Regenerate the skeletons obstacle map each time a door is opened</comment>
         <event-block>
@@ -248,6 +270,9 @@
                                 </condition>
                                 <condition id="1" name="Is overlapping another object" type="LineOfSight">
                                     <param id="0" name="Object">NoWalkOnly</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" type="LineOfSight">
+                                    <param id="0" name="Object">CombinationDoor_Temple</param>
                                 </condition>
                             </conditions>
                             <actions>

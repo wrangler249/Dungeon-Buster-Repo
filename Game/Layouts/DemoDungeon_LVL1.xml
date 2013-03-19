@@ -3669,8 +3669,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>656</x>
-                        <y>824</y>
+                        <x>812</x>
+                        <y>792</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -10059,6 +10059,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType>Ninja Skeleton</enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -10114,6 +10115,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType>Ninja Skeleton</enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -10143,8 +10145,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>680</x>
-                        <y>656</y>
+                        <x>368</x>
+                        <y>720</y>
                         <z>0</z>
                         <width>24</width>
                         <height>45</height>
@@ -10169,6 +10171,7 @@
                         <health>100</health>
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
+                        <enemyType>Ninja Skeleton</enemyType>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
@@ -12429,7 +12432,7 @@
                         <y>576</y>
                         <z>0</z>
                         <width>336</width>
-                        <height>16</height>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -12449,7 +12452,7 @@
                         <y>832</y>
                         <z>0</z>
                         <width>256</width>
-                        <height>16</height>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -12469,7 +12472,7 @@
                         <y>832</y>
                         <z>0</z>
                         <width>64</width>
-                        <height>16</height>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -12489,7 +12492,7 @@
                         <y>448</y>
                         <z>0</z>
                         <width>16</width>
-                        <height>16</height>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -12509,7 +12512,7 @@
                         <y>448</y>
                         <z>0</z>
                         <width>16</width>
-                        <height>16</height>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -13054,6 +13057,106 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Pathfinding_Helper">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>224</x>
+                        <y>576</y>
+                        <z>0</z>
+                        <width>192</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PitfallArea">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>288</x>
+                        <y>584</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PitfallArea">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>368</x>
+                        <y>592</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>72</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PitfallArea">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>224</x>
+                        <y>584</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>80</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PitfallArea">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>240</x>
+                        <y>656</y>
+                        <z>0</z>
+                        <width>80</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -13194,8 +13297,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>656</x>
-                        <y>752</y>
+                        <x>1068</x>
+                        <y>600</y>
                         <z>0</z>
                         <width>32</width>
                         <height>16</height>
