@@ -231,12 +231,6 @@
                                         <condition id="-4" name="Trigger once while true" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="0" name="Play" type="Audio">
-                                            <param id="0" name="Audio file">LN2-CentralParkLoader</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;BossMusic&quot;</param>
-                                        </action>
                                         <action id="-15" name="Set visible" type="Dialogue_OK">
                                             <param id="0" name="Visibility">0</param>
                                         </action>

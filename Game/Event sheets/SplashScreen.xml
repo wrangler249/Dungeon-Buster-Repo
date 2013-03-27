@@ -23,6 +23,18 @@
                 <action id="4" name="Preload" type="Audio">
                     <param id="0" name="Audio file">Main Menu Music</param>
                 </action>
+                <action id="4" name="Preload" type="Audio">
+                    <param id="0" name="Audio file">pickup_sound</param>
+                </action>
+                <action id="4" name="Preload" type="Audio">
+                    <param id="0" name="Audio file">enemedeath2</param>
+                </action>
+                <action id="4" name="Preload" type="Audio">
+                    <param id="0" name="Audio file">CoinFall</param>
+                </action>
+                <action id="4" name="Preload" type="Audio">
+                    <param id="0" name="Audio file">exp_Pickup</param>
+                </action>
                 <action id="-16" name="Set opacity" type="MainLogo">
                     <param id="0" name="Opacity">0</param>
                 </action>

@@ -7,19 +7,8 @@
         <event-block>
             <conditions>
                 <condition id="-2" name="On start of layout" type="System" />
-                <condition id="-11" name="For Each" type="System">
-                    <param id="0" name="Object">Master_Glowsprite</param>
-                </condition>
             </conditions>
-            <actions>
-                <action id="-16" name="Set opacity" type="Master_Glowsprite">
-                    <param id="0" name="Opacity">0</param>
-                </action>
-                <action behavior="Pathfinding" id="5" name="Add obstacle" type="Master_Glowsprite">
-                    <param id="0" name="Obstacle">CollisionBox</param>
-                </action>
-                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" type="Master_Glowsprite" />
-            </actions>
+            <actions />
             <sub-events>
                 <event-block>
                     <conditions>
@@ -27,13 +16,7 @@
                             <param id="0" name="Count">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" type="Master_Glowsprite">
-                            <param id="0" name="Object">Glowsprite</param>
-                            <param id="1" name="Layer">&quot;Scenery&quot;</param>
-                            <param id="2" name="Image point">floor(random(1,5))</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-block>
@@ -41,138 +24,47 @@
             <conditions>
                 <condition id="-1" name="Every tick" type="System" />
             </conditions>
-            <actions>
-                <action behavior="Boids" id="1" name="Flock" type="Glowsprite">
-                    <param id="0" name="Target X">Master_Glowsprite.X</param>
-                    <param id="1" name="Target Y">Master_Glowsprite.Y</param>
-                    <param id="2" name="Flock with">Glowsprite</param>
-                    <param id="3" name="Target Priority">1</param>
-                    <param id="4" name="Seperation Priority">60</param>
-                    <param id="5" name="Alignment Priority">40</param>
-                    <param id="6" name="Cohesion Priority">20</param>
-                    <param id="7" name="Seperation Distance">random(12,15)</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block>
             <conditions>
-                <condition behavior="Fade" id="0" name="On fade out finished" type="Glowsprite" />
-            </conditions>
-            <actions>
-                <action id="-28" name="Set effect parameter" type="Glowsprite">
-                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
-                    <param id="1" name="Parameter index">0</param>
-                    <param id="2" name="Value">choose(0,4,8,11,13)</param>
-                </action>
-                <action behavior="Fade" id="0" name="Restart fade" type="Glowsprite" />
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="-11" name="For Each" type="System">
-                    <param id="0" name="Object">Master_Glowsprite</param>
-                </condition>
-                <condition id="-8" name="Compare two values" type="System">
-                    <param id="0" name="First value">distance(buster.X,buster.Y,master_glowsprite.X,master_glowsprite.Y)</param>
-                    <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Second value">64</param>
-                </condition>
                 <condition behavior="8Direction" disabled="1" id="1" name="Compare speed" type="Buster">
                     <param id="0" name="Comparison">0</param>
                     <param id="1" name="Speed">0</param>
                 </condition>
                 <condition id="-4" name="Trigger once while true" type="System" />
             </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" type="Master_Glowsprite">
-                    <param id="0" name="Instance variable">followingBuster</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block>
             <conditions>
-                <condition id="-11" name="For Each" type="System">
-                    <param id="0" name="Object">Master_Glowsprite</param>
-                </condition>
-                <condition id="-8" name="Compare two values" type="System">
-                    <param id="0" name="First value">distance(buster.X,buster.Y,master_glowsprite.X,master_glowsprite.Y)</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Second value">64</param>
-                </condition>
                 <condition id="-4" name="Trigger once while true" type="System" />
             </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" type="Master_Glowsprite">
-                    <param id="0" name="Instance variable">followingBuster</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block>
             <conditions>
                 <condition id="-6" name="Every X seconds" type="System">
                     <param id="0" name="Interval (seconds)">0.1</param>
                 </condition>
-                <condition id="-8" name="Is boolean instance variable set" type="Master_Glowsprite">
-                    <param id="0" name="Instance variable">followingBuster</param>
-                </condition>
             </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="0" name="Find path" type="Master_Glowsprite">
-                    <param id="0" name="X">buster.X</param>
-                    <param id="1" name="Y">buster.Y</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block>
             <conditions>
                 <condition id="-6" name="Every X seconds" type="System">
                     <param id="0" name="Interval (seconds)">random(3,6)</param>
                 </condition>
-                <condition id="-8" inverted="1" name="Is boolean instance variable set" type="Master_Glowsprite">
-                    <param id="0" name="Instance variable">followingBuster</param>
-                </condition>
             </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="0" name="Find path" type="Master_Glowsprite">
-                    <param id="0" name="X">random(master_glowsprite.X-64,master_glowsprite.X+64)</param>
-                    <param id="1" name="Y">random(master_glowsprite.Y-64,master_glowsprite.Y+64)</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
         <event-block>
             <conditions>
-                <condition behavior="Pathfinding" id="0" name="On path found" type="Master_Glowsprite" />
-            </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="1" name="Move along path" type="Master_Glowsprite" />
-            </actions>
-        </event-block>
-        <event-block>
-            <conditions>
-                <condition id="-11" name="For Each" type="System">
-                    <param id="0" name="Object">Glowsprite</param>
-                </condition>
                 <condition id="-6" name="Every X seconds" type="System">
                     <param id="0" name="Interval (seconds)">random(3,6)</param>
                 </condition>
-                <condition id="-16" name="Pick random instance" type="System">
-                    <param id="0" name="Object">Master_Glowsprite</param>
-                </condition>
             </conditions>
-            <actions>
-                <action behavior="Boids" id="1" name="Flock" type="Glowsprite">
-                    <param id="0" name="Target X">Master_Glowsprite.X</param>
-                    <param id="1" name="Target Y">Master_Glowsprite.Y</param>
-                    <param id="2" name="Flock with">Glowsprite</param>
-                    <param id="3" name="Target Priority">1</param>
-                    <param id="4" name="Seperation Priority">60</param>
-                    <param id="5" name="Alignment Priority">40</param>
-                    <param id="6" name="Cohesion Priority">20</param>
-                    <param id="7" name="Seperation Distance">random(12,15)</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

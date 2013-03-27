@@ -9,7 +9,7 @@
             </conditions>
             <actions>
                 <action id="0" name="Play" type="Audio">
-                    <param id="0" name="Audio file">Main Menu Music</param>
+                    <param id="0" name="Audio file">MenuMusic_Overture</param>
                     <param id="2" name="Loop">1</param>
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
@@ -32,7 +32,7 @@
                 <action behavior="Fade" id="1" name="Start fade" type="Sprite48" />
             </actions>
         </event-block>
-        <event-block>
+        <event-block disabled="1">
             <conditions>
                 <condition id="-2" name="On start of layout" type="System" />
             </conditions>
@@ -47,7 +47,7 @@
                     <param id="3" name="Y">112</param>
                 </action>
                 <action id="4" name="Set animation" type="Ninja_Skeleton">
-                    <param id="0" name="Animation">&quot;Walking&quot;</param>
+                    <param id="0" name="Animation">&quot;Walking_Right&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="-16" name="Wait" type="System">
@@ -74,7 +74,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block>
+        <event-block disabled="1">
             <conditions>
                 <condition id="-1" name="Every tick" type="System" />
             </conditions>
@@ -149,7 +149,7 @@
                     <param id="0" name="Tag">&quot;Music&quot;</param>
                 </action>
                 <action id="-25" name="Go to layout (by name)" type="System">
-                    <param id="0" name="Layout">&quot;Tomb_Dream&quot;</param>
+                    <param id="0" name="Layout">&quot;DemoDungeon_LVL1&quot;</param>
                 </action>
             </actions>
         </event-block>

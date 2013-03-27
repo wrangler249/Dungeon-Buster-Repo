@@ -23,11 +23,19 @@
                                 <condition id="-8" name="Compare two values" type="System">
                                     <param id="0" name="First value">Webstorage.SessionValue(Doors.Door_ID)</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;Opened&quot;</param>
+                                    <param id="2" name="Second value">&quot;Unlocked&quot;</param>
                                 </condition>
+                                <condition id="-4" name="Trigger once while true" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" type="Doors" />
+                                <action id="4" name="Set animation" type="Doors">
+                                    <param id="0" name="Animation">&quot;Unlocked&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" type="Doors">
+                                    <param id="0" name="Instance variable">doorStatus</param>
+                                    <param id="1" name="Value">&quot;Unlocked&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -38,25 +46,59 @@
             <sub-events>
                 <event-block>
                     <conditions>
-                        <condition id="0" name="On collision with another object" type="Buster">
-                            <param id="0" name="Object">Doors</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" type="System">
-                            <param id="0" name="Variable">DungeonKeyCount</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
+                        <condition id="0" name="On key pressed" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" type="System">
-                            <param id="0" name="Variable">currentDoorBeingOpened</param>
-                            <param id="1" name="Value">Doors.Door_ID</param>
-                        </action>
-                        <action id="0" name="Call function" type="Function">
-                            <param id="0" name="Name">&quot;Door Opening&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" type="Buster">
+                                    <param id="0" name="Object">Doors</param>
+                                    <param id="1" name="Offset X">0</param>
+                                    <param id="2" name="Offset Y">12</param>
+                                </condition>
+                                <condition id="9" name="Is overlapping at offset" type="Buster">
+                                    <param id="0" name="Object">Doors</param>
+                                    <param id="1" name="Offset X">0</param>
+                                    <param id="2" name="Offset Y">-12</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block>
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" type="System">
+                                            <param id="0" name="Variable">DungeonKeyCount</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="Doors">
+                                            <param id="0" name="Instance variable">doorType</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;keyLocked&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" type="Doors">
+                                            <param id="0" name="Instance variable">doorStatus</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Locked&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" type="System">
+                                            <param id="0" name="Variable">currentDoorBeingOpened</param>
+                                            <param id="1" name="Value">Doors.Door_ID</param>
+                                        </action>
+                                        <action id="0" name="Call function" type="Function">
+                                            <param id="0" name="Name">&quot;Door Opening&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block>
                     <conditions>
@@ -70,14 +112,21 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" type="Doors" />
+                        <action id="-10" name="Set value" type="Doors">
+                            <param id="0" name="Instance variable">doorStatus</param>
+                            <param id="1" name="Value">&quot;Unlocked&quot;</param>
+                        </action>
                         <action id="-11" name="Subtract from" type="System">
                             <param id="0" name="Variable">DungeonKeyCount</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="4" name="Set animation" type="Doors">
+                            <param id="0" name="Animation">&quot;Unlocked&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                         <action id="1" name="Set session value" type="WebStorage">
                             <param id="0" name="Key">currentDoorBeingOpened</param>
-                            <param id="1" name="Value">&quot;Opened&quot;</param>
+                            <param id="1" name="Value">&quot;Unlocked&quot;</param>
                         </action>
                         <action id="-9" name="Set value" type="System">
                             <param id="0" name="Variable">currentDoorBeingOpened</param>
@@ -91,5 +140,77 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block>
+            <conditions>
+                <condition id="4" name="On finished" type="Doors">
+                    <param id="0" name="Animation">&quot;Opening&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Doors">
+                    <param id="0" name="Animation">&quot;Open&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="2" name="Is playing" type="Doors">
+                    <param id="0" name="Animation">&quot;Open&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="4" name="Set animation" type="Doors">
+                    <param id="0" name="Animation">&quot;Closing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="4" name="On finished" type="Doors">
+                    <param id="0" name="Animation">&quot;Closing&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" type="Doors">
+                    <param id="0" name="Animation">&quot;Unlocked&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="0" name="On collision with another object" type="Buster">
+                    <param id="0" name="Object">Doors</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="Doors">
+                            <param id="0" name="Instance variable">doorStatus</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Unlocked&quot;</param>
+                        </condition>
+                        <condition id="2" name="Is playing" type="Doors">
+                            <param id="0" name="Animation">&quot;Unlocked&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" type="Doors">
+                            <param id="0" name="Animation">&quot;Opening&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

@@ -68,7 +68,7 @@
                     <behavior-instances>
                         <behavior-instance type="8Direction">
                             <properties>
-                                <max-speed>75</max-speed>
+                                <max-speed>90</max-speed>
                                 <acceleration>600</acceleration>
                                 <deceleration>500</deceleration>
                                 <directions>8 directions</directions>
@@ -87,13 +87,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>16</x>
-                        <y>25</y>
+                        <y>48</y>
                         <z>0</z>
                         <width>23</width>
                         <height>41</height>
                         <depth>0</depth>
                         <hotspotX>0.521739125</hotspotX>
-                        <hotspotY>0.51219511</hotspotY>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -682,7 +682,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>150</speed>
+                                <speed>250</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -711,6 +711,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <onFire>false</onFire>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
@@ -1174,6 +1177,15 @@
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
                                 <set-angle>No</set-angle>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>5</wait-time>
+                                <fade-out-time>5</fade-out-time>
+                                <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -1646,12 +1658,14 @@
                         <isStunned>false</isStunned>
                         <immuneToSword>false</immuneToSword>
                         <enemyType>Ninja Skeleton</enemyType>
+                        <myTargetPoint>None</myTargetPoint>
+                        <isAttacking>false</isAttacking>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>8</cell-size>
-                                <cell-border>4</cell-border>
+                                <cell-border>1</cell-border>
                                 <obstacles>Custom</obstacles>
                                 <max-speed>45</max-speed>
                                 <acceleration>1000</acceleration>
@@ -1682,7 +1696,7 @@
                         <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.844444454</hotspotY>
+                        <hotspotY>0.800000012</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1707,6 +1721,30 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="attackPoint">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <attackPointID></attackPointID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-32</x>
+                        <y>144</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

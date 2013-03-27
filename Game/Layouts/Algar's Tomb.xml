@@ -157,9 +157,11 @@
                     </properties>
                     <instance-variables>
                         <Door_ID>AlgarsTomb_Door01</Door_ID>
+                        <doorType>keyLocked</doorType>
+                        <doorStatus>Locked</doorStatus>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Solid" />
+                        <behavior-instance type="Solid2" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -6811,9 +6813,11 @@
                     </properties>
                     <instance-variables>
                         <Door_ID>AlgarsTomb_Door01</Door_ID>
+                        <doorType>keyLocked</doorType>
+                        <doorStatus>Locked</doorStatus>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Solid" />
+                        <behavior-instance type="Solid2" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

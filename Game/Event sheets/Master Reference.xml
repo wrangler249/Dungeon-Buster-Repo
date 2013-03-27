@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Master Reference</name>
     <events>
+        <include>Music</include>
         <include>WanderingEnemies</include>
         <include>Trading</include>
         <include>DeadAdventurers</include>

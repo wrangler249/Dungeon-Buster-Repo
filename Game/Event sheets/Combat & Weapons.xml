@@ -17,7 +17,7 @@
         <variable constant="0" name="currentLeftWeaponDamage" static="0" type="number">0</variable>
         <variable constant="0" name="currentLeftWeaponRange" static="0" type="number">0</variable>
         <variable constant="0" name="currentLeftWeaponCooldown" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" title="Combat">
+        <event-group description="" title="Combat">
             <sub-events>
                 <event-block>
                     <conditions>

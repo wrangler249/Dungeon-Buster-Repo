@@ -84,39 +84,146 @@
         </event-block>
         <event-block>
             <conditions>
-                <condition id="-11" name="For Each" type="System">
-                    <param id="0" name="Object">WanderingEnemies</param>
+                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isPursuing</param>
                 </condition>
             </conditions>
             <actions />
             <sub-events>
                 <event-block>
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
-                            <param id="0" name="Instance variable">isPursuing</param>
-                        </condition>
-                        <condition id="-6" name="Every X seconds" type="System">
-                            <param id="0" name="Interval (seconds)">1.0</param>
+                        <condition id="-7" name="Compare instance variable" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">enemyType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ninjaSkeleton&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block>
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" type="WanderingEnemies">
-                                    <param id="0" name="Instance variable">enemyType</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;Ninja Skeleton&quot;</param>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                                    <param id="0" name="Instance variable">isAttacking</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action behavior="Pathfinding" id="0" name="Find path" type="WanderingEnemies">
-                                    <param id="0" name="X">choose(Buster.X+floor(random(48,64)),Buster.X+floor(random(-64,-48)))</param>
-                                    <param id="1" name="Y">choose(Buster.Y+floor(random(48,64)),Buster.Y+floor(random(-64,-48)))</param>
+                                    <param id="0" name="X">choose(Buster.X+floor(random(32,48)),Buster.X+floor(random(-48,-33)))</param>
+                                    <param id="1" name="Y">choose(Buster.Y+floor(random(32,48)),Buster.Y+floor(random(-48,-33)))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                                    <param id="0" name="Instance variable">isPursuing</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" type="WanderingEnemies">
+                                    <param id="0" name="X">Buster.X</param>
+                                    <param id="1" name="Y">Buster.Y</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">enemyType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;genericSkeleton&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                                    <param id="0" name="Instance variable">isAttacking</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" type="WanderingEnemies">
+                                    <param id="0" name="X">choose(Buster.X+floor(random(32,48)),Buster.X+floor(random(-48,-33)))</param>
+                                    <param id="1" name="Y">choose(Buster.Y+floor(random(32,48)),Buster.Y+floor(random(-48,-33)))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block>
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" type="System">
+                                    <param id="0" name="Interval (seconds)">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                                    <param id="0" name="Instance variable">isPursuing</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="0" name="Find path" type="WanderingEnemies">
+                                    <param id="0" name="X">Buster.X</param>
+                                    <param id="1" name="Y">Buster.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                    <param id="0" name="Instance variable">isPursuing</param>
+                </condition>
+                <condition id="-8" name="Compare two values" type="System">
+                    <param id="0" name="First value">distance(WanderingEnemies.X,WanderingEnemies.Y,Buster.X,Buster.Y)</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">180</param>
+                </condition>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" type="WanderingEnemies">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">WanderingEnemies.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">Buster.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" type="WanderingEnemies">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">WanderingEnemies.X</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">Buster.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" type="WanderingEnemies">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>
@@ -247,7 +354,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block>
+                <event-block collapsed="1">
                     <conditions>
                         <condition id="-11" name="For Each" type="System">
                             <param id="0" name="Object">WanderingEnemies</param>
@@ -295,7 +402,7 @@
                                 <condition id="-8" name="Compare two values" type="System">
                                     <param id="0" name="First value">distance(WanderingEnemies.X,WanderingEnemies.Y,Buster.X,Buster.Y)</param>
                                     <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">256</param>
+                                    <param id="2" name="Second value">384</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -310,6 +417,42 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isPursuing</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">hasLineOfSight</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" type="System">
+                            <param id="0" name="First value">distance(WanderingEnemies.X,WanderingEnemies.Y,Buster.X,Buster.Y)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">128</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isAttacking</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isPursuing</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block>
+                    <conditions>
+                        <condition id="-22" name="Else" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" type="WanderingEnemies">
+                            <param id="0" name="Instance variable">isAttacking</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
